@@ -8,6 +8,7 @@ import WalletIcon from '../../SvgIconComponents/WalletIcon';
 import BannerAmount from '../../common/BannerAmount';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
+import FPCard from '../../common/FPCard';
 
 let {height, width} = Dimensions.get('window');
 const styles = EStyleSheet.create({
@@ -30,7 +31,7 @@ const styles = EStyleSheet.create({
   },
   timeText: {
     fontSize: 14,
-    color: 'black'
+    color: 'black',
   },
   circleIconRow: {
     flexDirection: 'row',
@@ -134,6 +135,38 @@ const Home = () => {
             />
           </LinearGradient>
         </View>
+        <FPCard
+          backgroundColor={'#E03838'}
+          description={'Refunded Transaction'}
+          date={'19 June 2021 - 17:30'}
+          amount={'532.00'}
+          currency={'MVR'}
+          icon={require('../../../assets/icons/refund.png')}
+        />
+        <FPCard
+          backgroundColor={'#0CAF39'}
+          description={'Cash Deposit'}
+          date={'19 June 2021 - 17:30'}
+          amount={'31,912.90'}
+          currency={'MVR'}
+          icon={require('../../../assets/icons/addcash.png')}
+        />
+        <FPCard
+          backgroundColor={'#FFA26B'}
+          description={'Service Recharge'}
+          date={'19 June 2021 - 17:30'}
+          amount={'120.50'}
+          currency={'MVR'}
+          icon={require('../../../assets/icons/services.png')}
+        />
+        <FPCard
+          backgroundColor={'#FFA26B'}
+          description={'Dhiraagu Reload'}
+          date={'19 June 2021 - 17:30'}
+          amount={'31,912.50'}
+          currency={'MVR'}
+          icon={require('../../../assets/icons/services.png')}
+        />
       </View>
     </ScrollView>
   );
