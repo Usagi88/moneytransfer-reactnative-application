@@ -1,4 +1,4 @@
-import {ScrollView, View, Text, Dimensions} from 'react-native';
+import {ScrollView, View, Text, Dimensions, Image} from 'react-native';
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {IconButton} from 'react-native-paper';
@@ -9,6 +9,8 @@ import BannerAmount from '../../common/BannerAmount';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import FPCard from '../../common/FPCard';
+import CarouselBanner from '../../common/Carousel/CarouselBanner';
+
 
 let {height, width} = Dimensions.get('window');
 const styles = EStyleSheet.create({
@@ -20,7 +22,6 @@ const styles = EStyleSheet.create({
   carousel: {
     width: '100%',
     height: 120,
-    backgroundColor: '#ccc',
   },
   time: {
     width: '100%',
@@ -81,13 +82,31 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  listBox: {
+    width: width,
+    height: 20,
+  },
+  imageContainer: {
+    width: width,
+    height: '100%',
+    resizeMode: 'cover',
+  },
 });
+
+const images = [
+  require('../../../assets/carousel/bannerOne.png'),
+  require('../../../assets/carousel/bannerTwo.png'),
+  require('../../../assets/carousel/bannerThree.png'),
+];
+
 
 const Home = () => {
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <View style={styles.column}>
-        <View style={styles.carousel} />
+        <View style={styles.carousel}>
+          <CarouselBanner/>
+        </View>
         <View style={styles.time}>
           <Text style={styles.timeText}>K.Male - Fajr 04:47</Text>
         </View>
@@ -135,38 +154,56 @@ const Home = () => {
             />
           </LinearGradient>
         </View>
-        <FPCard
-          backgroundColor={'#E03838'}
-          description={'Refunded Transaction'}
-          date={'19 June 2021 - 17:30'}
-          amount={'532.00'}
-          currency={'MVR'}
-          icon={require('../../../assets/icons/refund.png')}
-        />
-        <FPCard
-          backgroundColor={'#0CAF39'}
-          description={'Cash Deposit'}
-          date={'19 June 2021 - 17:30'}
-          amount={'31,912.90'}
-          currency={'MVR'}
-          icon={require('../../../assets/icons/addcash.png')}
-        />
-        <FPCard
-          backgroundColor={'#FFA26B'}
-          description={'Service Recharge'}
-          date={'19 June 2021 - 17:30'}
-          amount={'120.50'}
-          currency={'MVR'}
-          icon={require('../../../assets/icons/services.png')}
-        />
-        <FPCard
-          backgroundColor={'#FFA26B'}
-          description={'Dhiraagu Reload'}
-          date={'19 June 2021 - 17:30'}
-          amount={'31,912.50'}
-          currency={'MVR'}
-          icon={require('../../../assets/icons/services.png')}
-        />
+        <ScrollView style={styles.listBox}>
+          <FPCard
+            backgroundColor={'#E03838'}
+            description={'Refunded Transaction'}
+            date={'19 June 2021 - 17:30'}
+            amount={'532.00'}
+            currency={'MVR'}
+            icon={require('../../../assets/icons/refund.png')}
+          />
+          <FPCard
+            backgroundColor={'#0CAF39'}
+            description={'Cash Deposit'}
+            date={'19 June 2021 - 17:30'}
+            amount={'31,912.90'}
+            currency={'MVR'}
+            icon={require('../../../assets/icons/addcash.png')}
+          />
+          <FPCard
+            backgroundColor={'#FFA26B'}
+            description={'Service Recharge'}
+            date={'19 June 2021 - 17:30'}
+            amount={'120.50'}
+            currency={'MVR'}
+            icon={require('../../../assets/icons/services.png')}
+          />
+          <FPCard
+            backgroundColor={'#FFA26B'}
+            description={'Dhiraagu Reload'}
+            date={'19 June 2021 - 17:30'}
+            amount={'31,912.50'}
+            currency={'MVR'}
+            icon={require('../../../assets/icons/services.png')}
+          />
+          <FPCard
+            backgroundColor={'#FFA26B'}
+            description={'Service Recharge'}
+            date={'19 June 2021 - 17:30'}
+            amount={'120.50'}
+            currency={'MVR'}
+            icon={require('../../../assets/icons/services.png')}
+          />
+          <FPCard
+            backgroundColor={'#FFA26B'}
+            description={'Dhiraagu Reload'}
+            date={'19 June 2021 - 17:30'}
+            amount={'31,912.50'}
+            currency={'MVR'}
+            icon={require('../../../assets/icons/services.png')}
+          />
+        </ScrollView>
       </View>
     </ScrollView>
   );
