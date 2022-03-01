@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import FPCard from '../../common/FPCard';
 import CarouselBanner from '../../common/Carousel/CarouselBanner';
-
+import MyAppBar from '../../common/Navbar';
 
 let {height, width} = Dimensions.get('window');
 const styles = EStyleSheet.create({
@@ -99,13 +99,12 @@ const images = [
   require('../../../assets/carousel/bannerThree.png'),
 ];
 
-
 const Home = () => {
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <View style={styles.column}>
         <View style={styles.carousel}>
-          <CarouselBanner/>
+          <CarouselBanner />
         </View>
         <View style={styles.time}>
           <Text style={styles.timeText}>K.Male - Fajr 04:47</Text>

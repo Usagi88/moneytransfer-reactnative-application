@@ -7,7 +7,6 @@
  *
  * @format
  */
-import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -31,8 +30,8 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import {Provider as PaperProvider} from 'react-native-paper';
 import AwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
-import MyDrawer from './src/components/common/MyDrawer';
-import {NavigationContainer} from '@react-navigation/native';
+
+import Navbar from './src/components/common/Navbar';
 
 EStyleSheet.build({
   // always call EStyleSheet.build() even if you don't use global variables!
@@ -50,9 +49,8 @@ const App = () => {
       settings={{
         icon: props => <AwesomeIcon {...props} />,
       }}>
-      
-
       <SafeAreaView style={backgroundStyle}>
+        <Navbar/>
         <Home />
       </SafeAreaView>
     </PaperProvider>
