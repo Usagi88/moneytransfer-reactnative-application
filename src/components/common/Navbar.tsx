@@ -6,8 +6,16 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import LiveChatIcon from '../SvgIconComponents/LiveChatIcon';
 
 let {height, width} = Dimensions.get('window');
-const Navbar = () => (
-  <Appbar style={styles.bottom}>
+const Navbar = ({navigation}) => (
+  <Appbar
+    style={{
+      left: 0,
+      right: 0,
+      top: 0,
+      zIndex: 100,
+      backgroundColor: 'white',
+      elevation: 1,
+    }}>
     <View
       style={{
         justifyContent: 'space-between',
@@ -17,11 +25,11 @@ const Navbar = () => (
       }}>
       <Appbar.Action
         icon={() => <Icon name="bars" size={26} color="#25BFA3" />}
-        onPress={() => console.log('Pressed archive')}
+        onPress={() => navigation.openDrawer()}
       />
       <View style={styles.imageContainer}>
         <Image
-          source={require('../../assets/fahipay-logo.png')}
+          source={require('../../assets/images/fahipay-logo.png')}
           style={{width: '100%', height: '100%'}}
         />
       </View>
@@ -43,14 +51,6 @@ const Navbar = () => (
 export default Navbar;
 
 const styles = StyleSheet.create({
-  bottom: {
-    left: 0,
-    right: 0,
-    top: 0,
-    zIndex: 100,
-    backgroundColor: 'white',
-    elevation: 1
-  },
   imageContainer: {
     width: 150,
     height: 40,

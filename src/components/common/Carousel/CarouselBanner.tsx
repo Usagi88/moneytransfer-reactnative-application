@@ -26,13 +26,13 @@ interface State {
 }
 
 const WIDTH = Dimensions.get('window').width;
-
+/*
 const images = [
   require('../../../assets/carousel/bannerOne.png'),
   require('../../../assets/carousel/bannerTwo.png'),
   require('../../../assets/carousel/bannerThree.png'),
 ];
-
+*/
 type Props = {
   item: {
     imgUrl: string;
@@ -47,13 +47,13 @@ function carouselCardItem({item, index}: any) {
   );
 }
 
-const CarouselBanner = () => {
+const CarouselBanner = (props:any) => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef<any>(null);
   return (
     <View style={styles.container}>
       <Carousel
-        data={images}
+        data={props.images}
         renderItem={carouselCardItem}
         sliderWidth={WIDTH}
         itemWidth={WIDTH}
@@ -70,7 +70,7 @@ const CarouselBanner = () => {
       />
       <View style={styles.dotsWrapper}>
         <Pagination
-          dotsLength={images.length}
+          dotsLength={props.images.length}
           activeDotIndex={index}
           dotStyle={styles.dots}
           inactiveDotOpacity={0.4}

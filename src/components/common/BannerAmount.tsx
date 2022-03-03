@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View, Text, Dimensions} from 'react-native';
+import {Image, View, Text, Dimensions, ImageBackground} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import BannerWalletIcon from '../SvgIconComponents/BannerWalletIcon';
 import {CountUp} from 'use-count-up';
@@ -60,7 +60,7 @@ const styles = EStyleSheet.create({
 const BannerAmount = () => {
   return (
     <View>
-      <Image source={require('../../assets/banner.png')} />
+      <ImageBackground source={require('../../assets/images/banner.png')} style={{height:160, width: width}}/>
       <View style={styles.bannerRow}>
         <BannerWalletIcon width={52} height={52} color={'white'} />
         <View style={styles.verticalDivider} />
