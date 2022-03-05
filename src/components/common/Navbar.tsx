@@ -14,7 +14,7 @@ const Navbar = ({navigation}) => (
       top: 0,
       zIndex: 100,
       backgroundColor: 'white',
-      elevation: 1,
+      elevation: 4,
     }}>
     <View
       style={{

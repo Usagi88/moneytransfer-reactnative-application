@@ -13,85 +13,6 @@ import CarouselBanner from '../common/Carousel/CarouselBanner';
 import Navbar from '../common/Navbar';
 
 let {height, width} = Dimensions.get('window');
-const styles = EStyleSheet.create({
-  column: {
-    width: width,
-    minHeight: height,
-    backgroundColor: 'white',
-  },
-  carousel: {
-    width: '100%',
-    height: 120,
-  },
-  time: {
-    width: '100%',
-    height: 30,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  timeText: {
-    fontSize: 14,
-    color: 'black',
-  },
-  circleIconRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    width: width,
-    top: 250,
-  },
-  circleIcon: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 70,
-    height: 70,
-    backgroundColor: 'white',
-    borderRadius: 50,
-    marginRight: 10,
-    marginLeft: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 3,
-  },
-  historyWrapper: {
-    flexDirection: 'row',
-    padding: 20,
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: 'black',
-  },
-  divider: {
-    width: '100% - 160',
-    height: 1,
-    backgroundColor: '#ccc',
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  smallBox: {
-    borderRadius: 20,
-    width: 40,
-    height: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  listBox: {
-    width: width,
-    height: 20,
-  },
-  imageContainer: {
-    width: width,
-    height: '100%',
-    resizeMode: 'cover',
-  },
-});
 
 const images = [
   require('../../assets/carousel/bannerOne.png'),
@@ -102,7 +23,7 @@ const images = [
 const Home = ({navigation}) => {
   return (
     <>
-      <Navbar  navigation={navigation}/>
+      <Navbar navigation={navigation} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={styles.column}>
           <View style={styles.carousel}>
@@ -113,36 +34,45 @@ const Home = ({navigation}) => {
           </View>
           <BannerAmount />
           <View style={styles.circleIconRow}>
-            <View style={styles.circleIcon}>
-              <IconButton
-                icon={() => (
-                  <QuestionIcon width={32} height={32} color={'#ffa26b'} />
-                )}
-                size={40}
-                onPress={() => {}}
-              />
+            <View style={{alignItems: 'center'}}>
+              <View style={styles.circleIcon}>
+                <IconButton
+                  icon={() => (
+                    <QuestionIcon width={32} height={32} color={'#ffa26b'} />
+                  )}
+                  size={40}
+                  onPress={() => {}}
+                />
+              </View>
+              <Text style={{paddingTop: 10}}>Support</Text>
             </View>
-            <View style={styles.circleIcon}>
-              <IconButton
-                icon={() => (
-                  <ServiceIcon width={32} height={32} color={'#7b89f9'} />
-                )}
-                size={40}
-                onPress={() => {}}
-              />
+            <View style={{alignItems: 'center'}}>
+              <View style={styles.circleIcon}>
+                <IconButton
+                  icon={() => (
+                    <ServiceIcon width={32} height={32} color={'#7b89f9'} />
+                  )}
+                  size={40}
+                  onPress={() => {navigation.navigate('Services');}}
+                />
+              </View>
+              <Text style={{paddingTop: 10}}>Services</Text>
             </View>
-            <View style={styles.circleIcon}>
-              <IconButton
-                style={{paddingLeft: 6, paddingTop: 6}}
-                icon={() => (
-                  <WalletIcon width={32} height={32} color={'#0caf39'} />
-                )}
-                size={40}
-                onPress={() => {}}
-              />
+            <View style={{alignItems: 'center'}}>
+              <View style={styles.circleIcon}>
+                <IconButton
+                  style={{paddingLeft: 6, paddingTop: 6}}
+                  icon={() => (
+                    <WalletIcon width={32} height={32} color={'#0caf39'} />
+                  )}
+                  size={40}
+                  onPress={() => {}}
+                />
+              </View>
+              <Text style={{paddingTop: 10}}>Add Cash</Text>
             </View>
           </View>
-          <View style={styles.historyWrapper}>
+          <View style={styles.titleWrapper}>
             <Text style={styles.title}>History</Text>
             <View style={styles.divider} />
             <LinearGradient
@@ -155,7 +85,7 @@ const Home = ({navigation}) => {
               />
             </LinearGradient>
           </View>
-          <ScrollView style={styles.listBox}>
+          <ScrollView style={styles.listBox} nestedScrollEnabled={true}>
             <FPCard
               backgroundColor={'#E03838'}
               description={'Refunded Transaction'}
@@ -212,3 +142,86 @@ const Home = ({navigation}) => {
 };
 
 export default Home;
+
+const styles = EStyleSheet.create({
+  column: {
+    width: width,
+    minHeight: height - 56,
+    backgroundColor: 'white',
+  },
+  carousel: {
+    width: '100%',
+    height: 120,
+  },
+  time: {
+    width: '100%',
+    height: 30,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  timeText: {
+    fontSize: 14,
+    color: 'black',
+  },
+  circleIconRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    width: width,
+    top: 250,
+  },
+  circleIcon: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 70,
+    height: 70,
+    backgroundColor: 'white',
+    borderRadius: 50,
+    marginRight: 10,
+    marginLeft: 10,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 1},
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 3,
+  },
+  titleWrapper: {
+    width: width,
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    paddingTop: 60,
+    paddingBottom: 10,
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: 'black',
+  },
+  divider: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#ccc',
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  smallBox: {
+    borderRadius: 20,
+    width: 40,
+    height: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  listBox: {
+    width: width,
+    maxHeight: '100% - 50%'
+  },
+  imageContainer: {
+    width: width,
+    height: '100%',
+    resizeMode: 'cover',
+  },
+});

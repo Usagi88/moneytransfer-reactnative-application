@@ -11,7 +11,7 @@ import {
   View,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
 
 const styles = EStyleSheet.create({
   backgroundImageContainer: {
