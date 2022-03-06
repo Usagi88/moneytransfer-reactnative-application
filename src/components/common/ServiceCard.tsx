@@ -1,23 +1,33 @@
 import React from 'react';
-import {Image, ImageSourcePropType, Text, View} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  Text,
+  TouchableNativeFeedback,
+  View,
+} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-
+import {useNavigation} from '@react-navigation/native';
 
 interface ServiceCard {
   image: ImageSourcePropType;
   title: string;
+  link: string;
 }
 
 const ServiceCard = (props: ServiceCard) => {
+  const navigation = useNavigation<any>();
   return (
-    <View style={styles.serviceCard}>
-      <Image
-        style={styles.serviceCardImage}
-        source={props.image}
-      />
-      <View style={styles.serviceCardVerticalDivider} />
-      <Text style={styles.serviceCardText}>{props.title}</Text>
-    </View>
+    <TouchableNativeFeedback
+      onPress={() => {
+        navigation.navigate(props.link);
+      }}>
+      <View style={styles.serviceCard}>
+        <Image style={styles.serviceCardImage} source={props.image} />
+        <View style={styles.serviceCardVerticalDivider} />
+        <Text style={styles.serviceCardText}>{props.title}</Text>
+      </View>
+    </TouchableNativeFeedback>
   );
 };
 
@@ -33,6 +43,12 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
     padding: 10,
     borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,  
+    elevation: 5
+    
   },
   serviceCardImage: {
     width: 50,

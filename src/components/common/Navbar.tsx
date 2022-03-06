@@ -4,49 +4,55 @@ import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import QRCodeIcon from '../SvgIconComponents/QRCodeIcon';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LiveChatIcon from '../SvgIconComponents/LiveChatIcon';
+import { useNavigation } from '@react-navigation/native';
 
-let {height, width} = Dimensions.get('window');
-const Navbar = ({navigation}) => (
-  <Appbar
-    style={{
-      left: 0,
-      right: 0,
-      top: 0,
-      zIndex: 100,
-      backgroundColor: 'white',
-      elevation: 4,
-    }}>
-    <View
+let {width} = Dimensions.get('window');
+const Navbar = () => {
+  const navigation = useNavigation<any>();
+  return (
+    <Appbar
       style={{
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        width: width,
-        paddingHorizontal: 10,
+        left: 0,
+        right: 0,
+        top: 0,
+        zIndex: 100,
+        backgroundColor: 'white',
+        elevation: 4,
       }}>
-      <Appbar.Action
-        icon={() => <Icon name="bars" size={26} color="#25BFA3" />}
-        onPress={() => navigation.openDrawer()}
-      />
-      <View style={styles.imageContainer}>
-        <Image
-          source={require('../../assets/images/fahipay-logo.png')}
-          style={{width: '100%', height: '100%'}}
-        />
-      </View>
-      <View style={{flexDirection: 'row'}}>
+      <View
+        style={{
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          width: width,
+          paddingHorizontal: 10,
+        }}>
         <Appbar.Action
-          style={{paddingTop: 6}}
-          icon={() => <QRCodeIcon color={'#25BFA3'} width={32} height={32} />}
-          onPress={() => console.log('Pressed mail')}
+          icon={() => <Icon name="bars" size={26} color="#25BFA3" />}
+          onPress={() => navigation.openDrawer()}
         />
-        <Appbar.Action
-          icon={() => <LiveChatIcon color={'#25BFA3'} width={32} height={32} />}
-          onPress={() => console.log('Pressed delete')}
-        />
+        <View style={styles.imageContainer}>
+          <Image
+            source={require('../../assets/images/fahipay-logo.png')}
+            style={{width: '100%', height: '100%'}}
+          />
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <Appbar.Action
+            style={{paddingTop: 6}}
+            icon={() => <QRCodeIcon color={'#25BFA3'} width={32} height={32} />}
+            onPress={() => console.log('Pressed mail')}
+          />
+          <Appbar.Action
+            icon={() => (
+              <LiveChatIcon color={'#25BFA3'} width={32} height={32} />
+            )}
+            onPress={() => console.log('Pressed delete')}
+          />
+        </View>
       </View>
-    </View>
-  </Appbar>
-);
+    </Appbar>
+  );
+};
 
 export default Navbar;
 

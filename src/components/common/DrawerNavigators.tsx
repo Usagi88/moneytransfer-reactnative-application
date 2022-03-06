@@ -13,8 +13,11 @@ import ChangeAccount from "./ChangeAccount";
 import CustomDrawerContent from "./CustomDrawerContent";
 import ExitApp from "./ExitApp";
 import Logout from "./Logout";
+import Navbar from "./Navbar";
 import RefreshApp from "./RefreshApp";
 import Settings from "./Settings";
+import StackNavigators from "./StackNavigators";
+
 
 const Drawer = createDrawerNavigator();
 
@@ -35,9 +38,10 @@ const DrawerNavigators = () => {
       }}>
       <Drawer.Screen
         name="Home"
-        component={Home}
+        component={StackNavigators}
         options={{
-          headerShown: false,
+          header: () => ( <Navbar />),
+          headerShown: true,
           drawerIcon: () => (
             <View
               style={{

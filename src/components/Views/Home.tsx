@@ -1,4 +1,4 @@
-import {ScrollView, View, Text, Dimensions, Image} from 'react-native';
+import {ScrollView, View, Text, Dimensions} from 'react-native';
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {IconButton} from 'react-native-paper';
@@ -23,7 +23,6 @@ const images = [
 const Home = ({navigation}) => {
   return (
     <>
-      <Navbar navigation={navigation} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={styles.column}>
           <View style={styles.carousel}>
@@ -53,7 +52,9 @@ const Home = ({navigation}) => {
                     <ServiceIcon width={32} height={32} color={'#7b89f9'} />
                   )}
                   size={40}
-                  onPress={() => {navigation.navigate('Services');}}
+                  onPress={() => {
+                    navigation.navigate('Services');
+                  }}
                 />
               </View>
               <Text style={{paddingTop: 10}}>Services</Text>
@@ -66,7 +67,9 @@ const Home = ({navigation}) => {
                     <WalletIcon width={32} height={32} color={'#0caf39'} />
                   )}
                   size={40}
-                  onPress={() => {}}
+                  onPress={() => {
+                    navigation.navigate('AddCash');
+                  }}
                 />
               </View>
               <Text style={{paddingTop: 10}}>Add Cash</Text>
@@ -217,7 +220,7 @@ const styles = EStyleSheet.create({
   },
   listBox: {
     width: width,
-    maxHeight: '100% - 50%'
+    maxHeight: '100% - 50%',
   },
   imageContainer: {
     width: width,

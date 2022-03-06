@@ -62,6 +62,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Services from './src/components/Views/Services';
 import DrawerNavigators from './src/components/common/DrawerNavigators';
+import DhiraaguReload from './src/components/Views/Services/DhiraaguReload';
+import Navbar from './src/components/common/Navbar';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -71,8 +73,9 @@ EStyleSheet.build({
   // always call EStyleSheet.build() even if you don't use global variables!
   $textColor: '#0275d8',
 });
-const Drawer = createDrawerNavigator();
+//const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -86,18 +89,7 @@ const App = () => {
         icon: props => <AwesomeIcon {...props} />,
       }}>
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="DrawerNavigators"
-            component={DrawerNavigators}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Services"
-            component={Services}
-            options={{headerShown: false}}
-          />
-        </Stack.Navigator>
+        <DrawerNavigators/>
       </NavigationContainer>
     </PaperProvider>
   );
