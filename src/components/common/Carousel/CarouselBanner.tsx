@@ -6,6 +6,7 @@ import {
   Dimensions,
   StyleSheet,
   Image,
+  ImageSourcePropType,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -20,9 +21,8 @@ interface ItemProps {
 //   carouselItems?: ItemProps;
 // }
 
-interface State {
-  activeIndex: number;
-  carouselItems: ItemProps[];
+interface CarouselType {
+  images: ImageSourcePropType[];
 }
 
 const WIDTH = Dimensions.get('window').width;
@@ -33,13 +33,11 @@ const images = [
   require('../../../assets/carousel/bannerThree.png'),
 ];
 */
-type Props = {
-  item: {
-    imgUrl: string;
-  };
+type carouselCardItem = {
+  item: ImageSourcePropType;
   index: number;
 };
-function carouselCardItem({item, index}: any) {
+function carouselCardItem({item, index}: carouselCardItem) {
   return (
     <View style={styles.cardCarousel} key={index}>
       <Image style={styles.image} source={item} />
@@ -47,7 +45,7 @@ function carouselCardItem({item, index}: any) {
   );
 }
 
-const CarouselBanner = (props:any) => {
+const CarouselBanner = (props:CarouselType) => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef<any>(null);
   return (

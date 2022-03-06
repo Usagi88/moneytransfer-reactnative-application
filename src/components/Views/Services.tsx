@@ -3,6 +3,7 @@ import {Dimensions, Image, ScrollView, Text, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
 import Navbar from '../common/Navbar';
+import ServiceCard from '../common/ServiceCard';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
 let {height, width} = Dimensions.get('window');
@@ -24,22 +25,14 @@ const Services = ({navigation}) => {
           <TitleHorizonDivider name={'Services'} />
           <ScrollView style={styles.listBox} nestedScrollEnabled={true}>
             <View style={styles.cardRow}>
-              <View style={styles.serviceCard}>
-                <Image
-                  style={styles.serviceCardImage}
-                  source={require('../../assets/icons/dhiraagu-logo.png')}
-                />
-                <View style={styles.serviceCardVerticalDivider} />
-                <Text style={styles.serviceCardText}>Dhiraagu Reload</Text>
-              </View>
-              <View style={styles.serviceCard}>
-                <Image
-                  style={styles.serviceCardImage}
-                  source={require('../../assets/icons/ooredoo-logo.png')}
-                />
-                <View style={styles.serviceCardVerticalDivider} />
-                <Text style={styles.serviceCardText}>Ooredoo Raastas</Text>
-              </View>
+              <ServiceCard
+                title={'Dhiraagu Reload'}
+                image={require('../../assets/icons/dhiraagu-logo.png')}
+              />
+              <ServiceCard
+                title={'Dhiraagu Reload'}
+                image={require('../../assets/icons/dhiraagu-logo.png')}
+              />
             </View>
           </ScrollView>
         </View>
@@ -72,35 +65,6 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
     width: width,
     paddingHorizontal: 10,
-    paddingTop: 20,
-  },
-  serviceCard: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    flex: 1,
-    height: 100,
-    marginHorizontal: 10,
-    alignItems: 'center',
-    padding: 10,
-
-    borderRadius: 10,
-  },
-  serviceCardImage: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-  },
-  serviceCardVerticalDivider: {
-    width: 1,
-    height: '100%',
-    backgroundColor: '#ccc',
-    marginHorizontal: 10,
-  },
-  serviceCardTextWrapper: {
-    backgroundColor: '#8d7070',
-    flex: 1,
-  },
-  serviceCardText: {
-    flex: 1,
+    paddingVertical: 10,
   },
 });
