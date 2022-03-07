@@ -1521,10 +1521,10 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*", "@types/react-native@^0.66.16":
-  "integrity" "sha512-TsMV/4gW9WTu/6Iuyrm8+UaClIcgJ+1FqVUqDgMvp/Ys+cF+q1GFid3ZPYHYmVZTfOoowY+e3Vd8zFufVL7HLQ=="
-  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.66.16.tgz"
-  "version" "0.66.16"
+"@types/react-native@*", "@types/react-native@^0.66.17":
+  "integrity" "sha512-Q3S+NhPvA1C35L9oLj8hgJj3QXmEC07Kd54o40ngUNQ2jdtAGc+7AKu2RZ3sPcIHpUBWN+WyHkCuPPQHoiDxQg=="
+  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.66.17.tgz"
+  "version" "0.66.17"
   dependencies:
     "@types/react" "*"
 
@@ -6078,6 +6078,11 @@
   "resolved" "https://registry.npmjs.org/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz"
   "version" "2.5.6"
 
+"react-native-pager-view@*", "react-native-pager-view@^5.4.11":
+  "integrity" "sha512-4QlBL5W8yVjeYwrw89oCdABI7sDxIGapFQvIbukfB5mAj1Zn1IQPkBqROLblNFtQ8PbAeexXRgDT1ENWygiJ7A=="
+  "resolved" "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-5.4.11.tgz"
+  "version" "5.4.11"
+
 "react-native-paper@^4.11.2":
   "integrity" "sha512-r+M5unY9Avez4we/RijVh4iy8gqxK93R4840aZmbakOJLIuxjfNh3B6SuoxBEbR6diuPRbKVeWHKju4mhltxWw=="
   "resolved" "https://registry.npmjs.org/react-native-paper/-/react-native-paper-4.11.2.tgz"
@@ -6133,6 +6138,11 @@
   "integrity" "sha512-8Mkh5DnGP7x42GBI870vpiliAdXAJObi8uDdqCjd3cWJBDgVv1xmo3y11CZzqpf6241EyddX0LygSt1Rv61LYg=="
   "resolved" "https://registry.npmjs.org/react-native-swiper-flatlist/-/react-native-swiper-flatlist-3.0.16.tgz"
   "version" "3.0.16"
+
+"react-native-tab-view@^3.1.1":
+  "integrity" "sha512-M5pRN6utQfytKWoKlKVzg5NbkYu308qNoW1khGTtEOTs1k14p2dHJ/BWOJoJYHKbPVUyZldbG9MFT7gUl4YHnw=="
+  "resolved" "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-3.1.1.tgz"
+  "version" "3.1.1"
 
 "react-native-vector-icons@*", "react-native-vector-icons@^9.1.0":
   "integrity" "sha512-2AHZ/h9d/+rC0odz+OwbGNlc1Lik/pHhSixn4HfC8RtQ8CxfSBZ6gg7bTLcZhdSvZN+ZEGi30Fj+ZnOSQy+smg=="

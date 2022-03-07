@@ -1,27 +1,42 @@
-import { faBullhorn, faCalendarAlt, faCog, faHome, faInfoCircle, faLock, faPhoneAlt, faPowerOff, faSignOutAlt, faSyncAlt, faUserAlt, faUserFriends } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import React from "react";
-import { View } from "react-native";
-import About from "../Views/About";
-import ChangePassword from "../Views/ChangePassword";
-import ContactUs from "../Views/ContactUs";
-import Home from "../Views/Home";
-import InviteFriends from "../Views/InviteFriends";
-import Profile from "../Views/Profile";
-import ChangeAccount from "./ChangeAccount";
-import CustomDrawerContent from "./CustomDrawerContent";
-import ExitApp from "./ExitApp";
-import Logout from "./Logout";
-import Navbar from "./Navbar";
-import RefreshApp from "./RefreshApp";
-import Settings from "./Settings";
-import StackNavigators from "./StackNavigators";
-
+import {
+  faBullhorn,
+  faCalendarAlt,
+  faCog,
+  faHome,
+  faInfoCircle,
+  faLock,
+  faPhoneAlt,
+  faPowerOff,
+  faSignOutAlt,
+  faSyncAlt,
+  faUserAlt,
+  faUserFriends,
+} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import React from 'react';
+import {TouchableNativeFeedback, View} from 'react-native';
+import About from '../Views/About';
+import ChangePassword from '../Views/ChangePassword';
+import ContactUs from '../Views/ContactUs';
+import Home from '../Views/Home';
+import InviteFriends from '../Views/InviteFriends';
+import Profile from '../Views/Profile';
+import ChangeAccount from './ChangeAccount';
+import CustomDrawerContent from './CustomDrawerContent';
+import ExitApp from './ExitApp';
+import Logout from './Logout';
+import Navbar from './Navbar';
+import RefreshApp from './RefreshApp';
+import Settings from './Settings';
+import StackNavigators from './StackNavigators';
+import {CommonActions} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigators = () => {
+  const navigation = useNavigation<any>();
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawerContent {...props} />}
@@ -40,8 +55,9 @@ const DrawerNavigators = () => {
         name="Home"
         component={StackNavigators}
         options={{
-          header: () => ( <Navbar />),
+          header: () => <Navbar />,
           headerShown: true,
+          drawerItemStyle: { height: 0 },
           drawerIcon: () => (
             <View
               style={{

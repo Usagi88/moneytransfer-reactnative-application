@@ -6,7 +6,7 @@ import AddCash from '../Views/AddCash';
 import Home from '../Views/Home';
 
 import Services from '../Views/Services';
-import DhiraaguReload from '../Views/Services/DhiraaguReload';
+import ReloadRaastas from '../Views/Services/ReloadRaastas/ReloadRaastas';
 
 const Stack = createStackNavigator();
 
@@ -29,7 +29,7 @@ const StackNavigators = () => {
       />
       <Stack.Screen
         name="DhiraaguReload"
-        component={DhiraaguReload}
+        component={ReloadRaastas}
         options={{
           headerShown: false,
         }}

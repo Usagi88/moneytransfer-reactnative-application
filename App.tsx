@@ -62,7 +62,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Services from './src/components/Views/Services';
 import DrawerNavigators from './src/components/common/DrawerNavigators';
-import DhiraaguReload from './src/components/Views/Services/DhiraaguReload';
+import DhiraaguReload from './src/components/Views/Services/ReloadRaastas/ReloadRaastas';
 import Navbar from './src/components/common/Navbar';
 
 LogBox.ignoreLogs([

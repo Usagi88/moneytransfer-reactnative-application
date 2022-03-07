@@ -4,11 +4,11 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 let {width} = Dimensions.get('window');
 
-interface title {
+interface TitleHorizonDividerType {
   name: string;
 }
 
-const TitleHorizonDivider = (props: title) => {
+const TitleHorizonDivider = (props: TitleHorizonDividerType) => {
   return (
     <View style={styles.titleWrapper}>
       <Text style={styles.title}>{props.name}</Text>
