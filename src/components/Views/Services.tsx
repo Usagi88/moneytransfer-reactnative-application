@@ -87,7 +87,7 @@ const Services = () => {
               <ServiceCard
                 title={'MWSC Bill Pay'}
                 image={require('../../assets/icons/mwsc.png')}
-                link={'OoredooRaastas'}
+                link={'MWSCBillPay'}
               />
             </View>
             <View style={styles.cardRow}>

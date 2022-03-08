@@ -7,6 +7,7 @@ import Home from '../Views/Home';
 
 import Services from '../Views/Services';
 import BillPay from '../Views/Services/BillPay/BillPay';
+import MWSCBillPay from '../Views/Services/MWSCBillPay';
 import PackageRecharge from '../Views/Services/PackageRecharge/PackageRecharge';
 import PUBGBuyPackage from '../Views/Services/PUBGBuyPackage';
 import ReloadRaastas from '../Views/Services/ReloadRaastas/ReloadRaastas';
@@ -62,6 +63,13 @@ const StackNavigators = () => {
       <Stack.Screen
         name="PUBGBuyPackage"
         component={PUBGBuyPackage}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="MWSCBillPay"
+        component={MWSCBillPay}
         options={{
           headerShown: false,
         }}
