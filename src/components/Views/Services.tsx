@@ -94,7 +94,7 @@ const Services = () => {
               <ServiceCard
                 title={'MediaNet Bill Pay'}
                 image={require('../../assets/icons/medianet.png')}
-                link={'DhiraaguReload'}
+                link={'MediaNetBillPay'}
               />
               <ServiceCard
                 title={'Maldive Gas'}
