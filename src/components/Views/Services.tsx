@@ -82,7 +82,7 @@ const Services = () => {
               <ServiceCard
                 title={'PUBG UC'}
                 image={require('../../assets/icons/pubg.png')}
-                link={'DhiraaguReload'}
+                link={'PUBGBuyPackage'}
               />
               <ServiceCard
                 title={'MWSC Bill Pay'}
