@@ -99,7 +99,7 @@ const Services = () => {
               <ServiceCard
                 title={'Maldive Gas'}
                 image={require('../../assets/icons/gas.png')}
-                link={'OoredooRaastas'}
+                link={'OrderGas'}
               />
             </View>
             <View style={styles.cardRow}>
