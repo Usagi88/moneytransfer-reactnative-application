@@ -7,16 +7,14 @@ import {
   View,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 import GradientButton from '../../../common/GradientButton';
 import {Checkbox, DataTable, IconButton} from 'react-native-paper';
 import TitleHorizonDivider from '../../../common/TitleHorizonDivider';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faLocationArrow,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import {faLocationArrow, faTrash} from '@fortawesome/free-solid-svg-icons';
 
-const DhiraaguReload = () => {
+const OoredooRaastas = () => {
   const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
   const [amount, onChangeAmount] = useState<any>(null);
   const [saveName, onChangeSaveName] = useState<any>(null);
@@ -26,7 +24,7 @@ const DhiraaguReload = () => {
     <ScrollView style={styles.listBox}>
       <View style={styles.column}>
         <Text style={styles.firstSentence}>
-          Enter the Dhiraagu number and amount to send reload.
+          Enter the Ooredoo number and amount to send raastas.
         </Text>
         <GradientButton text={'Pick Contact'} onPress={() => {}} />
         <Text style={styles.inputText}>Mobile Number</Text>
@@ -181,7 +179,7 @@ const DhiraaguReload = () => {
   );
 };
 
-export default DhiraaguReload;
+export default OoredooRaastas;
 
 const styles = EStyleSheet.create({
   column: {

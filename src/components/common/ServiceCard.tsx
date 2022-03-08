@@ -13,6 +13,7 @@ interface ServiceCard {
   image: ImageSourcePropType;
   title: string;
   link: string;
+  paramsId?: number;
 }
 
 const ServiceCard = (props: ServiceCard) => {
@@ -20,7 +21,9 @@ const ServiceCard = (props: ServiceCard) => {
   return (
     <TouchableNativeFeedback
       onPress={() => {
-        navigation.navigate(props.link);
+        navigation.navigate(props.link, {
+          tabId: props.paramsId
+        });
       }}>
       <View style={styles.serviceCard}>
         <Image style={styles.serviceCardImage} source={props.image} />

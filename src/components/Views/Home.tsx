@@ -23,6 +23,7 @@ const images = [
 const Home = ({navigation}) => {
   return (
     <>
+      <Navbar/>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={styles.column}>
           <View style={styles.carousel}>

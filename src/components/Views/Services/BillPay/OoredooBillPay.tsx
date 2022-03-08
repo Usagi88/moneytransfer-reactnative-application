@@ -11,13 +11,11 @@ import GradientButton from '../../../common/GradientButton';
 import {Checkbox, DataTable, IconButton} from 'react-native-paper';
 import TitleHorizonDivider from '../../../common/TitleHorizonDivider';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faLocationArrow,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import {faLocationArrow, faTrash} from '@fortawesome/free-solid-svg-icons';
+import LinearGradient from 'react-native-linear-gradient';
 
-const DhiraaguReload = () => {
-  const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
+const OoredooBillPay = () => {
+  const [serviceNumber, onChangeServiceNumber] = useState<any>(null);
   const [amount, onChangeAmount] = useState<any>(null);
   const [saveName, onChangeSaveName] = useState<any>(null);
   const [checked, setChecked] = useState(false);
@@ -26,18 +24,28 @@ const DhiraaguReload = () => {
     <ScrollView style={styles.listBox}>
       <View style={styles.column}>
         <Text style={styles.firstSentence}>
-          Enter the Dhiraagu number and amount to send reload.
+          Enter the Ooredoo service number and amount to pay bill.
         </Text>
         <GradientButton text={'Pick Contact'} onPress={() => {}} />
-        <Text style={styles.inputText}>Mobile Number</Text>
+        <Text style={styles.inputText}>Service Number</Text>
         <View style={styles.inputWrapper}>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeMobileNumber}
-            value={mobileNumber}
-            placeholder="Mobile Number"
-            keyboardType="numeric"
+            onChangeText={onChangeServiceNumber}
+            value={serviceNumber}
+            placeholder="Service Number"
           />
+          <View style={styles.buttonWrapper}>
+            <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+              <LinearGradient
+                start={{x: 0, y: 1}}
+                end={{x: 1, y: 1}}
+                colors={['#3AC170', '#25BFA3']}
+                style={styles.button}>
+                <Text style={styles.buttonText}>Check Balance</Text>
+              </LinearGradient>
+            </TouchableNativeFeedback>
+          </View>
         </View>
         <Text style={styles.inputText}>Amount</Text>
         <View style={styles.inputWrapper}>
@@ -78,7 +86,7 @@ const DhiraaguReload = () => {
             <Text style={styles.label}>Keep info saved</Text>
           </View>
         </TouchableNativeFeedback>
-        <GradientButton text={'Send Reload'} onPress={() => {}} />
+        <GradientButton text={'Pay Bill'} onPress={() => {}} />
         <TitleHorizonDivider name={'Saved Numbers'} />
         <DataTable>
           <DataTable.Header>
@@ -181,7 +189,7 @@ const DhiraaguReload = () => {
   );
 };
 
-export default DhiraaguReload;
+export default OoredooBillPay;
 
 const styles = EStyleSheet.create({
   column: {
@@ -226,5 +234,22 @@ const styles = EStyleSheet.create({
   },
   dataTableCell: {
     color: 'black',
+  },
+
+  buttonWrapper: {
+    alignItems: 'flex-end',
+    paddingRight: 20,
+  },
+  button: {
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    width: 100,
+    height: 36,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 12,
   },
 });

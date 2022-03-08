@@ -55,8 +55,8 @@ const DrawerNavigators = () => {
         name="Home"
         component={StackNavigators}
         options={{
-          header: () => <Navbar />,
-          headerShown: true,
+          //header: () => <Navbar />,
+          headerShown: false,
           drawerItemStyle: { height: 0 },
           drawerIcon: () => (
             <View

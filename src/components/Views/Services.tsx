@@ -2,6 +2,7 @@ import React from 'react';
 import {Dimensions, Image, ScrollView, Text, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
+import Navbar from '../common/Navbar';
 import ServiceCard from '../common/ServiceCard';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
@@ -15,6 +16,7 @@ const images = [
 const Services = () => {
   return (
     <>
+      <Navbar />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={styles.column}>
           <View style={styles.carousel}>
@@ -26,43 +28,49 @@ const Services = () => {
               <ServiceCard
                 title={'Dhiraagu Reload'}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
-                link={'DhiraaguReload'}
+                link={'ReloadRaastas'}
+                paramsId={0}
               />
               <ServiceCard
                 title={'Ooredoo Raastas'}
                 image={require('../../assets/icons/ooredoo-logo.png')}
-                link={'OoredooRaastas'}
+                link={'ReloadRaastas'}
+                paramsId={1}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
                 title={'Dhiraagu Package Recharge'}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
-                link={'DhiraaguReload'}
+                link={'PackageRecharge'}
+                paramsId={0}
               />
               <ServiceCard
                 title={'Ooredoo Package Recharge'}
                 image={require('../../assets/icons/ooredoo-logo.png')}
-                link={'OoredooRaastas'}
+                link={'PackageRecharge'}
+                paramsId={1}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
                 title={'Dhiraagu Bill Pay'}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
-                link={'DhiraaguReload'}
+                link={'BillPay'}
+                paramsId={0}
               />
               <ServiceCard
                 title={'Ooredoo Bill Pay'}
                 image={require('../../assets/icons/ooredoo-logo.png')}
-                link={'OoredooRaastas'}
+                link={'BillPay'}
+                paramsId={1}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
                 title={'Raajje Online Bill Pay'}
                 image={require('../../assets/icons/ROL.png')}
-                link={'DhiraaguReload'}
+                link={'ROLBillPay'}
               />
               <ServiceCard
                 title={'Gift Cards'}
@@ -136,7 +144,7 @@ const Services = () => {
                 image={require('../../assets/icons/donate.png')}
                 link={'DhiraaguReload'}
               />
-              <View style={{flex: 1,marginHorizontal: 10,padding: 10,}}/>
+              <View style={{flex: 1, marginHorizontal: 10, padding: 10}} />
             </View>
           </ScrollView>
         </View>
@@ -160,7 +168,6 @@ const styles = EStyleSheet.create({
   listBox: {
     width: width,
     height: '100%',
-    
   },
   cardRow: {
     flexDirection: 'row',

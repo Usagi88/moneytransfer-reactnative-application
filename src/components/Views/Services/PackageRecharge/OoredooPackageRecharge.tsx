@@ -12,23 +12,71 @@ import {Checkbox, DataTable, IconButton} from 'react-native-paper';
 import TitleHorizonDivider from '../../../common/TitleHorizonDivider';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
+  faChevronDown,
+  faChevronUp,
   faLocationArrow,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
+import SelectDropdown from 'react-native-select-dropdown';
 
-const DhiraaguReload = () => {
+const OoredooPackageRecharge = () => {
   const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
-  const [amount, onChangeAmount] = useState<any>(null);
   const [saveName, onChangeSaveName] = useState<any>(null);
   const [checked, setChecked] = useState(false);
+
+  const packages = ['Package 1', 'Package 2', 'Package 3', 'Package 4'];
 
   return (
     <ScrollView style={styles.listBox}>
       <View style={styles.column}>
         <Text style={styles.firstSentence}>
-          Enter the Dhiraagu number and amount to send reload.
+          Enter the Ooredoo number and select a package to recharge.
         </Text>
         <GradientButton text={'Pick Contact'} onPress={() => {}} />
+        <Text style={styles.inputText}>Select Package</Text>
+        <View style={{paddingHorizontal: 20}}>
+          <SelectDropdown
+            data={packages}
+            onSelect={(selectedItem, index) => {
+              //console.log(selectedItem, index);
+            }}
+            defaultButtonText={'Select a package'}
+            buttonTextAfterSelection={(selectedItem, index) => {
+              // text represented after item is selected
+              // if data array is an array of objects then return selectedItem.property to render after item is selected
+              return selectedItem;
+            }}
+            rowTextForSelection={(item, index) => {
+              // text represented for each item in dropdown
+              // if data array is an array of objects then return item.property to represent item in dropdown
+              return item;
+            }}
+            renderDropdownIcon={isOpened => {
+              return (
+                <FontAwesomeIcon
+                  icon={isOpened ? faChevronUp : faChevronDown}
+                  color={'#444'}
+                  size={18}
+                />
+              );
+            }}
+            buttonStyle={{
+              width: '100%',
+              borderRadius: 10,
+              marginTop: 6,
+              marginBottom: 20,
+            }}
+            buttonTextStyle={{
+              fontSize: 14,
+              textAlign: 'left',
+            }}
+            rowTextStyle={{
+              fontSize: 14,
+              textAlign: 'left',
+            }}
+          />
+        </View>
+
         <Text style={styles.inputText}>Mobile Number</Text>
         <View style={styles.inputWrapper}>
           <TextInput
@@ -36,16 +84,6 @@ const DhiraaguReload = () => {
             onChangeText={onChangeMobileNumber}
             value={mobileNumber}
             placeholder="Mobile Number"
-            keyboardType="numeric"
-          />
-        </View>
-        <Text style={styles.inputText}>Amount</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeAmount}
-            value={amount}
-            placeholder="Amount"
             keyboardType="numeric"
           />
         </View>
@@ -78,7 +116,7 @@ const DhiraaguReload = () => {
             <Text style={styles.label}>Keep info saved</Text>
           </View>
         </TouchableNativeFeedback>
-        <GradientButton text={'Send Reload'} onPress={() => {}} />
+        <GradientButton text={'Buy Package'} onPress={() => {}} />
         <TitleHorizonDivider name={'Saved Numbers'} />
         <DataTable>
           <DataTable.Header>
@@ -181,7 +219,7 @@ const DhiraaguReload = () => {
   );
 };
 
-export default DhiraaguReload;
+export default OoredooPackageRecharge;
 
 const styles = EStyleSheet.create({
   column: {

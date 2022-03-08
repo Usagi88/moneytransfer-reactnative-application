@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 let {width} = Dimensions.get('window');
 const Navbar = () => {
+  console.log('running');
   const navigation = useNavigation<any>();
   return (
     <Appbar

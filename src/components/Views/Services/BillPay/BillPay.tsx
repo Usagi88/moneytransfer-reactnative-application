@@ -14,24 +14,26 @@ import BannerAmount from '../../../common/BannerAmount';
 
 import {TabView, SceneMap} from 'react-native-tab-view';
 import LinearGradient from 'react-native-linear-gradient';
-import DhiraaguReload from './DhiraaguReload';
-import OoredooRaastas from './OoredooRaastas';
+
+import DhiraaguBillPay from './DhiraaguBillPay';
+import OoredooBillPay from './OoredooBillPay';
 import Navbar from '../../../common/Navbar';
+
 let {height, width} = Dimensions.get('window');
 
 const FirstRoute = () => {
-  return <DhiraaguReload />;
+  return <DhiraaguBillPay />;
 };
 
 const SecondRoute = () => {
-  return <OoredooRaastas />;
+  return <OoredooBillPay />;
 };
 const renderScene = SceneMap({
   first: FirstRoute,
   second: SecondRoute,
 });
 
-const ReloadRaastas = ({route}) => {
+const BillPay = ({route}) => {
   const {tabId} = route.params;
 
   const layout = useWindowDimensions();
@@ -106,7 +108,7 @@ const ReloadRaastas = ({route}) => {
   );
 };
 
-export default ReloadRaastas;
+export default BillPay;
 
 const styles = EStyleSheet.create({
   column: {
