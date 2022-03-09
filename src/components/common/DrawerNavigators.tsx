@@ -32,6 +32,7 @@ import Settings from './Settings';
 import StackNavigators from './StackNavigators';
 import {CommonActions} from '@react-navigation/native';
 import {useNavigation} from '@react-navigation/native';
+import SchedulePayment from '../Views/Services/SchedulePayment';
 
 const Drawer = createDrawerNavigator();
 
@@ -91,7 +92,7 @@ const DrawerNavigators = () => {
       />
       <Drawer.Screen
         name="Scheduled Payment"
-        component={ChangePassword}
+        component={SchedulePayment}
         options={{
           headerShown: false,
           drawerIcon: () => (

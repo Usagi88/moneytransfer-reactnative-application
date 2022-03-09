@@ -120,19 +120,21 @@ const Services = () => {
               <ServiceCard
                 title={'Dhiraagu Pay Cash In'}
                 image={require('../../assets/icons/dhp.png')}
-                link={'DhiraaguReload'}
+                link={'CashIn'}
+                paramsId={0}
               />
               <ServiceCard
                 title={'Ooredoo M-faisaa Cash In'}
                 image={require('../../assets/icons/mfaisaa.png')}
-                link={'OoredooRaastas'}
+                link={'CashIn'}
+                paramsId={1}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
                 title={'Schedule Payment'}
                 image={require('../../assets/icons/schedule.png')}
-                link={'DhiraaguReload'}
+                link={'SchedulePayment'}
               />
               <ServiceCard
                 title={'Send SMS'}

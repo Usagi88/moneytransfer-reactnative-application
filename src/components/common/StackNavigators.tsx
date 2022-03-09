@@ -7,6 +7,7 @@ import Home from '../Views/Home';
 
 import Services from '../Views/Services';
 import BillPay from '../Views/Services/BillPay/BillPay';
+import CashIn from '../Views/Services/CashIn/CashIn';
 import MediaNetBillPay from '../Views/Services/MediaNetBillPay';
 import MWSCBillPay from '../Views/Services/MWSCBillPay';
 import OrderGas from '../Views/Services/OrderGas';
@@ -14,6 +15,7 @@ import PackageRecharge from '../Views/Services/PackageRecharge/PackageRecharge';
 import PUBGBuyPackage from '../Views/Services/PUBGBuyPackage';
 import ReloadRaastas from '../Views/Services/ReloadRaastas/ReloadRaastas';
 import ROLBillPay from '../Views/Services/ROLPayBill';
+import SchedulePayment from '../Views/Services/SchedulePayment';
 import Wholesale from '../Views/Services/Wholesale/Wholesale';
 
 const Stack = createStackNavigator();
@@ -94,6 +96,20 @@ const StackNavigators = () => {
       <Stack.Screen
         name="Wholesale"
         component={Wholesale}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CashIn"
+        component={CashIn}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SchedulePayment"
+        component={SchedulePayment}
         options={{
           headerShown: false,
         }}
