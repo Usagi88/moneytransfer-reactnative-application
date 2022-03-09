@@ -146,7 +146,7 @@ const Services = () => {
               <ServiceCard
                 title={'Donate'}
                 image={require('../../assets/icons/donate.png')}
-                link={'DhiraaguReload'}
+                link={'Donate'}
               />
               <View style={{flex: 1, marginHorizontal: 10, padding: 10}} />
             </View>

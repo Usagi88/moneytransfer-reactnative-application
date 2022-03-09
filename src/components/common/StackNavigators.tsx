@@ -8,6 +8,7 @@ import Home from '../Views/Home';
 import Services from '../Views/Services';
 import BillPay from '../Views/Services/BillPay/BillPay';
 import CashIn from '../Views/Services/CashIn/CashIn';
+import Donate from '../Views/Services/Donate';
 import MediaNetBillPay from '../Views/Services/MediaNetBillPay';
 import MWSCBillPay from '../Views/Services/MWSCBillPay';
 import OrderGas from '../Views/Services/OrderGas';
@@ -110,6 +111,13 @@ const StackNavigators = () => {
       <Stack.Screen
         name="SchedulePayment"
         component={SchedulePayment}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Donate"
+        component={Donate}
         options={{
           headerShown: false,
         }}

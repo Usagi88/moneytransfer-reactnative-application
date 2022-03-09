@@ -21,16 +21,16 @@ import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../../common/BannerAmount';
 import Navbar from '../../common/Navbar';
 import LinearGradient from 'react-native-linear-gradient';
-import {DataTable, IconButton} from 'react-native-paper';
 
 let {height, width} = Dimensions.get('window');
 
-const SchedulePayment = () => {
-  const [dayOfMonth, onChangeDayOfMonth] = useState<any>(null);
-  const [serviceNumber, onChangeServiceNumber] = useState<any>(null);
+const Donate = () => {
+  const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
   const [amount, onChangeAmount] = useState<any>(null);
+  const [saveName, onChangeSaveName] = useState<any>(null);
+  const [checked, setChecked] = useState(false);
 
-  const packages = ['Service 1', 'Service 2', 'Service 3', 'Service 4'];
+  const packages = ['Esfiya', 'DhivehiMv'];
 
   return (
     <>
@@ -39,18 +39,16 @@ const SchedulePayment = () => {
         <View style={styles.column}>
           <BannerAmount />
           <Text style={styles.firstSentence}>
-            You can easily make an automatic monthly payment with this service.
-            The automatic payment will work only if you have sufficient balance
-            in FahiPay account.
+            Select the recipient to donate.
           </Text>
-          <Text style={styles.inputText}>Select a service</Text>
+          <Text style={styles.inputText}>Select a donee</Text>
           <View style={{paddingHorizontal: 20}}>
             <SelectDropdown
               data={packages}
               onSelect={(selectedItem, index) => {
                 //console.log(selectedItem, index);
               }}
-              defaultButtonText={'Select a service'}
+              defaultButtonText={'Select a donee'}
               buttonTextAfterSelection={(selectedItem, index) => {
                 // text represented after item is selected
                 // if data array is an array of objects then return selectedItem.property to render after item is selected
@@ -86,25 +84,6 @@ const SchedulePayment = () => {
               }}
             />
           </View>
-          <Text style={styles.inputText}>Payment day of month</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeDayOfMonth}
-              value={dayOfMonth}
-              placeholder="Payment day of month"
-              keyboardType="numeric"
-            />
-          </View>
-          <Text style={styles.inputText}>Service Number</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeServiceNumber}
-              value={serviceNumber}
-              placeholder="Service Number"
-            />
-          </View>
           <Text style={styles.inputText}>Amount</Text>
           <View style={styles.inputWrapper}>
             <TextInput
@@ -122,73 +101,26 @@ const SchedulePayment = () => {
                 end={{x: 1, y: 1}}
                 colors={['#3AC170', '#25BFA3']}
                 style={styles.button}>
-                <Text style={styles.buttonText}>Schedule Payment</Text>
+                <Text style={styles.buttonText}>Send Donation</Text>
               </LinearGradient>
             </TouchableNativeFeedback>
           </View>
-          <DataTable>
-            <DataTable.Header>
-              <DataTable.Title>
-                <Text style={styles.dataTableHeader}>#</Text>
-              </DataTable.Title>
-              <DataTable.Title style={{flex: 3}}>
-                <Text style={styles.dataTableHeader}>Service</Text>
-              </DataTable.Title>
-              <DataTable.Title style={{flex: 2}}>
-                <Text style={styles.dataTableHeader}>Number</Text>
-              </DataTable.Title>
-              <DataTable.Title style={{flex: 2}}>
-                <Text style={styles.dataTableHeader}>Amount</Text>
-              </DataTable.Title>
-              <DataTable.Title style={{flex: 2}}>
-                <Text style={styles.dataTableHeader}>Day</Text>
-              </DataTable.Title>
-            </DataTable.Header>
-
-            <DataTable.Row>
-              <DataTable.Cell>1</DataTable.Cell>
-              <DataTable.Cell style={{flex: 3}}>
-                <Text style={styles.dataTableCell}>Dhiraagu bill pay</Text>
-              </DataTable.Cell>
-              <DataTable.Cell style={{flex: 2}}>
-                <Text style={styles.dataTableCell}>123</Text>
-              </DataTable.Cell >
-              <DataTable.Cell style={{flex: 2}}>
-                <Text style={styles.dataTableCell}>500.00</Text>
-              </DataTable.Cell>
-              <DataTable.Cell style={{flex: 2}}>
-                <Text style={styles.dataTableCell}>18/1/2022</Text>
-              </DataTable.Cell>
-            </DataTable.Row>
-
-            <DataTable.Row>
-              <DataTable.Cell>2</DataTable.Cell>
-              <DataTable.Cell style={{flex: 3}}>
-                <Text style={styles.dataTableCell}>Dhiraagu bill pay</Text>
-              </DataTable.Cell>
-              <DataTable.Cell style={{flex: 2}}>
-                <Text style={styles.dataTableCell}>123</Text>
-              </DataTable.Cell >
-              <DataTable.Cell style={{flex: 2}}>
-                <Text style={styles.dataTableCell}>500.00</Text>
-              </DataTable.Cell>
-              <DataTable.Cell style={{flex: 2}}>
-                <Text style={styles.dataTableCell}>18/1/2022</Text>
-              </DataTable.Cell>
-            </DataTable.Row>
-          </DataTable>
+          <View style={{paddingHorizontal: 20, paddingTop: 10}}>
+              <Text style={{color: '#747373'}}>Note: Call 4007004 if you would like to receive donations through FahiPay.</Text>
+              <View style={{width: 100, height: 1, backgroundColor: '#747373', marginTop: 10,}}/>
+          </View>
         </View>
       </ScrollView>
     </>
   );
 };
 
-export default SchedulePayment;
+export default Donate;
 
 const styles = EStyleSheet.create({
   column: {
     width: width,
-    minHeight: height,
+    height: height,
     backgroundColor: 'white',
   },
   firstSentence: {
@@ -205,7 +137,7 @@ const styles = EStyleSheet.create({
   inputWrapper: {
     paddingHorizontal: 20,
     paddingTop: 6,
-    paddingBottom: 20,
+    paddingBottom: 10,
   },
   input: {
     height: 46,
@@ -215,7 +147,7 @@ const styles = EStyleSheet.create({
   },
   buttonWrapper: {
     paddingHorizontal: 20,
-
+    paddingTop: 10,
     paddingBottom: 10,
   },
   button: {
@@ -226,18 +158,5 @@ const styles = EStyleSheet.create({
   },
   buttonText: {
     color: 'white',
-  },
-
-  iconButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dataTableHeader: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: 'black',
-  },
-  dataTableCell: {
-    color: 'black',
   },
 });
