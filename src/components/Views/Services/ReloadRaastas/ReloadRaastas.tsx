@@ -35,7 +35,7 @@ const ReloadRaastas = ({route}) => {
   const {tabId} = route.params;
 
   const layout = useWindowDimensions();
-  const [index, setIndex] = useState(3);
+  const [index, setIndex] = useState(-1);
   const [routes] = useState([
     {key: 'first', title: 'Dhiraagu'},
     {key: 'second', title: 'Ooredoo'},
@@ -43,6 +43,7 @@ const ReloadRaastas = ({route}) => {
 
   //set tab when page opened
   useEffect(() => {
+    console.log(tabId);
     setIndex(tabId);
   }, []);
 
@@ -95,9 +96,7 @@ const ReloadRaastas = ({route}) => {
         <TabView
           navigationState={{index, routes}}
           renderScene={renderScene}
-          onIndexChange={() => {
-            setIndex(tabId);
-          }}
+          onIndexChange={setIndex}
           initialLayout={{width: layout.width}}
           renderTabBar={_renderTabBar}
         />

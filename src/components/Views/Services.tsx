@@ -106,12 +106,14 @@ const Services = () => {
               <ServiceCard
                 title={'Wholesale Reload'}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
-                link={'DhiraaguReload'}
+                link={'Wholesale'}
+                paramsId={0}
               />
               <ServiceCard
                 title={'Wholesale Raastas'}
                 image={require('../../assets/icons/ooredoo-logo.png')}
-                link={'OoredooRaastas'}
+                link={'Wholesale'}
+                paramsId={1}
               />
             </View>
             <View style={styles.cardRow}>

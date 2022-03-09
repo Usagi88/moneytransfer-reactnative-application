@@ -14,6 +14,7 @@ import PackageRecharge from '../Views/Services/PackageRecharge/PackageRecharge';
 import PUBGBuyPackage from '../Views/Services/PUBGBuyPackage';
 import ReloadRaastas from '../Views/Services/ReloadRaastas/ReloadRaastas';
 import ROLBillPay from '../Views/Services/ROLPayBill';
+import Wholesale from '../Views/Services/Wholesale/Wholesale';
 
 const Stack = createStackNavigator();
 
@@ -86,6 +87,13 @@ const StackNavigators = () => {
       <Stack.Screen
         name="MediaNetBillPay"
         component={MediaNetBillPay}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Wholesale"
+        component={Wholesale}
         options={{
           headerShown: false,
         }}
