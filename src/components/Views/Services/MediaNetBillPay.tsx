@@ -175,6 +175,7 @@ const styles = EStyleSheet.create({
     width: 46,
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
   },
   buttonText: {
     color: 'white',

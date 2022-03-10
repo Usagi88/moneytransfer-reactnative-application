@@ -9,6 +9,7 @@ import Services from '../Views/Services';
 import BillPay from '../Views/Services/BillPay/BillPay';
 import CashIn from '../Views/Services/CashIn/CashIn';
 import Donate from '../Views/Services/Donate';
+import GiftCards from '../Views/Services/GiftCards';
 import MediaNetBillPay from '../Views/Services/MediaNetBillPay';
 import MWSCBillPay from '../Views/Services/MWSCBillPay';
 import OrderGas from '../Views/Services/OrderGas';
@@ -17,6 +18,7 @@ import PUBGBuyPackage from '../Views/Services/PUBGBuyPackage';
 import ReloadRaastas from '../Views/Services/ReloadRaastas/ReloadRaastas';
 import ROLBillPay from '../Views/Services/ROLPayBill';
 import SchedulePayment from '../Views/Services/SchedulePayment';
+import SendSMS from '../Views/Services/SendSMS';
 import Wholesale from '../Views/Services/Wholesale/Wholesale';
 
 const Stack = createStackNavigator();
@@ -118,6 +120,20 @@ const StackNavigators = () => {
       <Stack.Screen
         name="Donate"
         component={Donate}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SendSMS"
+        component={SendSMS}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="GiftCards"
+        component={GiftCards}
         options={{
           headerShown: false,
         }}

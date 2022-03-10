@@ -75,7 +75,7 @@ const Services = () => {
               <ServiceCard
                 title={'Gift Cards'}
                 image={require('../../assets/icons/giftcard.png')}
-                link={'OoredooRaastas'}
+                link={'GiftCards'}
               />
             </View>
             <View style={styles.cardRow}>
@@ -139,7 +139,7 @@ const Services = () => {
               <ServiceCard
                 title={'Send SMS'}
                 image={require('../../assets/icons/sms.png')}
-                link={'OoredooRaastas'}
+                link={'SendSMS'}
               />
             </View>
             <View style={styles.cardRow}>

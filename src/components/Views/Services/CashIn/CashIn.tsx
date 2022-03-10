@@ -37,7 +37,7 @@ const CashIn = ({route}) => {
   const {tabId} = route.params;
 
   const layout = useWindowDimensions();
-  const [index, setIndex] = useState(-1);
+  const [index, setIndex] = useState(tabId);
   const [routes] = useState([
     {key: 'first', title: 'Dhiraagu'},
     {key: 'second', title: 'Ooredoo'},

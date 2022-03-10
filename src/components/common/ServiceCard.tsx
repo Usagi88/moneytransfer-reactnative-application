@@ -22,7 +22,7 @@ const ServiceCard = (props: ServiceCard) => {
     <TouchableNativeFeedback
       onPress={() => {
         navigation.navigate(props.link, {
-          tabId: props.paramsId
+          tabId: props.paramsId,
         });
       }}>
       <View style={styles.serviceCard}>
@@ -47,11 +47,10 @@ const styles = EStyleSheet.create({
     padding: 10,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 1},
     shadowOpacity: 0.8,
-    shadowRadius: 2,  
-    elevation: 5
-    
+    shadowRadius: 2,
+    elevation: 5,
   },
   serviceCardImage: {
     width: 50,
