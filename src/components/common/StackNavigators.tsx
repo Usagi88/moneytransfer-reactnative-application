@@ -4,6 +4,7 @@ import React from 'react';
 import AddCash from '../Views/AddCash';
 
 import Home from '../Views/Home';
+import Register from '../Views/Register';
 import ResetPassword from '../Views/ResetPassword';
 import Registration from '../Views/ResetPassword';
 
@@ -142,7 +143,7 @@ const StackNavigators = () => {
       />
       <Stack.Screen
         name="AddCash"
-        component={ResetPassword}
+        component={Register}
         options={{
           headerShown: false,
         }}
