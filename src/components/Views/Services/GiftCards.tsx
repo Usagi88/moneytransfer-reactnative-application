@@ -648,7 +648,7 @@ const styles = EStyleSheet.create({
   buttonWrapper: {},
   button: {
     borderRadius: 10,
-    width: width > 320 ? 70 : 65,
+    width: width > 320 ? 70 : 60,
     height: 28,
     justifyContent: 'center',
     alignItems: 'center',
@@ -660,7 +660,7 @@ const styles = EStyleSheet.create({
   },
   buttonActive: {
     borderRadius: 10,
-    width: width > 320 ? 70 : 65,
+    width: width > 320 ? 70 : 60,
     height: 28,
     justifyContent: 'center',
     alignItems: 'center',
@@ -715,7 +715,7 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     top: 20,
-    left: width > 320 ? 200 : 170,
+    left: width > 320 ? 200 : 130,
     zIndex: 100,
     overflow: 'hidden',
   },

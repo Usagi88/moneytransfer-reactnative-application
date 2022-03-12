@@ -78,7 +78,7 @@ const OoredooRaastas = () => {
         </TouchableNativeFeedback>
         <GradientButton text={'Send Reload'} onPress={() => {}} />
         <TitleHorizonDivider name={'Saved Numbers'} />
-        <DataTable>
+        <DataTable style={{paddingBottom: 40, paddingHorizontal: 20}}>
           <DataTable.Header>
             <DataTable.Title>
               <Text style={styles.dataTableHeader}>#</Text>

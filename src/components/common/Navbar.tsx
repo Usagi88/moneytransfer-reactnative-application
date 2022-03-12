@@ -58,7 +58,7 @@ export default Navbar;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    width: 150,
+    width: width > 320 ? 150: 130,
     height: 40,
     marginTop: 6,
     marginLeft: 30,

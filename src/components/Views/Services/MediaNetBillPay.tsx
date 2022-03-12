@@ -106,6 +106,7 @@ const MediaNetBillPay = () => {
                 height: 1,
                 backgroundColor: 'red',
                 marginTop: 10,
+                marginBottom: 20,
               }}
             />
           </View>

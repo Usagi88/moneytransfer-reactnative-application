@@ -114,7 +114,7 @@ const styles = EStyleSheet.create({
   buttonWrapper: {
     paddingHorizontal: 20,
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 40,
   },
   button: {
     borderRadius: 10,

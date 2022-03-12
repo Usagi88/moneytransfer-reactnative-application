@@ -106,7 +106,7 @@ const PUBGBuyPackage = () => {
           </View>
           <View style={{paddingHorizontal: 20, paddingTop: 10}}>
               <Text style={{color: 'red'}}>UC will be delivered within 5 to 30 minutes. This transaction is non-refundable</Text>
-              <View style={{width: 100, height: 1, backgroundColor: 'red', marginTop: 10,}}/>
+              <View style={{width: 100, height: 1, backgroundColor: 'red', marginTop: 10, marginBottom: 20,}}/>
           </View>
         </View>
       </ScrollView>

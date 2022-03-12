@@ -107,7 +107,7 @@ const Donate = () => {
           </View>
           <View style={{paddingHorizontal: 20, paddingTop: 10}}>
               <Text style={{color: '#747373'}}>Note: Call 4007004 if you would like to receive donations through FahiPay.</Text>
-              <View style={{width: 100, height: 1, backgroundColor: '#747373', marginTop: 10,}}/>
+              <View style={{width: 100, height: 1, backgroundColor: '#747373', marginTop: 10, marginBottom: 20,}}/>
           </View>
         </View>
       </ScrollView>

@@ -202,7 +202,7 @@ const styles = EStyleSheet.create({
   },
 
   cardbox: {
-    width: 135,
+    width: width > 320 ? 135: 120,
     minHeight: 68,
     flexDirection: 'row',
     padding: 10,

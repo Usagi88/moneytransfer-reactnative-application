@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Dimensions,
   Image,
   ImageSourcePropType,
   Text,
@@ -15,6 +16,7 @@ interface ServiceCard {
   link: string;
   paramsId?: number;
 }
+let {height, width} = Dimensions.get('window');
 
 const ServiceCard = (props: ServiceCard) => {
   const navigation = useNavigation<any>();
@@ -41,7 +43,7 @@ const styles = EStyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'white',
     flex: 1,
-    height: 100,
+    height: width > 320 ? 100: 80,
     marginHorizontal: 10,
     alignItems: 'center',
     padding: 10,
@@ -53,8 +55,8 @@ const styles = EStyleSheet.create({
     elevation: 5,
   },
   serviceCardImage: {
-    width: 50,
-    height: 50,
+    width: width > 320 ? 50: 30,
+    height: width > 320 ? 50: 30,
     resizeMode: 'contain',
   },
   serviceCardVerticalDivider: {
@@ -69,5 +71,6 @@ const styles = EStyleSheet.create({
   },
   serviceCardText: {
     flex: 1,
+    fontSize: width > 320 ? 14: 12,
   },
 });
