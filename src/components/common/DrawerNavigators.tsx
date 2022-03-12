@@ -20,7 +20,7 @@ import About from '../Views/About';
 import ChangePassword from '../Views/ChangePassword';
 import ContactUs from '../Views/ContactUs';
 import Home from '../Views/Home';
-import InviteFriends from '../Views/InviteFriends';
+import InviteFriends from '../Views/InviteFriends/InviteFriends';
 import Profile from '../Views/Profile';
 import ChangeAccount from './ChangeAccount';
 import CustomDrawerContent from './CustomDrawerContent';

@@ -36,7 +36,7 @@ import {LogBox} from 'react-native';
 import CustomDrawerContent from './src/components/common/CustomDrawerContent';
 import Profile from './src/components/Views/Profile';
 import ChangePassword from './src/components/Views/ChangePassword';
-import InviteFriends from './src/components/Views/InviteFriends';
+import InviteFriends from './src/components/Views/InviteFriends/InviteFriends';
 import ContactUs from './src/components/Views/ContactUs';
 import About from './src/components/Views/About';
 import RefreshApp from './src/components/common/RefreshApp';
