@@ -625,7 +625,7 @@ export default GiftCards;
 const styles = EStyleSheet.create({
   column: {
     width: width,
-    minHeight: height,
+    minHeight: height - 56,
     backgroundColor: 'white',
   },
   inputText: {

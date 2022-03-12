@@ -145,7 +145,7 @@ export default OrderGas;
 const styles = EStyleSheet.create({
   column: {
     width: width,
-    height: height,
+    minHeight: height - 56,
     backgroundColor: 'white',
   },
   firstSentence: {

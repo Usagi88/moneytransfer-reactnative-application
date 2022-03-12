@@ -59,7 +59,7 @@ const styles = EStyleSheet.create({
   },
   serviceCardVerticalDivider: {
     width: 1,
-    height: '100%',
+    height: 55,
     backgroundColor: '#ccc',
     marginHorizontal: 10,
   },
