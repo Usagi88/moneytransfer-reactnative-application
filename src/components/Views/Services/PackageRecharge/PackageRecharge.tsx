@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {
-  Dimensions,
   Text,
   View,
   useWindowDimensions,
-  TouchableOpacity,
-  Animated,
   TouchableNativeFeedback,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import BannerAmount from '../../../common/BannerAmount';
@@ -15,11 +11,9 @@ import BannerAmount from '../../../common/BannerAmount';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import LinearGradient from 'react-native-linear-gradient';
 import DhiraaguPackageRecharge from './DhiraaguPackageRecharge';
-import DhiraaguReload from '../ReloadRaastas/DhiraaguReload';
+
 import OoredooPackageRecharge from './OoredooPackageRecharge';
 import Navbar from '../../../common/Navbar';
-
-let {height, width} = Dimensions.get('window');
 
 const FirstRoute = () => {
   return <DhiraaguPackageRecharge />;
@@ -110,8 +104,7 @@ export default PackageRecharge;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    height: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   tabBar: {

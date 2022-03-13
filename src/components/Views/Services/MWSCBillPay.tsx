@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {
-  Dimensions,
   ScrollView,
   Text,
   TextInput,
@@ -9,15 +8,11 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import GradientButton from '../../common/GradientButton';
-import {Checkbox, DataTable, IconButton} from 'react-native-paper';
-import TitleHorizonDivider from '../../common/TitleHorizonDivider';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faLocationArrow, faTrash} from '@fortawesome/free-solid-svg-icons';
+import {Checkbox} from 'react-native-paper';
+
 import LinearGradient from 'react-native-linear-gradient';
 import BannerAmount from '../../common/BannerAmount';
 import Navbar from '../../common/Navbar';
-
-let {height, width} = Dimensions.get('window');
 
 const MWSCBillPay = () => {
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
@@ -29,81 +24,79 @@ const MWSCBillPay = () => {
   return (
     <>
       <Navbar />
-      <ScrollView style={styles.listBox}>
-        <View style={styles.column}>
-          <BannerAmount />
-          <Text style={styles.firstSentence}>
-            Enter MWSC account number, meter number and amount to pay bill.
-          </Text>
-          <Text style={styles.inputText}>Account Number</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeAccountNumber}
-              value={accountNumber}
-              placeholder="Account Number"
-            />
-          </View>
-          <Text style={styles.inputText}>Meter Number</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeMeterNumber}
-              value={meterNumber}
-              placeholder="Meter Number"
-            />
-            <View style={styles.buttonWrapper}>
-              <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
-                <LinearGradient
-                  start={{x: 0, y: 1}}
-                  end={{x: 1, y: 1}}
-                  colors={['#3AC170', '#25BFA3']}
-                  style={styles.button}>
-                  <Text style={styles.buttonText}>Check Balance</Text>
-                </LinearGradient>
-              </TouchableNativeFeedback>
-            </View>
-          </View>
-          <Text style={styles.inputText}>Amount</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeAmount}
-              value={amount}
-              placeholder="Amount"
-            />
-          </View>
-          {checked === true ? (
-            <>
-              <Text style={styles.inputText}>Name to save</Text>
-              <View style={styles.inputWrapper}>
-                <TextInput
-                  style={styles.input}
-                  onChangeText={onChangeSaveName}
-                  value={saveName}
-                  placeholder="Name to save"
-                />
-              </View>
-            </>
-          ) : null}
-
-          <TouchableNativeFeedback
-            onPress={() => {
-              setChecked(!checked);
-            }}>
-            <View style={styles.checkboxContainer}>
-              <Checkbox
-                status={checked ? 'checked' : 'unchecked'}
-                onPress={() => {
-                  setChecked(!checked);
-                }}
-                color={'#25BFA3'}
-              />
-              <Text style={styles.label}>Keep info saved</Text>
-            </View>
-          </TouchableNativeFeedback>
-          <GradientButton text={'Pay Bill'} onPress={() => {}} />
+      <ScrollView style={styles.column}>
+        <BannerAmount />
+        <Text style={styles.firstSentence}>
+          Enter MWSC account number, meter number and amount to pay bill.
+        </Text>
+        <Text style={styles.inputText}>Account Number</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeAccountNumber}
+            value={accountNumber}
+            placeholder="Account Number"
+          />
         </View>
+        <Text style={styles.inputText}>Meter Number</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeMeterNumber}
+            value={meterNumber}
+            placeholder="Meter Number"
+          />
+          <View style={styles.buttonWrapper}>
+            <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+              <LinearGradient
+                start={{x: 0, y: 1}}
+                end={{x: 1, y: 1}}
+                colors={['#3AC170', '#25BFA3']}
+                style={styles.button}>
+                <Text style={styles.buttonText}>Check Balance</Text>
+              </LinearGradient>
+            </TouchableNativeFeedback>
+          </View>
+        </View>
+        <Text style={styles.inputText}>Amount</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeAmount}
+            value={amount}
+            placeholder="Amount"
+          />
+        </View>
+        {checked === true ? (
+          <>
+            <Text style={styles.inputText}>Name to save</Text>
+            <View style={styles.inputWrapper}>
+              <TextInput
+                style={styles.input}
+                onChangeText={onChangeSaveName}
+                value={saveName}
+                placeholder="Name to save"
+              />
+            </View>
+          </>
+        ) : null}
+
+        <TouchableNativeFeedback
+          onPress={() => {
+            setChecked(!checked);
+          }}>
+          <View style={styles.checkboxContainer}>
+            <Checkbox
+              status={checked ? 'checked' : 'unchecked'}
+              onPress={() => {
+                setChecked(!checked);
+              }}
+              color={'#25BFA3'}
+            />
+            <Text style={styles.label}>Keep info saved</Text>
+          </View>
+        </TouchableNativeFeedback>
+        <GradientButton text={'Pay Bill'} onPress={() => {}} />
       </ScrollView>
     </>
   );
@@ -113,8 +106,7 @@ export default MWSCBillPay;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    minHeight: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   firstSentence: {

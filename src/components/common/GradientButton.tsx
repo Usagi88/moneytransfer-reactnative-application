@@ -1,12 +1,17 @@
 import React from 'react';
-import {GestureResponderEvent, Text, TouchableNativeFeedback, View} from 'react-native';
+import {
+  GestureResponderEvent,
+  Text,
+  TouchableNativeFeedback,
+  View,
+} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import LinearGradient from 'react-native-linear-gradient';
 
 interface GradientButtonType {
-    text: string;
-    onPress: ((event: GestureResponderEvent) => void) | undefined;
-  }
+  text: string;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
+}
 
 const GradientButton = (props: GradientButtonType) => {
   return (

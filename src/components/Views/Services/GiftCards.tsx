@@ -3,26 +3,19 @@ import {
   Dimensions,
   ScrollView,
   Text,
-  TextInput,
   TouchableNativeFeedback,
   View,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import GradientButton from '../../common/GradientButton';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faChevronDown,
-  faChevronUp,
-  faLocationArrow,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../../common/BannerAmount';
 import Navbar from '../../common/Navbar';
 import LinearGradient from 'react-native-linear-gradient';
 
-let {height, width} = Dimensions.get('window');
+let {width} = Dimensions.get('window');
 
 const GiftCards = () => {
   const [selectedItem, setSelectedItem] = useState('All');
@@ -568,53 +561,51 @@ const GiftCards = () => {
   return (
     <>
       <Navbar />
-      <ScrollView style={styles.listBox}>
-        <View style={styles.column}>
-          <BannerAmount />
-          <View style={{paddingHorizontal: 20}}>
-            <SelectDropdown
-              data={packages}
-              onSelect={(selectedItem, index) => {
-                setSelectedItem(selectedItem);
-              }}
-              defaultButtonText={'Select a gift card'}
-              buttonTextAfterSelection={(selectedItem, index) => {
-                // text represented after item is selected
-                // if data array is an array of objects then return selectedItem.property to render after item is selected
-                return selectedItem;
-              }}
-              rowTextForSelection={(item, index) => {
-                // text represented for each item in dropdown
-                // if data array is an array of objects then return item.property to represent item in dropdown
-                return item;
-              }}
-              renderDropdownIcon={isOpened => {
-                return (
-                  <FontAwesomeIcon
-                    icon={isOpened ? faChevronUp : faChevronDown}
-                    color={'#444'}
-                    size={18}
-                  />
-                );
-              }}
-              buttonStyle={{
-                width: '100%',
-                borderRadius: 10,
-                marginTop: 6,
-                marginBottom: 20,
-              }}
-              buttonTextStyle={{
-                fontSize: 14,
-                textAlign: 'left',
-              }}
-              rowTextStyle={{
-                fontSize: 14,
-                textAlign: 'left',
-              }}
-            />
-          </View>
-          {giftcard}
+      <ScrollView style={styles.column}>
+        <BannerAmount />
+        <View style={{paddingHorizontal: 20}}>
+          <SelectDropdown
+            data={packages}
+            onSelect={(selectedItem, index) => {
+              setSelectedItem(selectedItem);
+            }}
+            defaultButtonText={'Select a gift card'}
+            buttonTextAfterSelection={(selectedItem, index) => {
+              // text represented after item is selected
+              // if data array is an array of objects then return selectedItem.property to render after item is selected
+              return selectedItem;
+            }}
+            rowTextForSelection={(item, index) => {
+              // text represented for each item in dropdown
+              // if data array is an array of objects then return item.property to represent item in dropdown
+              return item;
+            }}
+            renderDropdownIcon={isOpened => {
+              return (
+                <FontAwesomeIcon
+                  icon={isOpened ? faChevronUp : faChevronDown}
+                  color={'#444'}
+                  size={18}
+                />
+              );
+            }}
+            buttonStyle={{
+              width: '100%',
+              borderRadius: 10,
+              marginTop: 6,
+              marginBottom: 20,
+            }}
+            buttonTextStyle={{
+              fontSize: 14,
+              textAlign: 'left',
+            }}
+            rowTextStyle={{
+              fontSize: 14,
+              textAlign: 'left',
+            }}
+          />
         </View>
+        {giftcard}
       </ScrollView>
     </>
   );
@@ -624,8 +615,7 @@ export default GiftCards;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    minHeight: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   inputText: {

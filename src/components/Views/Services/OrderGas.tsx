@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {
-    Dimensions,
   ScrollView,
   Text,
   TextInput,
@@ -9,20 +8,12 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import GradientButton from '../../common/GradientButton';
-import {Checkbox, DataTable, IconButton} from 'react-native-paper';
-import TitleHorizonDivider from '../../common/TitleHorizonDivider';
+import {Checkbox} from 'react-native-paper';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faChevronDown,
-  faChevronUp,
-  faLocationArrow,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../../common/BannerAmount';
 import Navbar from '../../common/Navbar';
-
-let {height, width} = Dimensions.get('window');
 
 const OrderGas = () => {
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
@@ -34,12 +25,12 @@ const OrderGas = () => {
 
   return (
     <>
-    <Navbar/>
-    <ScrollView style={styles.listBox}>
-      <View style={styles.column}>
-          <BannerAmount/>
+      <Navbar />
+      <ScrollView style={styles.column}>
+        <BannerAmount />
         <Text style={styles.firstSentence}>
-          Enter Maldive Gas account number. NID number and select a package to order Gas.
+          Enter Maldive Gas account number. NID number and select a package to
+          order Gas.
         </Text>
         <Text style={styles.inputText}>Account Number</Text>
         <View style={styles.inputWrapper}>
@@ -133,9 +124,7 @@ const OrderGas = () => {
           </View>
         </TouchableNativeFeedback>
         <GradientButton text={'Order Gas'} onPress={() => {}} />
-        
-      </View>
-    </ScrollView>
+      </ScrollView>
     </>
   );
 };
@@ -144,8 +133,7 @@ export default OrderGas;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    minHeight: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   firstSentence: {

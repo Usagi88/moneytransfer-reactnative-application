@@ -27,194 +27,184 @@ const OoredooPackageRecharge = () => {
   const packages = ['Package 1', 'Package 2', 'Package 3', 'Package 4'];
 
   return (
-    <ScrollView style={styles.listBox}>
-      <View style={styles.column}>
-        <Text style={styles.firstSentence}>
-          Enter the Ooredoo number and select a package to recharge.
-        </Text>
-        <GradientButton text={'Pick Contact'} onPress={() => {}} />
-        <Text style={styles.inputText}>Select Package</Text>
-        <View style={{paddingHorizontal: 20}}>
-          <SelectDropdown
-            data={packages}
-            onSelect={(selectedItem, index) => {
-              //console.log(selectedItem, index);
-            }}
-            defaultButtonText={'Select a package'}
-            buttonTextAfterSelection={(selectedItem, index) => {
-              // text represented after item is selected
-              // if data array is an array of objects then return selectedItem.property to render after item is selected
-              return selectedItem;
-            }}
-            rowTextForSelection={(item, index) => {
-              // text represented for each item in dropdown
-              // if data array is an array of objects then return item.property to represent item in dropdown
-              return item;
-            }}
-            renderDropdownIcon={isOpened => {
-              return (
-                <FontAwesomeIcon
-                  icon={isOpened ? faChevronUp : faChevronDown}
-                  color={'#444'}
-                  size={18}
-                />
-              );
-            }}
-            buttonStyle={{
-              width: '100%',
-              borderRadius: 10,
-              marginTop: 6,
-              marginBottom: 20,
-            }}
-            buttonTextStyle={{
-              fontSize: 14,
-              textAlign: 'left',
-            }}
-            rowTextStyle={{
-              fontSize: 14,
-              textAlign: 'left',
-            }}
-          />
-        </View>
+    <ScrollView style={styles.column}>
+      <Text style={styles.firstSentence}>
+        Enter the Ooredoo number and select a package to recharge.
+      </Text>
+      <GradientButton text={'Pick Contact'} onPress={() => {}} />
+      <Text style={styles.inputText}>Select Package</Text>
+      <View style={{paddingHorizontal: 20}}>
+        <SelectDropdown
+          data={packages}
+          onSelect={(selectedItem, index) => {
+            //console.log(selectedItem, index);
+          }}
+          defaultButtonText={'Select a package'}
+          buttonTextAfterSelection={(selectedItem, index) => {
+            // text represented after item is selected
+            // if data array is an array of objects then return selectedItem.property to render after item is selected
+            return selectedItem;
+          }}
+          rowTextForSelection={(item, index) => {
+            // text represented for each item in dropdown
+            // if data array is an array of objects then return item.property to represent item in dropdown
+            return item;
+          }}
+          renderDropdownIcon={isOpened => {
+            return (
+              <FontAwesomeIcon
+                icon={isOpened ? faChevronUp : faChevronDown}
+                color={'#444'}
+                size={18}
+              />
+            );
+          }}
+          buttonStyle={{
+            width: '100%',
+            borderRadius: 10,
+            marginTop: 6,
+            marginBottom: 20,
+          }}
+          buttonTextStyle={{
+            fontSize: 14,
+            textAlign: 'left',
+          }}
+          rowTextStyle={{
+            fontSize: 14,
+            textAlign: 'left',
+          }}
+        />
+      </View>
 
-        <Text style={styles.inputText}>Mobile Number</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeMobileNumber}
-            value={mobileNumber}
-            placeholder="Mobile Number"
-            keyboardType="numeric"
+      <Text style={styles.inputText}>Mobile Number</Text>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeMobileNumber}
+          value={mobileNumber}
+          placeholder="Mobile Number"
+          keyboardType="numeric"
+        />
+      </View>
+      {checked === true ? (
+        <>
+          <Text style={styles.inputText}>Name to save</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeSaveName}
+              value={saveName}
+              placeholder="Name to save"
+            />
+          </View>
+        </>
+      ) : null}
+
+      <TouchableNativeFeedback
+        onPress={() => {
+          setChecked(!checked);
+        }}>
+        <View style={styles.checkboxContainer}>
+          <Checkbox
+            status={checked ? 'checked' : 'unchecked'}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+            color={'#25BFA3'}
           />
+          <Text style={styles.label}>Keep info saved</Text>
         </View>
-        {checked === true ? (
-          <>
-            <Text style={styles.inputText}>Name to save</Text>
-            <View style={styles.inputWrapper}>
-              <TextInput
-                style={styles.input}
-                onChangeText={onChangeSaveName}
-                value={saveName}
-                placeholder="Name to save"
+      </TouchableNativeFeedback>
+      <GradientButton text={'Buy Package'} onPress={() => {}} />
+      <TitleHorizonDivider name={'Saved Numbers'} />
+      <DataTable style={{paddingBottom: 40, paddingHorizontal: 20}}>
+        <DataTable.Header>
+          <DataTable.Title>
+            <Text style={styles.dataTableHeader}>#</Text>
+          </DataTable.Title>
+          <DataTable.Title style={{flex: 2}}>
+            <Text style={styles.dataTableHeader}>Details</Text>
+          </DataTable.Title>
+          <DataTable.Title>
+            <Text style={styles.dataTableHeader}>Delete</Text>
+          </DataTable.Title>
+          <DataTable.Title>
+            <Text style={styles.dataTableHeader}>Show</Text>
+          </DataTable.Title>
+        </DataTable.Header>
+
+        <DataTable.Row>
+          <DataTable.Cell>1</DataTable.Cell>
+          <DataTable.Cell style={{flex: 2}}>
+            <View>
+              <Text style={styles.dataTableCell}>777777</Text>
+              <Text style={styles.dataTableCell}>Test name</Text>
+            </View>
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon icon={faTrash} size={22} color={'#25BFA3'} />
+                )}
+                size={22}
+                onPress={() => {}}
               />
             </View>
-          </>
-        ) : null}
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon
+                    icon={faLocationArrow}
+                    size={22}
+                    color={'#25BFA3'}
+                  />
+                )}
+                size={22}
+                onPress={() => {}}
+              />
+            </View>
+          </DataTable.Cell>
+        </DataTable.Row>
 
-        <TouchableNativeFeedback
-          onPress={() => {
-            setChecked(!checked);
-          }}>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              status={checked ? 'checked' : 'unchecked'}
-              onPress={() => {
-                setChecked(!checked);
-              }}
-              color={'#25BFA3'}
-            />
-            <Text style={styles.label}>Keep info saved</Text>
-          </View>
-        </TouchableNativeFeedback>
-        <GradientButton text={'Buy Package'} onPress={() => {}} />
-        <TitleHorizonDivider name={'Saved Numbers'} />
-        <DataTable style={{paddingBottom: 40, paddingHorizontal: 20}}>
-          <DataTable.Header>
-            <DataTable.Title>
-              <Text style={styles.dataTableHeader}>#</Text>
-            </DataTable.Title>
-            <DataTable.Title style={{flex: 2}}>
-              <Text style={styles.dataTableHeader}>Details</Text>
-            </DataTable.Title>
-            <DataTable.Title>
-              <Text style={styles.dataTableHeader}>Delete</Text>
-            </DataTable.Title>
-            <DataTable.Title>
-              <Text style={styles.dataTableHeader}>Show</Text>
-            </DataTable.Title>
-          </DataTable.Header>
-
-          <DataTable.Row>
-            <DataTable.Cell>1</DataTable.Cell>
-            <DataTable.Cell style={{flex: 2}}>
-              <View>
-                <Text style={styles.dataTableCell}>777777</Text>
-                <Text style={styles.dataTableCell}>Test name</Text>
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faLocationArrow}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-          </DataTable.Row>
-
-          <DataTable.Row>
-            <DataTable.Cell>2</DataTable.Cell>
-            <DataTable.Cell style={{flex: 2}}>
-              <View>
-                <Text style={styles.dataTableCell}>777777</Text>
-                <Text style={styles.dataTableCell}>Test name</Text>
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faLocationArrow}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-          </DataTable.Row>
-        </DataTable>
-      </View>
+        <DataTable.Row>
+          <DataTable.Cell>2</DataTable.Cell>
+          <DataTable.Cell style={{flex: 2}}>
+            <View>
+              <Text style={styles.dataTableCell}>777777</Text>
+              <Text style={styles.dataTableCell}>Test name</Text>
+            </View>
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon icon={faTrash} size={22} color={'#25BFA3'} />
+                )}
+                size={22}
+                onPress={() => {}}
+              />
+            </View>
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon
+                    icon={faLocationArrow}
+                    size={22}
+                    color={'#25BFA3'}
+                  />
+                )}
+                size={22}
+                onPress={() => {}}
+              />
+            </View>
+          </DataTable.Cell>
+        </DataTable.Row>
+      </DataTable>
     </ScrollView>
   );
 };

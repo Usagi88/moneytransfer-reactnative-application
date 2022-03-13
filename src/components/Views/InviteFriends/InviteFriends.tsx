@@ -1,13 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
-  Dimensions,
   Text,
   View,
   useWindowDimensions,
-  TouchableOpacity,
-  Animated,
   TouchableNativeFeedback,
-  TouchableWithoutFeedback,
   Image,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -18,7 +14,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import Navbar from '../../common/Navbar';
 import Invite from './Invite';
 import Referrals from './Referrals';
-let {height, width} = Dimensions.get('window');
 
 const FirstRoute = () => {
   return <Invite />;
@@ -107,8 +102,7 @@ export default InviteFriends;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    height: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   tabBar: {
@@ -192,7 +186,5 @@ const styles = EStyleSheet.create({
     width: '100%',
     height: 132,
     resizeMode: 'cover',
-    
   },
-  
 });

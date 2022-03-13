@@ -9,57 +9,49 @@ import {
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import GradientButton from '../../../common/GradientButton';
-import {Checkbox, DataTable, IconButton} from 'react-native-paper';
-import TitleHorizonDivider from '../../../common/TitleHorizonDivider';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faLocationArrow, faTrash} from '@fortawesome/free-solid-svg-icons';
+
 import LinearGradient from 'react-native-linear-gradient';
 
 const OoredooCashIn = () => {
   const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
   const [amount, onChangeAmount] = useState<any>(null);
-  const [saveName, onChangeSaveName] = useState<any>(null);
-  const [checked, setChecked] = useState(false);
 
   return (
-    <ScrollView style={styles.listBox}>
-      <View style={styles.column}>
-        <Text style={styles.firstSentence}>
-            Enter the Ooredoo number and amount to pay M-faisaa cash in.
-        </Text>
-        <GradientButton text={'Pick Contact'} onPress={() => {}} />
-        <Text style={styles.inputText}>Mobile Number</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeMobileNumber}
-            value={mobileNumber}
-            placeholder="Mobile Number"
-            keyboardType="numeric"
-          />
-        </View>
-        <Text style={styles.inputText}>Amount</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeAmount}
-            value={amount}
-            placeholder="Amount"
-            keyboardType="numeric"
-          />
-        </View>
-        <View style={styles.buttonWrapper}>
-          <TouchableNativeFeedback onPress={()=>{}} useForeground={true}>
-            <LinearGradient
-              start={{x: 0, y: 1}}
-              end={{x: 1, y: 1}}
-              colors={['#3AC170', '#25BFA3']}
-              style={styles.button}>
-              <Text style={styles.buttonText}>Cash In</Text>
-            </LinearGradient>
-          </TouchableNativeFeedback>
-        </View>
-        
+    <ScrollView style={styles.column}>
+      <Text style={styles.firstSentence}>
+        Enter the Ooredoo number and amount to pay M-faisaa cash in.
+      </Text>
+      <GradientButton text={'Pick Contact'} onPress={() => {}} />
+      <Text style={styles.inputText}>Mobile Number</Text>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeMobileNumber}
+          value={mobileNumber}
+          placeholder="Mobile Number"
+          keyboardType="numeric"
+        />
+      </View>
+      <Text style={styles.inputText}>Amount</Text>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeAmount}
+          value={amount}
+          placeholder="Amount"
+          keyboardType="numeric"
+        />
+      </View>
+      <View style={styles.buttonWrapper}>
+        <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+          <LinearGradient
+            start={{x: 0, y: 1}}
+            end={{x: 1, y: 1}}
+            colors={['#3AC170', '#25BFA3']}
+            style={styles.button}>
+            <Text style={styles.buttonText}>Cash In</Text>
+          </LinearGradient>
+        </TouchableNativeFeedback>
       </View>
     </ScrollView>
   );

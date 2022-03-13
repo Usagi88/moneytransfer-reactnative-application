@@ -1,24 +1,25 @@
 import React from 'react';
-import {Dimensions, Image, ScrollView, Text, View} from 'react-native';
+import {Dimensions, ScrollView, StatusBar, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
 import Navbar from '../common/Navbar';
 import ServiceCard from '../common/ServiceCard';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
-let {height, width} = Dimensions.get('window');
+
 const images = [
   require('../../assets/carousel/bannerOne.png'),
   require('../../assets/carousel/bannerTwo.png'),
   require('../../assets/carousel/bannerThree.png'),
 ];
+let {height} = Dimensions.get('window');
+const STATUS_BAR_HEIGHT = StatusBar.currentHeight || 24; 
 
 const Services = () => {
   return (
     <>
       <Navbar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View style={styles.column}>
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.column}>
           <View style={styles.carousel}>
             <CarouselBanner images={images} />
           </View>
@@ -151,7 +152,7 @@ const Services = () => {
               <View style={{flex: 1, marginHorizontal: 10, padding: 10}} />
             </View>
           </ScrollView>
-        </View>
+  
       </ScrollView>
     </>
   );
@@ -161,8 +162,7 @@ export default Services;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    height: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   carousel: {
@@ -170,15 +170,15 @@ const styles = EStyleSheet.create({
     height: 120,
   },
   listBox: {
-    width: width,
-    height: '100%',
+    width: '100%',
+    height: height - (120 + STATUS_BAR_HEIGHT + 114),
   },
   cardRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: width,
+    width: '100%',
     paddingHorizontal: 10,
     paddingVertical: 10,
   },

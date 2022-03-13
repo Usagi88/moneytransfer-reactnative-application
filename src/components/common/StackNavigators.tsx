@@ -4,6 +4,7 @@ import React from 'react';
 import AddCash from '../Views/AddCash';
 
 import Home from '../Views/Home';
+import LiveChat from '../Views/LiveChat';
 import Register from '../Views/Register';
 import ResetPassword from '../Views/ResetPassword';
 import Registration from '../Views/ResetPassword';
@@ -137,6 +138,13 @@ const StackNavigators = () => {
       <Stack.Screen
         name="GiftCards"
         component={GiftCards}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="LiveChat"
+        component={LiveChat}
         options={{
           headerShown: false,
         }}

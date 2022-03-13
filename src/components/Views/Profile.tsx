@@ -10,133 +10,130 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {IconButton} from 'react-native-paper';
-import {CountUp} from 'use-count-up';
 import Navbar from '../common/Navbar';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
-import BannerWalletIcon from '../SvgIconComponents/BannerWalletIcon';
 import PencilEditIcon from '../SvgIconComponents/PencilEditIcon';
+
+let {width} = Dimensions.get('window');
 
 const Profile = () => {
   return (
     <>
       <Navbar />
-      <ScrollView>
-        <View style={styles.column}>
-          <ImageBackground
-            source={require('../../assets/images/banner.png')}
-            style={{height: 160, width: width}}
+      <ScrollView style={styles.column}>
+        <ImageBackground
+          source={require('../../assets/images/banner.png')}
+          style={{height: 160, width: width}}
+        />
+        <View style={styles.bannerRow}>
+          <FontAwesomeIcon icon={faUserAlt} size={44} color={'white'} />
+
+          <View style={{marginLeft: 20}}>
+            <Text style={styles.textStyle}>Test Name</Text>
+            <Text style={styles.textStyle}>A123456</Text>
+          </View>
+        </View>
+        <TitleHorizonDivider name={'Profile'} />
+        <View style={styles.listTitleWrapper}>
+          <View style={styles.userInfoBox}>
+            <Text style={styles.title}>Email</Text>
+            <Text style={styles.subtitle}>test@gmail.com</Text>
+          </View>
+          <IconButton
+            icon={() => (
+              <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
+            )}
+            size={24}
+            onPress={() => {}}
           />
-          <View style={styles.bannerRow}>
-            <FontAwesomeIcon icon={faUserAlt} size={44} color={'white'} />
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <View style={styles.divider} />
+        </View>
 
-            <View style={{marginLeft: 20}}>
-              <Text style={styles.textStyle}>Test Name</Text>
-              <Text style={styles.textStyle}>A123456</Text>
-            </View>
+        <View style={styles.listTitleWrapper}>
+          <View style={styles.userInfoBox}>
+            <Text style={styles.title}>Mobile Number</Text>
+            <Text style={styles.subtitle}>7777777</Text>
           </View>
-          <TitleHorizonDivider name={'Profile'} />
-          <View style={styles.listTitleWrapper}>
-            <View style={styles.userInfoBox}>
-              <Text style={styles.title}>Email</Text>
-              <Text style={styles.subtitle}>test@gmail.com</Text>
-            </View>
-            <IconButton
-              icon={() => (
-                <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
-              )}
-              size={24}
-              onPress={() => {}}
-            />
-          </View>
-          <View style={{paddingHorizontal: 20,}}>
-            <View style={styles.divider}/>
-          </View>
-          
+          <IconButton
+            icon={() => (
+              <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
+            )}
+            size={24}
+            onPress={() => {}}
+          />
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <View style={styles.divider} />
+        </View>
 
-          <View style={styles.listTitleWrapper}>
-            <View style={styles.userInfoBox}>
-              <Text style={styles.title}>Mobile Number</Text>
-              <Text style={styles.subtitle}>7777777</Text>
-            </View>
-            <IconButton
-              icon={() => (
-                <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
-              )}
-              size={24}
-              onPress={() => {}}
-            />
+        <View style={styles.listTitleWrapper}>
+          <View style={styles.userInfoBox}>
+            <Text style={styles.title}>Address</Text>
+            <Text style={styles.subtitle}>test address</Text>
           </View>
-          <View style={{paddingHorizontal: 20,}}>
-            <View style={styles.divider}/>
-          </View>
+          <IconButton
+            icon={() => (
+              <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
+            )}
+            size={24}
+            onPress={() => {}}
+          />
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <View style={styles.divider} />
+        </View>
 
-          <View style={styles.listTitleWrapper}>
-            <View style={styles.userInfoBox}>
-              <Text style={styles.title}>Address</Text>
-              <Text style={styles.subtitle}>test address</Text>
-            </View>
-            <IconButton
-              icon={() => (
-                <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
-              )}
-              size={24}
-              onPress={() => {}}
-            />
+        <View style={styles.listTitleWrapper}>
+          <View style={styles.userInfoBox}>
+            <Text style={styles.title}>Island/City</Text>
+            <Text style={styles.subtitle}>test island/city</Text>
           </View>
-          <View style={{paddingHorizontal: 20,}}>
-            <View style={styles.divider}/>
-          </View>
+          <IconButton
+            icon={() => (
+              <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
+            )}
+            size={24}
+            onPress={() => {}}
+          />
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <View style={styles.divider} />
+        </View>
 
-          <View style={styles.listTitleWrapper}>
-            <View style={styles.userInfoBox}>
-              <Text style={styles.title}>Island/City</Text>
-              <Text style={styles.subtitle}>test island/city</Text>
-            </View>
-            <IconButton
-              icon={() => (
-                <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
-              )}
-              size={24}
-              onPress={() => {}}
-            />
+        <View style={styles.listTitleWrapper}>
+          <View style={styles.userInfoBox}>
+            <Text style={styles.title}>Country</Text>
+            <Text style={styles.subtitle}>test country</Text>
           </View>
-          <View style={{paddingHorizontal: 20,}}>
-            <View style={styles.divider}/>
-          </View>
+          <IconButton
+            icon={() => (
+              <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
+            )}
+            size={24}
+            onPress={() => {}}
+          />
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <View style={styles.divider} />
+        </View>
 
-          <View style={styles.listTitleWrapper}>
-            <View style={styles.userInfoBox}>
-              <Text style={styles.title}>Country</Text>
-              <Text style={styles.subtitle}>test country</Text>
-            </View>
-            <IconButton
-              icon={() => (
-                <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
-              )}
-              size={24}
-              onPress={() => {}}
-            />
+        <View style={styles.listTitleWrapper}>
+          <View style={styles.userInfoBox}>
+            <Text style={styles.title}>Post Code</Text>
+            <Text style={styles.subtitle}>test post code</Text>
           </View>
-          <View style={{paddingHorizontal: 20,}}>
-            <View style={styles.divider}/>
-          </View>
-
-          <View style={styles.listTitleWrapper}>
-            <View style={styles.userInfoBox}>
-              <Text style={styles.title}>Post Code</Text>
-              <Text style={styles.subtitle}>test post code</Text>
-            </View>
-            <IconButton
-              icon={() => (
-                <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
-              )}
-              size={24}
-              onPress={() => {}}
-            />
-          </View>
-          <View style={{paddingHorizontal: 20,}}>
-            <View style={styles.divider}/>
-          </View>
+          <IconButton
+            icon={() => (
+              <PencilEditIcon width={24} height={24} color={'#25BFA3'} />
+            )}
+            size={24}
+            onPress={() => {}}
+          />
+        </View>
+        <View style={{paddingHorizontal: 20}}>
+          <View style={styles.divider} />
         </View>
       </ScrollView>
     </>
@@ -145,11 +142,9 @@ const Profile = () => {
 
 export default Profile;
 
-let {height, width} = Dimensions.get('window');
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    minHeight: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   bannerRow: {
@@ -158,7 +153,6 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    //backgroundColor: 'yellow',
     width: width,
     top: 30,
     minHeight: 62,
@@ -185,5 +179,5 @@ const styles = EStyleSheet.create({
     height: 1,
     backgroundColor: '#ccc',
     marginVertical: 20,
-  }
+  },
 });

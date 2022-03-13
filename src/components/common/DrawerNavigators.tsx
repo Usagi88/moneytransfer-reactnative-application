@@ -17,7 +17,6 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import React from 'react';
 import {TouchableNativeFeedback, View} from 'react-native';
 import About from '../Views/About';
-import ChangePassword from '../Views/ChangePassword';
 import ContactUs from '../Views/ContactUs';
 import Home from '../Views/Home';
 import InviteFriends from '../Views/InviteFriends/InviteFriends';
@@ -33,6 +32,7 @@ import StackNavigators from './StackNavigators';
 import {CommonActions} from '@react-navigation/native';
 import {useNavigation} from '@react-navigation/native';
 import SchedulePayment from '../Views/Services/SchedulePayment';
+import ResetPassword from '../Views/ResetPassword';
 
 const Drawer = createDrawerNavigator();
 
@@ -114,7 +114,7 @@ const DrawerNavigators = () => {
       />
       <Drawer.Screen
         name="Change Password"
-        component={ChangePassword}
+        component={ResetPassword}
         options={{
           headerShown: false,
           drawerIcon: () => (

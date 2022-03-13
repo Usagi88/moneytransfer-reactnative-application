@@ -1,26 +1,14 @@
-import React, {useState} from 'react';
-import {
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableNativeFeedback,
-  View,
-} from 'react-native';
+import React from 'react';
+import {ScrollView, Text, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-
 const Referrals = () => {
- 
-
   return (
-    <ScrollView style={styles.listBox}>
-      <View style={styles.column}>
-        <View style={{alignItems: 'center',}}>
-          <Text style={styles.firstSentence}>
-            No one registered from your referral link yet!
-          </Text>
-        </View>
-        
+    <ScrollView style={styles.column}>
+      <View style={{alignItems: 'center'}}>
+        <Text style={styles.firstSentence}>
+          No one registered from your referral link yet!
+        </Text>
       </View>
     </ScrollView>
   );

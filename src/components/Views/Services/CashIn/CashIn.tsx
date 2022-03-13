@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {
-  Dimensions,
   Text,
   View,
   useWindowDimensions,
-  TouchableOpacity,
-  Animated,
   TouchableNativeFeedback,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import BannerAmount from '../../../common/BannerAmount';
@@ -18,8 +14,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import Navbar from '../../../common/Navbar';
 import DhiraaguCashIn from './DhiraaguCashIn';
 import OoredooCashIn from './OoredooCashIn';
-
-let {height, width} = Dimensions.get('window');
 
 const FirstRoute = () => {
   return <DhiraaguCashIn />;
@@ -110,8 +104,7 @@ export default CashIn;
 
 const styles = EStyleSheet.create({
   column: {
-    width: width,
-    height: height - 56,
+    flex: 1,
     backgroundColor: 'white',
   },
   tabBar: {

@@ -21,170 +21,160 @@ const DhiraaguBillPay = () => {
   const [checked, setChecked] = useState(false);
 
   return (
-    <ScrollView style={styles.listBox}>
-      <View style={styles.column}>
-        <Text style={styles.firstSentence}>
-          Enter the Dhiraagu service number and amount to pay bill.
-        </Text>
-        <GradientButton text={'Pick Contact'} onPress={() => {}} />
-        <Text style={styles.inputText}>Service Number</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeServiceNumber}
-            value={serviceNumber}
-            placeholder="Service Number"
-          />
-          <View style={styles.buttonWrapper}>
-            <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
-              <LinearGradient
-                start={{x: 0, y: 1}}
-                end={{x: 1, y: 1}}
-                colors={['#3AC170', '#25BFA3']}
-                style={styles.button}>
-                <Text style={styles.buttonText}>Check Balance</Text>
-              </LinearGradient>
-            </TouchableNativeFeedback>
+    <ScrollView style={styles.column}>
+      <Text style={styles.firstSentence}>
+        Enter the Dhiraagu service number and amount to pay bill.
+      </Text>
+      <GradientButton text={'Pick Contact'} onPress={() => {}} />
+      <Text style={styles.inputText}>Service Number</Text>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeServiceNumber}
+          value={serviceNumber}
+          placeholder="Service Number"
+        />
+        <View style={styles.buttonWrapper}>
+          <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+            <LinearGradient
+              start={{x: 0, y: 1}}
+              end={{x: 1, y: 1}}
+              colors={['#3AC170', '#25BFA3']}
+              style={styles.button}>
+              <Text style={styles.buttonText}>Check Balance</Text>
+            </LinearGradient>
+          </TouchableNativeFeedback>
+        </View>
+      </View>
+      <Text style={styles.inputText}>Amount</Text>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeAmount}
+          value={amount}
+          placeholder="Amount"
+          keyboardType="numeric"
+        />
+      </View>
+      {checked === true ? (
+        <>
+          <Text style={styles.inputText}>Name to save</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeSaveName}
+              value={saveName}
+              placeholder="Name to save"
+            />
           </View>
-        </View>
-        <Text style={styles.inputText}>Amount</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeAmount}
-            value={amount}
-            placeholder="Amount"
-            keyboardType="numeric"
+        </>
+      ) : null}
+
+      <TouchableNativeFeedback
+        onPress={() => {
+          setChecked(!checked);
+        }}>
+        <View style={styles.checkboxContainer}>
+          <Checkbox
+            status={checked ? 'checked' : 'unchecked'}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+            color={'#25BFA3'}
           />
+          <Text style={styles.label}>Keep info saved</Text>
         </View>
-        {checked === true ? (
-          <>
-            <Text style={styles.inputText}>Name to save</Text>
-            <View style={styles.inputWrapper}>
-              <TextInput
-                style={styles.input}
-                onChangeText={onChangeSaveName}
-                value={saveName}
-                placeholder="Name to save"
+      </TouchableNativeFeedback>
+      <GradientButton text={'Pay Bill'} onPress={() => {}} />
+      <TitleHorizonDivider name={'Saved Numbers'} />
+      <DataTable style={{paddingBottom: 40, paddingHorizontal: 20}}>
+        <DataTable.Header>
+          <DataTable.Title>
+            <Text style={styles.dataTableHeader}>#</Text>
+          </DataTable.Title>
+          <DataTable.Title style={{flex: 2}}>
+            <Text style={styles.dataTableHeader}>Details</Text>
+          </DataTable.Title>
+          <DataTable.Title>
+            <Text style={styles.dataTableHeader}>Delete</Text>
+          </DataTable.Title>
+          <DataTable.Title>
+            <Text style={styles.dataTableHeader}>Show</Text>
+          </DataTable.Title>
+        </DataTable.Header>
+
+        <DataTable.Row>
+          <DataTable.Cell>1</DataTable.Cell>
+          <DataTable.Cell style={{flex: 2}}>
+            <View>
+              <Text style={styles.dataTableCell}>777777</Text>
+              <Text style={styles.dataTableCell}>Test name</Text>
+            </View>
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon icon={faTrash} size={22} color={'#25BFA3'} />
+                )}
+                size={22}
+                onPress={() => {}}
               />
             </View>
-          </>
-        ) : null}
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon
+                    icon={faLocationArrow}
+                    size={22}
+                    color={'#25BFA3'}
+                  />
+                )}
+                size={22}
+                onPress={() => {}}
+              />
+            </View>
+          </DataTable.Cell>
+        </DataTable.Row>
 
-        <TouchableNativeFeedback
-          onPress={() => {
-            setChecked(!checked);
-          }}>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              status={checked ? 'checked' : 'unchecked'}
-              onPress={() => {
-                setChecked(!checked);
-              }}
-              color={'#25BFA3'}
-            />
-            <Text style={styles.label}>Keep info saved</Text>
-          </View>
-        </TouchableNativeFeedback>
-        <GradientButton text={'Pay Bill'} onPress={() => {}} />
-        <TitleHorizonDivider name={'Saved Numbers'} />
-        <DataTable style={{paddingBottom: 40, paddingHorizontal: 20}}>
-          <DataTable.Header>
-            <DataTable.Title>
-              <Text style={styles.dataTableHeader}>#</Text>
-            </DataTable.Title>
-            <DataTable.Title style={{flex: 2}}>
-              <Text style={styles.dataTableHeader}>Details</Text>
-            </DataTable.Title>
-            <DataTable.Title>
-              <Text style={styles.dataTableHeader}>Delete</Text>
-            </DataTable.Title>
-            <DataTable.Title>
-              <Text style={styles.dataTableHeader}>Show</Text>
-            </DataTable.Title>
-          </DataTable.Header>
-
-          <DataTable.Row>
-            <DataTable.Cell>1</DataTable.Cell>
-            <DataTable.Cell style={{flex: 2}}>
-              <View>
-                <Text style={styles.dataTableCell}>777777</Text>
-                <Text style={styles.dataTableCell}>Test name</Text>
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faLocationArrow}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-          </DataTable.Row>
-
-          <DataTable.Row>
-            <DataTable.Cell>2</DataTable.Cell>
-            <DataTable.Cell style={{flex: 2}}>
-              <View>
-                <Text style={styles.dataTableCell}>777777</Text>
-                <Text style={styles.dataTableCell}>Test name</Text>
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-            <DataTable.Cell>
-              <View style={styles.iconButton}>
-                <IconButton
-                  icon={() => (
-                    <FontAwesomeIcon
-                      icon={faLocationArrow}
-                      size={22}
-                      color={'#25BFA3'}
-                    />
-                  )}
-                  size={22}
-                  onPress={() => {}}
-                />
-              </View>
-            </DataTable.Cell>
-          </DataTable.Row>
-        </DataTable>
-      </View>
+        <DataTable.Row>
+          <DataTable.Cell>2</DataTable.Cell>
+          <DataTable.Cell style={{flex: 2}}>
+            <View>
+              <Text style={styles.dataTableCell}>777777</Text>
+              <Text style={styles.dataTableCell}>Test name</Text>
+            </View>
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon icon={faTrash} size={22} color={'#25BFA3'} />
+                )}
+                size={22}
+                onPress={() => {}}
+              />
+            </View>
+          </DataTable.Cell>
+          <DataTable.Cell>
+            <View style={styles.iconButton}>
+              <IconButton
+                icon={() => (
+                  <FontAwesomeIcon
+                    icon={faLocationArrow}
+                    size={22}
+                    color={'#25BFA3'}
+                  />
+                )}
+                size={22}
+                onPress={() => {}}
+              />
+            </View>
+          </DataTable.Cell>
+        </DataTable.Row>
+      </DataTable>
     </ScrollView>
   );
 };

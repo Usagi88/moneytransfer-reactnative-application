@@ -8,119 +8,112 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import {Checkbox, DataTable, IconButton} from 'react-native-paper';
-
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faClipboard,
-  faClone,
-  faGift,
-  faLocationArrow,
-  faShare,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import {faClone, faShare} from '@fortawesome/free-solid-svg-icons';
 import LinearGradient from 'react-native-linear-gradient';
-import GradientButton from '../../common/GradientButton';
 
 const Invite = () => {
   const [invite, onChangeInvite] = useState<any>(null);
 
   return (
-    <ScrollView style={styles.listBox}>
-      <View style={styles.column}>
-        <Text style={styles.firstSentence}>How it works!</Text>
-        <View style={styles.rowWrapper}>
-          <LinearGradient
-            start={{x: 0, y: 1}}
-            end={{x: 1, y: 1}}
-            colors={['#3AC170', '#25BFA3']}
-            style={styles.smallBox}
-          />
-          <View style={{marginLeft: 10}}>
-            <Text style={{color: 'black'}}>Invite your friends!</Text>
-            <Text>Simply Share your referral link!</Text>
-          </View>
+    <ScrollView style={styles.column}>
+      <Text style={styles.firstSentence}>How it works!</Text>
+      <View style={styles.rowWrapper}>
+        <LinearGradient
+          start={{x: 0, y: 1}}
+          end={{x: 1, y: 1}}
+          colors={['#3AC170', '#25BFA3']}
+          style={styles.smallBox}
+        />
+        <View style={{marginLeft: 10}}>
+          <Text style={{color: 'black'}}>Invite your friends!</Text>
+          <Text>Simply Share your referral link!</Text>
         </View>
-        <View style={styles.rowWrapper}>
-          <LinearGradient
-            start={{x: 0, y: 1}}
-            end={{x: 1, y: 1}}
-            colors={['#3AC170', '#25BFA3']}
-            style={styles.smallBox}
-          />
-          <View style={{marginLeft: 10}}>
-            <Text style={{color: 'black'}}>
-              Your friends join and use FahiPay!
-            </Text>
-            <Text>Your Friend gets MVR 10.00</Text>
-          </View>
+      </View>
+      <View style={styles.rowWrapper}>
+        <LinearGradient
+          start={{x: 0, y: 1}}
+          end={{x: 1, y: 1}}
+          colors={['#3AC170', '#25BFA3']}
+          style={styles.smallBox}
+        />
+        <View style={{marginLeft: 10}}>
+          <Text style={{color: 'black'}}>
+            Your friends join and use FahiPay!
+          </Text>
+          <Text>Your Friend gets MVR 10.00</Text>
         </View>
-        <View style={styles.rowWrapper}>
-          <LinearGradient
-            start={{x: 0, y: 1}}
-            end={{x: 1, y: 1}}
-            colors={['#3AC170', '#25BFA3']}
-            style={styles.smallBox}
-          />
-          <View style={{marginLeft: 10}}>
-            <Text style={{color: 'black'}}>Earn money!</Text>
-            <Text>You earn MVR 10.00</Text>
-          </View>
+      </View>
+      <View style={styles.rowWrapper}>
+        <LinearGradient
+          start={{x: 0, y: 1}}
+          end={{x: 1, y: 1}}
+          colors={['#3AC170', '#25BFA3']}
+          style={styles.smallBox}
+        />
+        <View style={{marginLeft: 10}}>
+          <Text style={{color: 'black'}}>Earn money!</Text>
+          <Text>You earn MVR 10.00</Text>
         </View>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeInvite}
-            value={invite}
-            placeholder="www.fahipay.mv"
-          />
-          <View style={styles.buttonWrapper}>
-            <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
-              <LinearGradient
-                start={{x: 0, y: 1}}
-                end={{x: 1, y: 1}}
-                colors={['#3AC170', '#25BFA3']}
-                style={styles.button}>
-                <FontAwesomeIcon icon={faClone} size={18} color={'white'} />
-              </LinearGradient>
-            </TouchableNativeFeedback>
-          </View>
-        </View>
-        <View style={styles.shareButtonWrapper}>
+      </View>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeInvite}
+          value={invite}
+          placeholder="www.fahipay.mv"
+        />
+        <View style={styles.buttonWrapper}>
           <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
             <LinearGradient
               start={{x: 0, y: 1}}
               end={{x: 1, y: 1}}
               colors={['#3AC170', '#25BFA3']}
-              style={styles.shareButton}>
-              <View style={{flexDirection: 'row'}}>
-                <FontAwesomeIcon icon={faShare} size={18} color={'white'} />
-                <Text style={styles.shareButtonText}>Share link</Text>
-              </View>
+              style={styles.button}>
+              <FontAwesomeIcon icon={faClone} size={18} color={'white'} />
             </LinearGradient>
           </TouchableNativeFeedback>
         </View>
-        <View
-          style={{paddingHorizontal: 20, flexDirection: 'row', paddingTop: 10, paddingBottom: 20}}>
-          <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+      </View>
+      <View style={styles.shareButtonWrapper}>
+        <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+          <LinearGradient
+            start={{x: 0, y: 1}}
+            end={{x: 1, y: 1}}
+            colors={['#3AC170', '#25BFA3']}
+            style={styles.shareButton}>
             <View style={{flexDirection: 'row'}}>
-              <View style={styles.borderLeft} />
-              <View>
-                <Text style={{paddingTop: 10, color: 'black'}}>
-                  Terms and conditions
-                </Text>
-                <View
-                  style={{
-                    width: 100,
-                    backgroundColor: '#ccc',
-                    height: 1,
-                    marginTop: 10,
-                  }}
-                />
-              </View>
+              <FontAwesomeIcon icon={faShare} size={18} color={'white'} />
+              <Text style={styles.shareButtonText}>Share link</Text>
             </View>
-          </TouchableNativeFeedback>
-        </View>
+          </LinearGradient>
+        </TouchableNativeFeedback>
+      </View>
+      <View
+        style={{
+          paddingHorizontal: 20,
+          flexDirection: 'row',
+          paddingTop: 10,
+          paddingBottom: 20,
+        }}>
+        <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+          <View style={{flexDirection: 'row'}}>
+            <View style={styles.borderLeft} />
+            <View>
+              <Text style={{paddingTop: 10, color: 'black'}}>
+                Terms and conditions
+              </Text>
+              <View
+                style={{
+                  width: 100,
+                  backgroundColor: '#ccc',
+                  height: 1,
+                  marginTop: 10,
+                }}
+              />
+            </View>
+          </View>
+        </TouchableNativeFeedback>
       </View>
     </ScrollView>
   );

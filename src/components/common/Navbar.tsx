@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {Appbar} from 'react-native-paper';
 import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import QRCodeIcon from '../SvgIconComponents/QRCodeIcon';
