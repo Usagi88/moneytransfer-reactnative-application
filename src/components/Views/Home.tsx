@@ -12,7 +12,6 @@ import QuestionIcon from '../SvgIconComponents/QuestionIcon';
 import ServiceIcon from '../SvgIconComponents/ServiceIcon';
 import WalletIcon from '../SvgIconComponents/WalletIcon';
 import BannerAmount from '../common/BannerAmount';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import FPCard from '../common/FPCard';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
@@ -20,7 +19,7 @@ import Navbar from '../common/Navbar';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
 
-let {height, width} = Dimensions.get('window');
+let {width} = Dimensions.get('window');
 
 const images = [
   require('../../assets/carousel/bannerOne.png'),

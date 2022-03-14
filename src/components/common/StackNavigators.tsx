@@ -24,6 +24,7 @@ import ROLBillPay from '../Views/Services/ROLPayBill';
 import SchedulePayment from '../Views/Services/SchedulePayment';
 import SendSMS from '../Views/Services/SendSMS';
 import Wholesale from '../Views/Services/Wholesale/Wholesale';
+import Slip from '../Views/Slip';
 
 const Stack = createStackNavigator();
 
@@ -151,7 +152,7 @@ const StackNavigators = () => {
       />
       <Stack.Screen
         name="AddCash"
-        component={Register}
+        component={Slip}
         options={{
           headerShown: false,
         }}

@@ -1,10 +1,37 @@
 import React from 'react';
-import {Image, View, Text, Dimensions, ImageBackground} from 'react-native';
+import {View, Text, Dimensions, ImageBackground} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import BannerWalletIcon from '../SvgIconComponents/BannerWalletIcon';
 import {CountUp} from 'use-count-up';
 
-let {height, width} = Dimensions.get('window');
+let {width} = Dimensions.get('window');
+
+const BannerAmount = () => {
+  return (
+    <View>
+      <ImageBackground source={require('../../assets/images/banner.png')} style={{height:160, width: width}}/>
+      <View style={styles.bannerRow}>
+        <BannerWalletIcon width={52} height={52} color={'white'} />
+        <View style={styles.verticalDivider} />
+        <View>
+          <View style={styles.firstRow}>
+            <Text style={styles.amount}>
+              <CountUp isCounting end={20320.20} duration={1} decimalPlaces={2} />
+            </Text>
+            <Text style={styles.currency}>MVR</Text>
+          </View>
+          <View style={styles.secondRow}>
+            <Text style={styles.points}>
+              <CountUp isCounting end={200} duration={1}/>
+            </Text>
+            <Text style={styles.pointsText}>Points</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
 const styles = EStyleSheet.create({
   bannerRow: {
     flexDirection: 'row',
@@ -57,30 +84,5 @@ const styles = EStyleSheet.create({
     color: '#055A40',
   },
 });
-const BannerAmount = () => {
-  return (
-    <View>
-      <ImageBackground source={require('../../assets/images/banner.png')} style={{height:160, width: width}}/>
-      <View style={styles.bannerRow}>
-        <BannerWalletIcon width={52} height={52} color={'white'} />
-        <View style={styles.verticalDivider} />
-        <View>
-          <View style={styles.firstRow}>
-            <Text style={styles.amount}>
-              <CountUp isCounting end={20320.20} duration={1} decimalPlaces={2} />
-            </Text>
-            <Text style={styles.currency}>MVR</Text>
-          </View>
-          <View style={styles.secondRow}>
-            <Text style={styles.points}>
-              <CountUp isCounting end={200} duration={1}/>
-            </Text>
-            <Text style={styles.pointsText}>Points</Text>
-          </View>
-        </View>
-      </View>
-    </View>
-  );
-};
 
 export default BannerAmount;

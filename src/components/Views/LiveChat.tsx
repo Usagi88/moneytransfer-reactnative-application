@@ -52,7 +52,7 @@ const LiveChat = () => {
         </View>
         <ScrollView style={styles.livechatBox} nestedScrollEnabled={true}>
           <View style={{padding: 10, paddingBottom: 20}}>
-            <ReceiverChatBubble message="Type a something please" />
+            <ReceiverChatBubble message="Type something please" />
             {livechatMessages?.map((livechatMessage: string, index:number) => {
               return (
                 <SenderChatBubble message={livechatMessage} key={index}/>
@@ -169,7 +169,6 @@ const styles = EStyleSheet.create({
     backgroundColor: '#f2f2f2',
   },
   livechatBox: {
-    backgroundColor: '#ccc',
     height: '100% - 190',
   },
   submitBtn: {
