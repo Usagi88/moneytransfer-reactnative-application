@@ -9,25 +9,38 @@ let {width} = Dimensions.get('window');
 const BannerAmount = () => {
   return (
     <View>
-      <ImageBackground source={require('../../assets/images/banner.png')} style={{height:160, width: width}}/>
-      <View style={styles.bannerRow}>
-        <BannerWalletIcon width={52} height={52} color={'white'} />
-        <View style={styles.verticalDivider} />
-        <View>
-          <View style={styles.firstRow}>
-            <Text style={styles.amount}>
-              <CountUp isCounting end={20320.20} duration={1} decimalPlaces={2} />
-            </Text>
-            <Text style={styles.currency}>MVR</Text>
-          </View>
-          <View style={styles.secondRow}>
-            <Text style={styles.points}>
-              <CountUp isCounting end={200} duration={1}/>
-            </Text>
-            <Text style={styles.pointsText}>Points</Text>
+      <ImageBackground
+        source={require('../../assets/images/banner.png')}
+        style={{
+          height: 160,
+          width: width,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <View style={styles.bannerRow}>
+          <BannerWalletIcon width={52} height={52} color={'white'} />
+          <View style={styles.verticalDivider} />
+          <View>
+            <View style={styles.firstRow}>
+              <Text style={styles.amount}>
+                <CountUp
+                  isCounting
+                  end={20320.2}
+                  duration={1}
+                  decimalPlaces={2}
+                />
+              </Text>
+              <Text style={styles.currency}>MVR</Text>
+            </View>
+            <View style={styles.secondRow}>
+              <Text style={styles.points}>
+                <CountUp isCounting end={200} duration={1} />
+              </Text>
+              <Text style={styles.pointsText}>Points</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -38,11 +51,7 @@ const styles = EStyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    //backgroundColor: 'yellow',
-    width: width,
-    top: 15,
-    minHeight: 62,
+    bottom: 25,
   },
   verticalDivider: {
     width: 1,

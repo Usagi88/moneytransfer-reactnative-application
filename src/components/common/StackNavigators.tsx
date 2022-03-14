@@ -25,6 +25,7 @@ import SchedulePayment from '../Views/Services/SchedulePayment';
 import SendSMS from '../Views/Services/SendSMS';
 import Wholesale from '../Views/Services/Wholesale/Wholesale';
 import Slip from '../Views/Slip';
+import TransactionHistory from '../Views/TransactionHistory';
 
 const Stack = createStackNavigator();
 
@@ -152,7 +153,7 @@ const StackNavigators = () => {
       />
       <Stack.Screen
         name="AddCash"
-        component={Slip}
+        component={TransactionHistory}
         options={{
           headerShown: false,
         }}

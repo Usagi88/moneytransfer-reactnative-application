@@ -23,16 +23,22 @@ const Profile = () => {
       <ScrollView style={styles.column}>
         <ImageBackground
           source={require('../../assets/images/banner.png')}
-          style={{height: 160, width: width}}
-        />
-        <View style={styles.bannerRow}>
-          <FontAwesomeIcon icon={faUserAlt} size={44} color={'white'} />
+          style={{
+            height: 160,
+            width: width,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <View style={styles.bannerRow}>
+            <FontAwesomeIcon icon={faUserAlt} size={44} color={'white'} />
 
-          <View style={{marginLeft: 20}}>
-            <Text style={styles.textStyle}>Test Name</Text>
-            <Text style={styles.textStyle}>A123456</Text>
+            <View style={{marginLeft: 20}}>
+              <Text style={styles.textStyle}>Test Name</Text>
+              <Text style={styles.textStyle}>A123456</Text>
+            </View>
           </View>
-        </View>
+        </ImageBackground>
+
         <TitleHorizonDivider name={'Profile'} />
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
@@ -152,10 +158,8 @@ const styles = EStyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    width: width,
-    top: 30,
-    minHeight: 62,
+    bottom: 20,
+   
   },
   textStyle: {
     color: 'white',
