@@ -2,6 +2,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
 import AddCash from '../Views/AddCash';
+import FahiSend from '../Views/FahiSend';
 
 import Home from '../Views/Home';
 import LiveChat from '../Views/LiveChat';
@@ -153,7 +154,7 @@ const StackNavigators = () => {
       />
       <Stack.Screen
         name="AddCash"
-        component={TransactionHistory}
+        component={FahiSend}
         options={{
           headerShown: false,
         }}
