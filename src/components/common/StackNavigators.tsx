@@ -3,6 +3,7 @@ import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import AddCash from '../Views/AddCash';
+import Bonus from '../Views/Bonus';
 import FahiSend from '../Views/FahiSend';
 
 import Home from '../Views/Home';
@@ -164,6 +165,13 @@ const StackNavigators = () => {
       <Stack.Screen
         name="TopUpVia"
         component={TopUpVia}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Bonus"
+        component={Bonus}
         options={{
           headerShown: false,
         }}

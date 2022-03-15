@@ -93,7 +93,7 @@ const AddCash = ({navigation}) => {
               )}
               size={40}
               onPress={() => {
-                navigation.navigate('LiveChat');
+                navigation.navigate('Bonus');
               }}
             />
           </View>
