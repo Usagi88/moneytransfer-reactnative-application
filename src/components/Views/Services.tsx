@@ -171,7 +171,7 @@ const styles = EStyleSheet.create({
   },
   listBox: {
     width: '100%',
-    height: height - (120 + STATUS_BAR_HEIGHT + 114),
+    height: '100% - 30%',
   },
   cardRow: {
     flexDirection: 'row',

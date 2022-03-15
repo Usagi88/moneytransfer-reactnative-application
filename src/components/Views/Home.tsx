@@ -89,7 +89,7 @@ const Home = ({navigation}) => {
         <View style={styles.titleWrapper}>
           <Text style={styles.title}>History</Text>
           <View style={styles.divider} />
-          <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+          <TouchableNativeFeedback onPress={() => {navigation.navigate('TransactionHistory')}} useForeground={true}>
             <LinearGradient
               colors={['#3AC170', '#25BFA3']}
               style={styles.smallBox}>

@@ -184,6 +184,13 @@ const StackNavigators = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="TransactionHistory"
+        component={TransactionHistory}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
