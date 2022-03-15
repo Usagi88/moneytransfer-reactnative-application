@@ -1,5 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import AddCash from '../Views/AddCash';
 import FahiSend from '../Views/FahiSend';
@@ -26,6 +27,7 @@ import SchedulePayment from '../Views/Services/SchedulePayment';
 import SendSMS from '../Views/Services/SendSMS';
 import Wholesale from '../Views/Services/Wholesale/Wholesale';
 import Slip from '../Views/Slip';
+import TopUpVia from '../Views/TopUpVia/TopUpVia';
 import TransactionHistory from '../Views/TransactionHistory';
 
 const Stack = createStackNavigator();
@@ -154,7 +156,14 @@ const StackNavigators = () => {
       />
       <Stack.Screen
         name="AddCash"
-        component={FahiSend}
+        component={AddCash}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="TopUpVia"
+        component={TopUpVia}
         options={{
           headerShown: false,
         }}
