@@ -1,16 +1,10 @@
-import React, {Component, useState} from 'react';
-import {
-  Text,
-  View,
-  SafeAreaView,
-  Dimensions,
-  StyleSheet,
-  Image,
-  ImageSourcePropType,
-} from 'react-native';
+import React from 'react';
+import {View, Dimensions, Image, ImageSourcePropType} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+//import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Carousel from 'pinar';
+import {Pagination} from 'react-native-snap-carousel';
 
 interface ItemProps {
   title: string;
@@ -45,37 +39,24 @@ function carouselCardItem({item, index}: carouselCardItem) {
   );
 }
 
-const CarouselBanner = (props:CarouselType) => {
-  const [index, setIndex] = React.useState(0);
-  const isCarousel = React.useRef<any>(null);
+const CarouselBanner = (props: CarouselType) => {
   return (
     <View style={styles.container}>
       <Carousel
-        data={props.images}
-        renderItem={carouselCardItem}
-        sliderWidth={WIDTH}
-        itemWidth={WIDTH}
-        inactiveSlideScale={1}
-        inactiveSlideOpacity={1}
-        sliderHeight={120}
-        itemHeight={120}
-        loop
+        loop={true}
         autoplay={true}
-        autoplayDelay={3000}
-        autoplayInterval={3000}
-        ref={isCarousel}
-        onSnapToItem={index => setIndex(index)}
-      />
-      <View style={styles.dotsWrapper}>
-        <Pagination
-          dotsLength={props.images.length}
-          activeDotIndex={index}
-          dotStyle={styles.dots}
-          inactiveDotOpacity={0.4}
-          inactiveDotScale={0.6}
-          
-        />
-      </View>
+        showsControls={false}
+        dotsContainerStyle={styles.dotsWrapper}
+        dotStyle={styles.dots}
+        activeDotStyle={styles.dotActive}>
+        {props.images.map((img: ImageSourcePropType, index: number) => {
+          return (
+            <View style={styles.cardCarousel} key={index}>
+              <Image style={styles.image} source={img} />
+            </View>
+          );
+        })}
+      </Carousel>
     </View>
   );
 };
@@ -90,19 +71,26 @@ const styles = EStyleSheet.create({
   },
   image: {
     height: 120,
-    resizeMode: 'cover'
+    resizeMode: 'cover',
   },
   dotsWrapper: {
-    position: 'absolute',
-    left: WIDTH - 100,
-    top: 70
+    justifyContent: 'flex-end',
+    bottom: 20,
+    flexDirection: 'row',
   },
   dots: {
     width: 10,
     height: 10,
     borderRadius: 5,
-    marginHorizontal: 0,
+    marginHorizontal: 5,
     backgroundColor: 'white',
+  },
+  dotActive: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginHorizontal: 5,
+    backgroundColor: '#25BFA3',
   },
 });
 
