@@ -8,15 +8,15 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import Navbar from '../common/Navbar';
 import GradientButton from '../common/GradientButton';
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 
 const ResetPassword = () => {
   const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={styles.column}>

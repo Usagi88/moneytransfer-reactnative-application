@@ -1,27 +1,17 @@
-import {faUserAlt} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
-import {
-  Dimensions,
-  ImageBackground,
-  ScrollView,
-  Text,
-  View,
-} from 'react-native';
+import {ScrollView} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import {IconButton} from 'react-native-paper';
+
 import BannerAmount from '../common/BannerAmount';
 import FPCard from '../common/FPCard';
-import Navbar from '../common/Navbar';
-import TitleHorizonDivider from '../common/TitleHorizonDivider';
-import PencilEditIcon from '../SvgIconComponents/PencilEditIcon';
 
-let {width} = Dimensions.get('window');
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
+import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
 const TransactionHistory = () => {
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <TitleHorizonDivider name={'Transaction History'} />
@@ -140,5 +130,4 @@ const styles = EStyleSheet.create({
     width: '100%',
     maxHeight: '100% - 38%',
   },
-  
 });

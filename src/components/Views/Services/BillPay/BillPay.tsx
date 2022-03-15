@@ -13,7 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import DhiraaguBillPay from './DhiraaguBillPay';
 import OoredooBillPay from './OoredooBillPay';
-import Navbar from '../../../common/Navbar';
+import NavbarWithBackBtn from '../../../common/NavbarWithBackBtn';
 
 const FirstRoute = () => {
   return <DhiraaguBillPay />;
@@ -85,7 +85,7 @@ const BillPay = ({route}) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <View style={styles.column}>
         <BannerAmount />
         <TabView

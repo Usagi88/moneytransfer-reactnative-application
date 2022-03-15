@@ -11,9 +11,9 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Navbar from '../../common/Navbar';
 import Invite from './Invite';
 import Referrals from './Referrals';
+import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
 
 const FirstRoute = () => {
   return <Invite />;
@@ -78,7 +78,7 @@ const InviteFriends = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <View style={styles.column}>
         <View style={styles.imageWrapper}>
           <Image

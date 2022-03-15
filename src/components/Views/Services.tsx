@@ -2,7 +2,7 @@ import React from 'react';
 import {Dimensions, ScrollView, StatusBar, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
-import Navbar from '../common/Navbar';
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 import ServiceCard from '../common/ServiceCard';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
@@ -12,13 +12,11 @@ const images = [
   require('../../assets/carousel/bannerTwo.png'),
   require('../../assets/carousel/bannerThree.png'),
 ];
-let {height} = Dimensions.get('window');
-const STATUS_BAR_HEIGHT = StatusBar.currentHeight || 24; 
 
 const Services = () => {
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.column}>
           <View style={styles.carousel}>
             <CarouselBanner images={images} />

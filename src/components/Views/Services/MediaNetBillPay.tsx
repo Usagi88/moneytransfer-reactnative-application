@@ -13,7 +13,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faGift} from '@fortawesome/free-solid-svg-icons';
 import BannerAmount from '../../common/BannerAmount';
 import LinearGradient from 'react-native-linear-gradient';
-import Navbar from '../../common/Navbar';
+import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
 
 const MediaNetBillPay = () => {
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
@@ -23,7 +23,7 @@ const MediaNetBillPay = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <Text style={styles.firstSentence}>

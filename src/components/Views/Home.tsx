@@ -18,6 +18,7 @@ import CarouselBanner from '../common/Carousel/CarouselBanner';
 import Navbar from '../common/Navbar';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
+import moment from 'moment';
 
 let {width} = Dimensions.get('window');
 
@@ -28,6 +29,7 @@ const images = [
 ];
 
 const Home = ({navigation}) => {
+  let now = moment().format('HH:mm');
   return (
     <>
       <Navbar />
@@ -38,7 +40,7 @@ const Home = ({navigation}) => {
           <CarouselBanner images={images} />
         </View>
         <View style={styles.time}>
-          <Text style={styles.timeText}>K.Male - Fajr 04:47</Text>
+          <Text style={styles.timeText}>K.Male - {now}</Text>
         </View>
         <BannerAmount />
         <View style={styles.circleIconRow}>

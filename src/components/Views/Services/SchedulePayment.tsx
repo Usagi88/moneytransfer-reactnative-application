@@ -12,9 +12,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../../common/BannerAmount';
-import Navbar from '../../common/Navbar';
 import LinearGradient from 'react-native-linear-gradient';
 import {DataTable} from 'react-native-paper';
+import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
 
 const SchedulePayment = () => {
   const [dayOfMonth, onChangeDayOfMonth] = useState<any>(null);
@@ -25,7 +25,7 @@ const SchedulePayment = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <Text style={styles.firstSentence}>

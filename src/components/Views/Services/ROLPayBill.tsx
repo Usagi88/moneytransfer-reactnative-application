@@ -14,17 +14,16 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faGift} from '@fortawesome/free-solid-svg-icons';
 import BannerAmount from '../../common/BannerAmount';
 import LinearGradient from 'react-native-linear-gradient';
-import Navbar from '../../common/Navbar';
+import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
 
 const ROLBillPay = () => {
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
-  const [amount, onChangeAmount] = useState<any>(null);
   const [saveName, onChangeSaveName] = useState<any>(null);
   const [checked, setChecked] = useState(false);
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <Text style={styles.firstSentence}>

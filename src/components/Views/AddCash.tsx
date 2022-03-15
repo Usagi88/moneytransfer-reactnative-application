@@ -3,6 +3,7 @@ import {Image, Text, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {IconButton} from 'react-native-paper';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 
 const images = [
   require('../../assets/carousel/bannerOne.png'),
@@ -12,95 +13,98 @@ const images = [
 
 const AddCash = ({navigation}) => {
   return (
-    <View style={styles.column}>
-      <View style={styles.carousel}>
-        <CarouselBanner images={images} />
-      </View>
-      <View style={styles.iconWrapper}>
-        <View style={styles.circleIconWrapper}>
-          <View style={styles.circleIcon}>
-            <IconButton
-              icon={() => (
-                <Image
-                  source={require('../../assets/icons/bml.png')}
-                  style={{width: 50, height: 50}}
-                />
-              )}
-              size={40}
-              onPress={() => {
-                navigation.navigate('TopUpVia', {
-                  tabId: 0,
-                });
-              }}
-            />
-          </View>
-          <Text style={{textAlign: 'center', paddingTop: 10}}>BML</Text>
+    <>
+      <NavbarWithBackBtn />
+      <View style={styles.column}>
+        <View style={styles.carousel}>
+          <CarouselBanner images={images} />
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingHorizontal: 60,
-          }}>
+        <View style={styles.iconWrapper}>
           <View style={styles.circleIconWrapper}>
             <View style={styles.circleIcon}>
               <IconButton
                 icon={() => (
                   <Image
-                    source={require('../../assets/icons/cashcard.png')}
-                    style={{width: 50, height: 50}}
-                  />
-                )}
-                size={40}
-                onPress={() => {
-                  navigation.navigate('CashCard');
-                }}
-              />
-            </View>
-            <Text style={{textAlign: 'center', paddingTop: 10}}>
-              CASH CARD{' '}
-            </Text>
-          </View>
-          <View style={styles.circleIconWrapper}>
-            <View style={styles.circleIcon}>
-              <IconButton
-                icon={() => (
-                  <Image
-                    source={require('../../assets/icons/mib.png')}
+                    source={require('../../assets/icons/bml.png')}
                     style={{width: 50, height: 50}}
                   />
                 )}
                 size={40}
                 onPress={() => {
                   navigation.navigate('TopUpVia', {
-                    tabId: 1,
+                    tabId: 0,
                   });
                 }}
               />
             </View>
-            <Text style={{textAlign: 'center', paddingTop: 10}}>MIB</Text>
+            <Text style={{textAlign: 'center', paddingTop: 10}}>BML</Text>
           </View>
-        </View>
-        <View style={styles.circleIconWrapper}>
-          <View style={styles.circleIcon}>
-            <IconButton
-              icon={() => (
-                <Image
-                  source={require('../../assets/icons/bonus.png')}
-                  style={{width: 50, height: 50}}
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              paddingHorizontal: 60,
+            }}>
+            <View style={styles.circleIconWrapper}>
+              <View style={styles.circleIcon}>
+                <IconButton
+                  icon={() => (
+                    <Image
+                      source={require('../../assets/icons/cashcard.png')}
+                      style={{width: 50, height: 50}}
+                    />
+                  )}
+                  size={40}
+                  onPress={() => {
+                    navigation.navigate('CashCard');
+                  }}
                 />
-              )}
-              size={40}
-              onPress={() => {
-                navigation.navigate('Bonus');
-              }}
-            />
+              </View>
+              <Text style={{textAlign: 'center', paddingTop: 10}}>
+                CASH CARD{' '}
+              </Text>
+            </View>
+            <View style={styles.circleIconWrapper}>
+              <View style={styles.circleIcon}>
+                <IconButton
+                  icon={() => (
+                    <Image
+                      source={require('../../assets/icons/mib.png')}
+                      style={{width: 50, height: 50}}
+                    />
+                  )}
+                  size={40}
+                  onPress={() => {
+                    navigation.navigate('TopUpVia', {
+                      tabId: 1,
+                    });
+                  }}
+                />
+              </View>
+              <Text style={{textAlign: 'center', paddingTop: 10}}>MIB</Text>
+            </View>
           </View>
-          <Text style={{textAlign: 'center', paddingTop: 10}}>BONUS</Text>
+          <View style={styles.circleIconWrapper}>
+            <View style={styles.circleIcon}>
+              <IconButton
+                icon={() => (
+                  <Image
+                    source={require('../../assets/icons/bonus.png')}
+                    style={{width: 50, height: 50}}
+                  />
+                )}
+                size={40}
+                onPress={() => {
+                  navigation.navigate('Bonus');
+                }}
+              />
+            </View>
+            <Text style={{textAlign: 'center', paddingTop: 10}}>BONUS</Text>
+          </View>
         </View>
       </View>
-    </View>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import DhiraaguPackageRecharge from './DhiraaguPackageRecharge';
 
 import OoredooPackageRecharge from './OoredooPackageRecharge';
-import Navbar from '../../../common/Navbar';
+import NavbarWithBackBtn from '../../../common/NavbarWithBackBtn';
 
 const FirstRoute = () => {
   return <DhiraaguPackageRecharge />;
@@ -85,7 +85,7 @@ const PackageRecharge = ({route}) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <View style={styles.column}>
         <BannerAmount />
         <TabView

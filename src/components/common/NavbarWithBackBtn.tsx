@@ -11,9 +11,11 @@ import QRCodeIcon from '../SvgIconComponents/QRCodeIcon';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LiveChatIcon from '../SvgIconComponents/LiveChatIcon';
 import {useNavigation} from '@react-navigation/native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 let {width} = Dimensions.get('window');
-const Navbar = () => {
+const NavbarWithBackBtn = () => {
   const navigation = useNavigation<any>();
   return (
     <Appbar
@@ -33,8 +35,8 @@ const Navbar = () => {
           paddingHorizontal: 10,
         }}>
         <Appbar.Action
-          icon={() => <Icon name="bars" size={26} color="#25BFA3" />}
-          onPress={() => navigation.openDrawer()}
+          icon={() => <FontAwesomeIcon icon={faArrowLeft} size={22} color={'#25BFA3'} />}
+          onPress={() => navigation.navigate('HomeStack')}
         />
         <View style={styles.imageContainer}>
           <TouchableNativeFeedback
@@ -67,7 +69,7 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarWithBackBtn;
 
 const styles = StyleSheet.create({
   imageContainer: {

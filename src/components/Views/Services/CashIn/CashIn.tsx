@@ -11,9 +11,9 @@ import BannerAmount from '../../../common/BannerAmount';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Navbar from '../../../common/Navbar';
 import DhiraaguCashIn from './DhiraaguCashIn';
 import OoredooCashIn from './OoredooCashIn';
+import NavbarWithBackBtn from '../../../common/NavbarWithBackBtn';
 
 const FirstRoute = () => {
   return <DhiraaguCashIn />;
@@ -85,7 +85,7 @@ const CashIn = ({route}) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <View style={styles.column}>
         <BannerAmount />
         <TabView

@@ -10,7 +10,8 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {IconButton} from 'react-native-paper';
-import Navbar from '../common/Navbar';
+
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 import PencilEditIcon from '../SvgIconComponents/PencilEditIcon';
 
@@ -19,7 +20,7 @@ let {width} = Dimensions.get('window');
 const Profile = () => {
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <ImageBackground
           source={require('../../assets/images/banner.png')}
@@ -159,7 +160,6 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     bottom: 20,
-   
   },
   textStyle: {
     color: 'white',

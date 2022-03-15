@@ -12,7 +12,7 @@ import {Checkbox} from 'react-native-paper';
 
 import LinearGradient from 'react-native-linear-gradient';
 import BannerAmount from '../../common/BannerAmount';
-import Navbar from '../../common/Navbar';
+import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
 
 const MWSCBillPay = () => {
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
@@ -23,7 +23,7 @@ const MWSCBillPay = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <Text style={styles.firstSentence}>

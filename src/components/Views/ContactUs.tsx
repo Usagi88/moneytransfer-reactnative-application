@@ -11,13 +11,13 @@ import {ScrollView, Text, TouchableNativeFeedback, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import LinearGradient from 'react-native-linear-gradient';
 import BannerAmount from '../common/BannerAmount';
-import Navbar from '../common/Navbar';
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
 const ContactUs = () => {
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <TitleHorizonDivider name={'Contact'} />

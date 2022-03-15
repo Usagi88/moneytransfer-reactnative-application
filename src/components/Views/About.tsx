@@ -1,12 +1,12 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import Navbar from '../common/Navbar';
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 
 const About = () => {
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <View style={styles.column}>
         <View style={styles.imageWrapper}>
           <Image

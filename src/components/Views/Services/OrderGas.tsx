@@ -13,7 +13,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../../common/BannerAmount';
-import Navbar from '../../common/Navbar';
+import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
 
 const OrderGas = () => {
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
@@ -25,7 +25,7 @@ const OrderGas = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
         <Text style={styles.firstSentence}>

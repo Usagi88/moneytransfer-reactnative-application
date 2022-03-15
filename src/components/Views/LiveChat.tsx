@@ -16,11 +16,11 @@ import {
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Navbar from '../common/Navbar';
 import LinearGradient from 'react-native-linear-gradient';
 
 import ReceiverChatBubble from '../common/ReceiverChatBubble';
 import SenderChatBubble from '../common/SenderChatBubble';
+import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 
 let {width} = Dimensions.get('window');
 
@@ -35,7 +35,7 @@ const LiveChat = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <View style={styles.titleWrapper}>
           <Text style={styles.title}>Live Chat</Text>

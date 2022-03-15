@@ -12,7 +12,7 @@ import {TabView, SceneMap} from 'react-native-tab-view';
 import LinearGradient from 'react-native-linear-gradient';
 import DhiraaguReload from './DhiraaguReload';
 import OoredooRaastas from './OoredooRaastas';
-import Navbar from '../../../common/Navbar';
+import NavbarWithBackBtn from '../../../common/NavbarWithBackBtn';
 
 const FirstRoute = () => {
   return <DhiraaguReload />;
@@ -85,7 +85,7 @@ const ReloadRaastas = ({route}) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarWithBackBtn />
       <View style={styles.column}>
         <BannerAmount />
         <TabView

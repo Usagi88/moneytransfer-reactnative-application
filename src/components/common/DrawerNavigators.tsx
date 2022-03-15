@@ -58,7 +58,9 @@ const DrawerNavigators = () => {
         options={{
           //header: () => <Navbar />,
           headerShown: false,
-          drawerItemStyle: { height: 0 },
+          drawerItemStyle: {
+            display: "none",
+          },
           drawerIcon: () => (
             <View
               style={{
@@ -191,8 +193,10 @@ const DrawerNavigators = () => {
       <Drawer.Screen
         name="Refresh App"
         component={RefreshApp}
+        
         options={{
           headerShown: false,
+          
           drawerIcon: () => (
             <View
               style={{
