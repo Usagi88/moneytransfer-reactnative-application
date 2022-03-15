@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {
-  Dimensions,
   ScrollView,
   Text,
   TextInput,
@@ -8,25 +7,12 @@ import {
   View,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import GradientButton from '../../common/GradientButton';
-import {Checkbox, DataTable, IconButton} from 'react-native-paper';
-import TitleHorizonDivider from '../../common/TitleHorizonDivider';
+
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faClone,
-  faCloudDownload,
-  faLocationArrow,
-  faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import {faClone, faCloudDownload} from '@fortawesome/free-solid-svg-icons';
 import LinearGradient from 'react-native-linear-gradient';
 
-let {width} = Dimensions.get('window');
-
 const BML = () => {
-  const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
-  const [amount, onChangeAmount] = useState<any>(null);
-  const [saveName, onChangeSaveName] = useState<any>(null);
-  const [checked, setChecked] = useState(false);
   const [accountName, onChangeAccountName] = useState<any>(null);
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
   const [accountNumberTwo, onChangeAccountNumberTwo] = useState<any>(null);
@@ -130,16 +116,16 @@ const BML = () => {
         </TouchableNativeFeedback>
       </View>
       <View style={styles.buttonWrapper}>
-      <TouchableNativeFeedback onPress={()=>{}} useForeground={true}>
-        <LinearGradient
-          start={{x: 0, y: 1}}
-          end={{x: 1, y: 1}}
-          colors={['#3AC170', '#25BFA3']}
-          style={styles.button}>
-          <Text style={styles.buttonText}>Claim</Text>
-        </LinearGradient>
-      </TouchableNativeFeedback>
-    </View>
+        <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
+          <LinearGradient
+            start={{x: 0, y: 1}}
+            end={{x: 1, y: 1}}
+            colors={['#3AC170', '#25BFA3']}
+            style={styles.button}>
+            <Text style={styles.buttonText}>Claim</Text>
+          </LinearGradient>
+        </TouchableNativeFeedback>
+      </View>
       <View style={{paddingHorizontal: 20}}>
         <Text style={{color: 'red'}}>
           Please do not transfer same amount twice in a single day only own BML

@@ -7,19 +7,13 @@ import {
   View,
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
-import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../common/BannerAmount';
 import Navbar from '../common/Navbar';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Bonus = () => {
   const [points, onChangePoints] = useState<any>(null);
-
-  const packages = ['Esfiya', 'DhivehiMv'];
-
+  
   return (
     <>
       <Navbar />
