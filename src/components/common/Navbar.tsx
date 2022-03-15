@@ -40,13 +40,13 @@ const Navbar = () => {
           <Appbar.Action
             style={{paddingTop: 6}}
             icon={() => <QRCodeIcon color={'#25BFA3'} width={32} height={32} />}
-            onPress={() => console.log('Pressed mail')}
+            onPress={() => {}}
           />
           <Appbar.Action
             icon={() => (
               <LiveChatIcon color={'#25BFA3'} width={32} height={32} />
             )}
-            onPress={() => console.log('Pressed delete')}
+            onPress={() => {navigation.navigate('LiveChat');}}
           />
         </View>
       </View>
