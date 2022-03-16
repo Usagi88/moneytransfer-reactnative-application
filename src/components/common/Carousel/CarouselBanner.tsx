@@ -4,12 +4,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 //import Carousel, {Pagination} from 'react-native-snap-carousel';
 import Carousel from 'pinar';
-import {Pagination} from 'react-native-snap-carousel';
-
-interface ItemProps {
-  title: string;
-  text: string;
-}
+//import {Pagination} from 'react-native-snap-carousel';
 
 // interface Props {
 //   carouselItems?: ItemProps;

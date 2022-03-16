@@ -23,9 +23,9 @@ import moment from 'moment';
 let {width} = Dimensions.get('window');
 
 const images = [
-  require('../../assets/carousel/bannerOne.png'),
-  require('../../assets/carousel/bannerTwo.png'),
-  require('../../assets/carousel/bannerThree.png'),
+  require('../../assets/carousel/bannerFour.png'),
+  require('../../assets/carousel/bannerFive.png'),
+  require('../../assets/carousel/bannerSix.png'),
 ];
 
 const Home = ({navigation}) => {

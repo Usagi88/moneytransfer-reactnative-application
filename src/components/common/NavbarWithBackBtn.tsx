@@ -51,7 +51,7 @@ const NavbarWithBackBtn = () => {
         </View>
         <View style={{flexDirection: 'row'}}>
           <Appbar.Action
-            style={{paddingTop: 6}}
+            style={{paddingTop: 6, paddingLeft: 4}}
             icon={() => <QRCodeIcon color={'#25BFA3'} width={32} height={32} />}
             onPress={() => {}}
           />
