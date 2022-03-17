@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {Dimensions, ScrollView, StatusBar, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import CarouselBanner from '../common/Carousel/CarouselBanner';
@@ -14,6 +15,7 @@ const images = [
 ];
 
 const Services = () => {
+  const {t} = useTranslation();
   return (
     <>
       <NavbarWithBackBtn />
@@ -21,7 +23,7 @@ const Services = () => {
           <View style={styles.carousel}>
             <CarouselBanner images={images} />
           </View>
-          <TitleHorizonDivider name={'Services'} />
+          <TitleHorizonDivider name={t('services')} />
           <ScrollView style={styles.listBox} nestedScrollEnabled={true}>
             <View style={styles.cardRow}>
               <ServiceCard

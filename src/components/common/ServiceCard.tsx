@@ -21,32 +21,31 @@ let {height, width} = Dimensions.get('window');
 const ServiceCard = (props: ServiceCard) => {
   const navigation = useNavigation<any>();
   return (
-    <TouchableNativeFeedback
-      onPress={() => {
-        navigation.navigate(props.link, {
-          tabId: props.paramsId,
-        });
-      }}>
-      <View style={styles.serviceCard}>
-        <Image style={styles.serviceCardImage} source={props.image} />
-        <View style={styles.serviceCardVerticalDivider} />
-        <Text style={styles.serviceCardText}>{props.title}</Text>
-      </View>
-    </TouchableNativeFeedback>
+    <View style={styles.serviceCardWrapper}>
+      <TouchableNativeFeedback
+        onPress={() => {
+          navigation.navigate(props.link, {
+            tabId: props.paramsId,
+          });
+        }} useForeground={true}>
+        <View style={styles.serviceCard}>
+          <Image style={styles.serviceCardImage} source={props.image} />
+          <View style={styles.serviceCardVerticalDivider} />
+          <Text style={styles.serviceCardText}>{props.title}</Text>
+        </View>
+      </TouchableNativeFeedback>
+    </View>
   );
 };
 
 export default ServiceCard;
 
 const styles = EStyleSheet.create({
-  serviceCard: {
-    flexDirection: 'row',
+  serviceCardWrapper: {
     backgroundColor: 'white',
     flex: 1,
-    height: width > 320 ? 100: 80,
+    height: width > 320 ? 100 : 80,
     marginHorizontal: 10,
-    alignItems: 'center',
-    padding: 10,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 1},
@@ -54,9 +53,19 @@ const styles = EStyleSheet.create({
     shadowRadius: 2,
     elevation: 5,
   },
+  serviceCard: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    flex: 1,
+    height: '100%',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 10,
+    overflow:'hidden'
+  },
   serviceCardImage: {
-    width: width > 320 ? 50: 30,
-    height: width > 320 ? 50: 30,
+    width: width > 320 ? 50 : 30,
+    height: width > 320 ? 50 : 30,
     resizeMode: 'contain',
   },
   serviceCardVerticalDivider: {
@@ -71,6 +80,6 @@ const styles = EStyleSheet.create({
   },
   serviceCardText: {
     flex: 1,
-    fontSize: width > 320 ? 14: 12,
+    fontSize: width > 320 ? 14 : 12,
   },
 });

@@ -99,7 +99,7 @@ const CustomDrawerContent = (props: any) => {
         </View>
       </DrawerContentScrollView>
       <View style={{padding: 10, borderTopWidth: 1, borderTopColor: '#ccc'}}>
-        <TouchableOpacity onPress={() => {}} style={{paddingVertical: 10}}>
+        <TouchableOpacity onPress={() => {props.navigation.navigate('ChangeLanguage');}} style={{paddingVertical: 10}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Text
               style={{

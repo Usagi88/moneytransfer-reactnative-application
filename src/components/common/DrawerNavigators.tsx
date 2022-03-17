@@ -245,28 +245,6 @@ const DrawerNavigators = () => {
         }}
       />
       <Drawer.Screen
-        name="Change Account"
-        component={ChangeAccount}
-        options={{
-          headerShown: false,
-          drawerIcon: () => (
-            <View
-              style={{
-                width: 25,
-                height: 25,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-              <FontAwesomeIcon
-                icon={faUserFriends}
-                size={22}
-                color={'#25BFA3'}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Drawer.Screen
         name="Settings"
         component={Settings}
         options={{

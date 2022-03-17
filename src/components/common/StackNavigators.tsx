@@ -5,6 +5,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import AddCash from '../Views/AddCash';
 import Bonus from '../Views/Bonus';
 import CashCard from '../Views/CashCard';
+import ChangeLanguage from '../Views/ChangeLanguage';
 import FahiSend from '../Views/FahiSend';
 
 import Home from '../Views/Home';
@@ -187,6 +188,13 @@ const StackNavigators = () => {
       <Stack.Screen
         name="TransactionHistory"
         component={TransactionHistory}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ChangeLanguage"
+        component={ChangeLanguage}
         options={{
           headerShown: false,
         }}

@@ -72,6 +72,7 @@ const styles = EStyleSheet.create({
     justifyContent: 'flex-end',
     bottom: 20,
     flexDirection: 'row',
+    marginRight: 20
   },
   dots: {
     width: 10,
