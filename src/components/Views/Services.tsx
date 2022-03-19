@@ -15,7 +15,33 @@ const images = [
 ];
 
 const Services = () => {
-  const {t} = useTranslation();
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
+
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    carousel: {
+      width: '100%',
+      height: 120,
+    },
+    listBox: {
+      width: '100%',
+      height: '100% - 30%',
+    },
+    cardRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      paddingHorizontal: 10,
+      paddingVertical: 10,
+    },
+  });
+
   return (
     <>
       <NavbarWithBackBtn />
@@ -160,26 +186,4 @@ const Services = () => {
 
 export default Services;
 
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  carousel: {
-    width: '100%',
-    height: 120,
-  },
-  listBox: {
-    width: '100%',
-    height: '100% - 30%',
-  },
-  cardRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-  },
-});
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {Image, Text, View} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {IconButton} from 'react-native-paper';
@@ -12,6 +13,9 @@ const images = [
 ];
 
 const AddCash = ({navigation}) => {
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
+  
   return (
     <>
       <NavbarWithBackBtn />
@@ -37,7 +41,7 @@ const AddCash = ({navigation}) => {
                 }}
               />
             </View>
-            <Text style={{textAlign: 'center', paddingTop: 10}}>BML</Text>
+            <Text style={{textAlign: 'center', paddingTop: 10}}>{t('bml')}</Text>
           </View>
           <View
             style={{
@@ -62,7 +66,7 @@ const AddCash = ({navigation}) => {
                 />
               </View>
               <Text style={{textAlign: 'center', paddingTop: 10}}>
-                CASH CARD{' '}
+                {t('cashCard')}
               </Text>
             </View>
             <View style={styles.circleIconWrapper}>
@@ -82,7 +86,7 @@ const AddCash = ({navigation}) => {
                   }}
                 />
               </View>
-              <Text style={{textAlign: 'center', paddingTop: 10}}>MIB</Text>
+              <Text style={{textAlign: 'center', paddingTop: 10}}>{t('mib')}</Text>
             </View>
           </View>
           <View style={styles.circleIconWrapper}>
@@ -100,7 +104,7 @@ const AddCash = ({navigation}) => {
                 }}
               />
             </View>
-            <Text style={{textAlign: 'center', paddingTop: 10}}>BONUS</Text>
+            <Text style={{textAlign: 'center', paddingTop: 10}}>{t('bonus')}</Text>
           </View>
         </View>
       </View>

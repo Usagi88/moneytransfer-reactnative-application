@@ -20,6 +20,8 @@ target 'fpAppProject' do
 
   pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
 
+  pod 'react-native-restart', :path => '../node_modules/react-native-restart'
+
   target 'fpAppProjectTests' do
     inherit! :complete
     # Pods for testing
