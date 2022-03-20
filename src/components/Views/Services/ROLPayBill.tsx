@@ -15,28 +15,100 @@ import {faGift} from '@fortawesome/free-solid-svg-icons';
 import BannerAmount from '../../common/BannerAmount';
 import LinearGradient from 'react-native-linear-gradient';
 import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
+import {useTranslation} from 'react-i18next';
 
 const ROLBillPay = () => {
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
   const [accountNumber, onChangeAccountNumber] = useState<any>(null);
   const [saveName, onChangeSaveName] = useState<any>(null);
   const [checked, setChecked] = useState(false);
+
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    firstSentence: {
+      paddingHorizontal: 20,
+      paddingTop: 10,
+      paddingBottom: 20,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    inputText: {
+      fontWeight: '600',
+      fontSize: 16,
+      color: 'black',
+      paddingHorizontal: 20,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    inputWrapper: {
+      paddingHorizontal: 20,
+      paddingTop: 6,
+      paddingBottom: 10,
+      flexDirection: deviceLocale == 'dv' ? 'row-reverse' : 'row',
+    },
+    input: {
+      height: 46,
+      backgroundColor: '#f2f2f2',
+      paddingHorizontal: 10,
+      borderBottomLeftRadius: 10,
+      borderTopLeftRadius: 10,
+      width: '100% - 76',
+      textAlign: deviceLocale == 'dv' ? 'right' : 'left',
+    },
+    checkboxContainerWrapper: {
+      alignItems: 'flex-end',
+      marginHorizontal: 20,
+    },
+    checkboxContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      width: 150,
+      justifyContent: 'center',
+    },
+    iconButton: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    dataTableHeader: {
+      fontSize: 14,
+      fontWeight: '600',
+      color: 'black',
+    },
+    dataTableCell: {
+      color: 'black',
+    },
+
+    button: {
+      borderRadius: 10,
+      right: deviceLocale == 'dv' ? 0 : 10,
+      left: deviceLocale == 'dv' ? 10 : 0,
+      height: 46,
+      width: 46,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
+    },
+    buttonText: {
+      color: 'white',
+    },
+  });
 
   return (
     <>
       <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
-        <Text style={styles.firstSentence}>
-          Enter the ROL number and select bill to pay.
-        </Text>
+        <Text style={styles.firstSentence}>{t('rolPayBillFirstText')}</Text>
 
-        <Text style={styles.inputText}>Account Number</Text>
+        <Text style={styles.inputText}>{t('accountNumber')}</Text>
         <View style={styles.inputWrapper}>
           <TextInput
             style={styles.input}
             onChangeText={onChangeAccountNumber}
             value={accountNumber}
-            placeholder="Account Number"
+            placeholder={t('accountNumber')}
           />
           <View style={styles.buttonWrapper}>
             <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
@@ -52,101 +124,40 @@ const ROLBillPay = () => {
         </View>
         {checked === true ? (
           <>
-            <Text style={styles.inputText}>Name to save</Text>
+            <Text style={styles.inputText}>{t('nameToSave')}</Text>
             <View style={styles.inputWrapper}>
               <TextInput
                 style={styles.input}
                 onChangeText={onChangeSaveName}
                 value={saveName}
-                placeholder="Name to save"
+                placeholder={t('nameToSave')}
               />
             </View>
           </>
         ) : null}
 
-        <TouchableNativeFeedback
-          onPress={() => {
-            setChecked(!checked);
-          }}>
-          <View style={styles.checkboxContainer}>
-            <Checkbox
-              status={checked ? 'checked' : 'unchecked'}
-              onPress={() => {
-                setChecked(!checked);
-              }}
-              color={'#25BFA3'}
-            />
-            <Text style={styles.label}>Keep info saved</Text>
-          </View>
-        </TouchableNativeFeedback>
-        <GradientButton text={'Pay Bill'} onPress={() => {}} />
+        <View style={styles.checkboxContainerWrapper}>
+          <TouchableNativeFeedback
+            onPress={() => {
+              setChecked(!checked);
+            }}>
+            <View style={styles.checkboxContainer}>
+              <Checkbox
+                status={checked ? 'checked' : 'unchecked'}
+                onPress={() => {
+                  setChecked(!checked);
+                }}
+                color={'#25BFA3'}
+              />
+              <Text style={styles.label}>{t('keepInfoSaved')}</Text>
+            </View>
+          </TouchableNativeFeedback>
+        </View>
+
+        <GradientButton text={t('payBill')} onPress={() => {}} />
       </ScrollView>
     </>
   );
 };
 
 export default ROLBillPay;
-
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  firstSentence: {
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 20,
-  },
-  inputText: {
-    fontWeight: '600',
-    fontSize: 16,
-    color: 'black',
-    paddingHorizontal: 20,
-  },
-  inputWrapper: {
-    paddingHorizontal: 20,
-    paddingTop: 6,
-    paddingBottom: 10,
-    flexDirection: 'row',
-  },
-  input: {
-    height: 46,
-    backgroundColor: '#f2f2f2',
-    paddingHorizontal: 10,
-    borderBottomLeftRadius: 10,
-    borderTopLeftRadius: 10,
-    width: '100% - 76',
-  },
-  checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: 150,
-    marginHorizontal: 20,
-  },
-  iconButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dataTableHeader: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: 'black',
-  },
-  dataTableCell: {
-    color: 'black',
-  },
-
-  buttonWrapper: {},
-  button: {
-    borderRadius: 10,
-    right: 10,
-    height: 46,
-    width: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  buttonText: {
-    color: 'white',
-  },
-});

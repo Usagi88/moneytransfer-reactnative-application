@@ -55,7 +55,7 @@ const Home = ({navigation}) => {
       color: 'black',
     },
     circleIconRow: {
-      flexDirection: 'row',
+      flexDirection: deviceLocale == 'dv' ? 'row-reverse' : 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignItems: 'center',
@@ -78,6 +78,10 @@ const Home = ({navigation}) => {
       shadowRadius: 2,
       elevation: 3,
     },
+    circleIconText: {
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+      paddingTop: 10,
+    },
     titleWrapper: {
       width: width,
       flexDirection: deviceLocale == 'dv' ? 'row-reverse' : 'row',
@@ -85,16 +89,16 @@ const Home = ({navigation}) => {
       marginTop: 60,
       paddingTop: 10,
       alignItems: 'center',
-      height: 40,
+  
       marginBottom: 10,
     
     },
     title: {
-      fontSize: 20,
-      fontWeight: '700',
+      fontSize: deviceLocale == 'dv' ? 24 : 20,
+      fontWeight: deviceLocale == 'dv' ? '600' : '700',
       color: 'black',
-      height: '100%',
- 
+   
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
     },
     divider: {
       flex: 1,
@@ -149,7 +153,7 @@ const Home = ({navigation}) => {
                 }}
               />
             </View>
-            <Text style={{paddingTop: 10}}>{t('support')}</Text>
+            <Text style={styles.circleIconText}>{t('support')}</Text>
           </View>
           <View style={{alignItems: 'center'}}>
             <View style={styles.circleIcon}>
@@ -178,7 +182,7 @@ const Home = ({navigation}) => {
                 }}
               />
             </View>
-            <Text style={{paddingTop: 10}}>{t('addCash')}</Text>
+            <Text style={styles.circleIconText}>{t('addCash')}</Text>
           </View>
         </View>
         <View style={styles.titleWrapper}>

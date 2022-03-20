@@ -30,6 +30,8 @@
 		FFA0493D84FB4ABEA0C12CD4 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA70571D6A7B42FCB6C4B388 /* Octicons.ttf */; };
 		58D4F479D17148F382797189 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B302FE4FB47478F46836B /* SimpleLineIcons.ttf */; };
 		80F4F178BE31457E88343108 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 774AEF2CD1E949A88133B95F /* Zocial.ttf */; };
+		45AB2377A90441EF9E28A99D /* Faruma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EE042C59AA7455497C3B83F /* Faruma.ttf */; };
+		B002B17439F64DBF8CA8E7E2 /* Faruma.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1384CC0568440FCA47C1600 /* Faruma.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		BA70571D6A7B42FCB6C4B388 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1F9B302FE4FB47478F46836B /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		774AEF2CD1E949A88133B95F /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8EE042C59AA7455497C3B83F /* Faruma.ttf */ = {isa = PBXFileReference; name = "Faruma.ttf"; path = "../src/assets/fonts/Faruma.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D1384CC0568440FCA47C1600 /* Faruma.otf */ = {isa = PBXFileReference; name = "Faruma.otf"; path = "../src/assets/fonts/Faruma.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 				BA70571D6A7B42FCB6C4B388 /* Octicons.ttf */,
 				1F9B302FE4FB47478F46836B /* SimpleLineIcons.ttf */,
 				774AEF2CD1E949A88133B95F /* Zocial.ttf */,
+				8EE042C59AA7455497C3B83F /* Faruma.ttf */,
+				D1384CC0568440FCA47C1600 /* Faruma.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -318,6 +324,8 @@
 				FFA0493D84FB4ABEA0C12CD4 /* Octicons.ttf in Resources */,
 				58D4F479D17148F382797189 /* SimpleLineIcons.ttf in Resources */,
 				80F4F178BE31457E88343108 /* Zocial.ttf in Resources */,
+				45AB2377A90441EF9E28A99D /* Faruma.ttf in Resources */,
+				B002B17439F64DBF8CA8E7E2 /* Faruma.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

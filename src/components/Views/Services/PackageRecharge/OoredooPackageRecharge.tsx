@@ -18,28 +18,84 @@ import {
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import SelectDropdown from 'react-native-select-dropdown';
+import {useTranslation} from 'react-i18next';
 
 const OoredooPackageRecharge = () => {
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
   const [mobileNumber, onChangeMobileNumber] = useState<any>(null);
   const [saveName, onChangeSaveName] = useState<any>(null);
   const [checked, setChecked] = useState(false);
 
   const packages = ['Package 1', 'Package 2', 'Package 3', 'Package 4'];
 
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    firstSentence: {
+      paddingHorizontal: 20,
+      paddingTop: 10,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    inputText: {
+      fontWeight: '600',
+      fontSize: 16,
+      color: 'black',
+      paddingHorizontal: 20,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    inputWrapper: {
+      paddingHorizontal: 20,
+      paddingTop: 6,
+      paddingBottom: 10,
+    },
+    input: {
+      height: 46,
+      backgroundColor: '#f2f2f2',
+      paddingHorizontal: 10,
+      borderRadius: 10,
+      textAlign: deviceLocale == 'dv' ? 'right' : 'left',
+    },
+    checkboxContainerWrapper: {
+      alignItems: 'flex-end',
+      marginHorizontal: 20,
+    },
+    checkboxContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      width: 150,
+      justifyContent: 'center',
+    },
+    iconButton: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    dataTableHeader: {
+      fontSize: 14,
+      fontWeight: '600',
+      color: 'black',
+    },
+    dataTableCell: {
+      color: 'black',
+    },
+  });
+
   return (
     <ScrollView style={styles.column}>
       <Text style={styles.firstSentence}>
-        Enter the Ooredoo number and select a package to recharge.
+        {t('packageRechargeViewOoredooFirstText')}
       </Text>
-      <GradientButton text={'Pick Contact'} onPress={() => {}} />
-      <Text style={styles.inputText}>Select Package</Text>
+      <GradientButton text={t('pickContact')} onPress={() => {}} />
+      <Text style={styles.inputText}>{t('selectPackage')}</Text>
       <View style={{paddingHorizontal: 20}}>
         <SelectDropdown
           data={packages}
           onSelect={(selectedItem, index) => {
             //console.log(selectedItem, index);
           }}
-          defaultButtonText={'Select a package'}
+          defaultButtonText={t('selectPackage')}
           buttonTextAfterSelection={(selectedItem, index) => {
             // text represented after item is selected
             // if data array is an array of objects then return selectedItem.property to render after item is selected
@@ -67,69 +123,71 @@ const OoredooPackageRecharge = () => {
           }}
           buttonTextStyle={{
             fontSize: 14,
-            textAlign: 'left',
+            textAlign: deviceLocale == 'dv' ? 'left' : 'left',
           }}
           rowTextStyle={{
             fontSize: 14,
-            textAlign: 'left',
+            textAlign: deviceLocale == 'dv' ? 'right' : 'left',
           }}
         />
       </View>
 
-      <Text style={styles.inputText}>Mobile Number</Text>
+      <Text style={styles.inputText}>{t('mobileNumber')}</Text>
       <View style={styles.inputWrapper}>
         <TextInput
           style={styles.input}
           onChangeText={onChangeMobileNumber}
           value={mobileNumber}
-          placeholder="Mobile Number"
+          placeholder={t('mobileNumber')}
           keyboardType="numeric"
         />
       </View>
       {checked === true ? (
         <>
-          <Text style={styles.inputText}>Name to save</Text>
+          <Text style={styles.inputText}>{t('nametoSave')}</Text>
           <View style={styles.inputWrapper}>
             <TextInput
               style={styles.input}
               onChangeText={onChangeSaveName}
               value={saveName}
-              placeholder="Name to save"
+              placeholder={t('nameToSave')}
             />
           </View>
         </>
       ) : null}
+      <View style={styles.checkboxContainerWrapper}>
+        <TouchableNativeFeedback
+          onPress={() => {
+            setChecked(!checked);
+          }}>
+          <View style={styles.checkboxContainer}>
+            <Checkbox
+              status={checked ? 'checked' : 'unchecked'}
+              onPress={() => {
+                setChecked(!checked);
+              }}
+              color={'#25BFA3'}
+            />
+            <Text style={styles.label}>{t('keepInfoSaved')}</Text>
+          </View>
+        </TouchableNativeFeedback>
+      </View>
 
-      <TouchableNativeFeedback
-        onPress={() => {
-          setChecked(!checked);
-        }}>
-        <View style={styles.checkboxContainer}>
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-            color={'#25BFA3'}
-          />
-          <Text style={styles.label}>Keep info saved</Text>
-        </View>
-      </TouchableNativeFeedback>
-      <GradientButton text={'Buy Package'} onPress={() => {}} />
-      <TitleHorizonDivider name={'Saved Numbers'} />
+      <GradientButton text={t('buyPackage')} onPress={() => {}} />
+      <TitleHorizonDivider name={t('savedNumbers')} />
       <DataTable style={{paddingBottom: 40, paddingHorizontal: 20}}>
         <DataTable.Header>
           <DataTable.Title>
             <Text style={styles.dataTableHeader}>#</Text>
           </DataTable.Title>
           <DataTable.Title style={{flex: 2}}>
-            <Text style={styles.dataTableHeader}>Details</Text>
+            <Text style={styles.dataTableHeader}>{t('details')}</Text>
           </DataTable.Title>
           <DataTable.Title>
-            <Text style={styles.dataTableHeader}>Delete</Text>
+            <Text style={styles.dataTableHeader}>{t('delete')}</Text>
           </DataTable.Title>
           <DataTable.Title>
-            <Text style={styles.dataTableHeader}>Show</Text>
+            <Text style={styles.dataTableHeader}>{t('show')}</Text>
           </DataTable.Title>
         </DataTable.Header>
 
@@ -210,49 +268,3 @@ const OoredooPackageRecharge = () => {
 };
 
 export default OoredooPackageRecharge;
-
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  firstSentence: {
-    paddingHorizontal: 20,
-    paddingTop: 10,
-  },
-  inputText: {
-    fontWeight: '600',
-    fontSize: 16,
-    color: 'black',
-    paddingHorizontal: 20,
-  },
-  inputWrapper: {
-    paddingHorizontal: 20,
-    paddingTop: 6,
-    paddingBottom: 10,
-  },
-  input: {
-    height: 46,
-    backgroundColor: '#f2f2f2',
-    paddingHorizontal: 10,
-    borderRadius: 10,
-  },
-  checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: 150,
-    marginHorizontal: 20,
-  },
-  iconButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dataTableHeader: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: 'black',
-  },
-  dataTableCell: {
-    color: 'black',
-  },
-});

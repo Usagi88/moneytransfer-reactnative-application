@@ -53,13 +53,13 @@ const Services = () => {
           <ScrollView style={styles.listBox} nestedScrollEnabled={true}>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Dhiraagu Reload'}
+                title={t('dhiraaguReload')}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
                 link={'ReloadRaastas'}
                 paramsId={0}
               />
               <ServiceCard
-                title={'Ooredoo Raastas'}
+                title={t('ooredooRaastas')}
                 image={require('../../assets/icons/ooredoo-logo.png')}
                 link={'ReloadRaastas'}
                 paramsId={1}
@@ -67,13 +67,13 @@ const Services = () => {
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Dhiraagu Package Recharge'}
+                title={t('dhiraaguPackageRecharge')}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
                 link={'PackageRecharge'}
                 paramsId={0}
               />
               <ServiceCard
-                title={'Ooredoo Package Recharge'}
+                title={t('ooredooPackageRecharge')}
                 image={require('../../assets/icons/ooredoo-logo.png')}
                 link={'PackageRecharge'}
                 paramsId={1}
@@ -81,13 +81,13 @@ const Services = () => {
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Dhiraagu Bill Pay'}
+                title={t('dhiraaguBillPay')}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
                 link={'BillPay'}
                 paramsId={0}
               />
               <ServiceCard
-                title={'Ooredoo Bill Pay'}
+                title={t('ooredooBillPay')}
                 image={require('../../assets/icons/ooredoo-logo.png')}
                 link={'BillPay'}
                 paramsId={1}
@@ -95,49 +95,49 @@ const Services = () => {
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Raajje Online Bill Pay'}
+                title={t('rol')}
                 image={require('../../assets/icons/ROL.png')}
                 link={'ROLBillPay'}
               />
               <ServiceCard
-                title={'Gift Cards'}
+                title={t('giftCards')}
                 image={require('../../assets/icons/giftcard.png')}
                 link={'GiftCards'}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'PUBG UC'}
+                title={t('pubgUC')}
                 image={require('../../assets/icons/pubg.png')}
                 link={'PUBGBuyPackage'}
               />
               <ServiceCard
-                title={'MWSC Bill Pay'}
+                title={t('mwscBillPay')}
                 image={require('../../assets/icons/mwsc.png')}
                 link={'MWSCBillPay'}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'MediaNet Bill Pay'}
+                title={t('medianetBillPay')}
                 image={require('../../assets/icons/medianet.png')}
                 link={'MediaNetBillPay'}
               />
               <ServiceCard
-                title={'Maldive Gas'}
+                title={t('maldiveGas')}
                 image={require('../../assets/icons/gas.png')}
                 link={'OrderGas'}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Wholesale Reload'}
+                title={t('wholeSaleReload')}
                 image={require('../../assets/icons/dhiraagu-logo.png')}
                 link={'Wholesale'}
                 paramsId={0}
               />
               <ServiceCard
-                title={'Wholesale Raastas'}
+                title={t('wholeSaleRaastas')}
                 image={require('../../assets/icons/ooredoo-logo.png')}
                 link={'Wholesale'}
                 paramsId={1}
@@ -145,13 +145,13 @@ const Services = () => {
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Dhiraagu Pay Cash In'}
+                title={t('dhiraaguPayCashIn')}
                 image={require('../../assets/icons/dhp.png')}
                 link={'CashIn'}
                 paramsId={0}
               />
               <ServiceCard
-                title={'Ooredoo M-faisaa Cash In'}
+                title={t('ooredooMFaisa')}
                 image={require('../../assets/icons/mfaisaa.png')}
                 link={'CashIn'}
                 paramsId={1}
@@ -159,19 +159,19 @@ const Services = () => {
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Schedule Payment'}
+                title={t('schedulePayment')}
                 image={require('../../assets/icons/schedule.png')}
                 link={'SchedulePayment'}
               />
               <ServiceCard
-                title={'Send SMS'}
+                title={t('sendSMS')}
                 image={require('../../assets/icons/sms.png')}
                 link={'SendSMS'}
               />
             </View>
             <View style={styles.cardRow}>
               <ServiceCard
-                title={'Donate'}
+                title={t('donate')}
                 image={require('../../assets/icons/donate.png')}
                 link={'Donate'}
               />

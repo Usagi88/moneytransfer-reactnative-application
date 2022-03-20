@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   GestureResponderEvent,
   Text,
@@ -14,6 +15,28 @@ interface GradientButtonType {
 }
 
 const GradientButton = (props: GradientButtonType) => {
+  const {i18n} = useTranslation();
+  let deviceLocale = i18n.language;
+
+  const styles = EStyleSheet.create({
+    buttonWrapper: {
+      paddingHorizontal: 20,
+      paddingTop: 20,
+      paddingBottom: 10,
+    },
+    button: {
+      borderRadius: 10,
+      height: 46,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
+    },
+    buttonText: {
+      color: 'white',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+  });
+  
   return (
     <View style={styles.buttonWrapper}>
       <TouchableNativeFeedback onPress={props.onPress} useForeground={true}>
@@ -31,20 +54,4 @@ const GradientButton = (props: GradientButtonType) => {
 
 export default GradientButton;
 
-const styles = EStyleSheet.create({
-  buttonWrapper: {
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 10,
-  },
-  button: {
-    borderRadius: 10,
-    height: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  buttonText: {
-    color: 'white',
-  },
-});
+

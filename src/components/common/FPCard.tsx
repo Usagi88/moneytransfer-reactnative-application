@@ -42,7 +42,7 @@ const FPCard = (props: any) => {
     },
     description: {
         color: 'black',
-  
+        fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
     },
     date: {
         color: '#929292',

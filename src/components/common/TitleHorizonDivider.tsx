@@ -22,13 +22,13 @@ const TitleHorizonDivider = (props: TitleHorizonDividerType) => {
       paddingTop: 20,
       paddingBottom: 10,
       alignItems: 'center',
-      height: 60,
+  
     },
     title: {
-      fontSize: 20,
-      fontWeight: '700',
+      fontSize: deviceLocale == 'dv' ? 24 : 20,
+      fontWeight: deviceLocale == 'dv' ? '600' : '700',
       color: 'black',
-      height: '100%'
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
     },
     divider: {
       flex: 1,
