@@ -1,6 +1,7 @@
 import {faUserAlt} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Dimensions,
   ImageBackground,
@@ -18,6 +19,48 @@ import PencilEditIcon from '../SvgIconComponents/PencilEditIcon';
 let {width} = Dimensions.get('window');
 
 const Profile = () => {
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
+  
+  
+const styles = EStyleSheet.create({
+  column: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  bannerRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    bottom: 20,
+  },
+  textStyle: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: '700',
+  },
+  listTitleWrapper: {
+    paddingHorizontal: 20,
+    flexDirection: deviceLocale == 'dv' ? 'row-reverse' : 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  title: {
+    color: 'black',
+    paddingBottom: 5,
+  },
+  subtitle: {
+    color: '#858b94',
+    textAlign: deviceLocale == 'dv' ? 'right' : null,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: '#ccc',
+    marginVertical: 20,
+  },
+});
+
   return (
     <>
       <NavbarWithBackBtn />
@@ -40,10 +83,10 @@ const Profile = () => {
           </View>
         </ImageBackground>
 
-        <TitleHorizonDivider name={'Profile'} />
+        <TitleHorizonDivider name={t('profile')} />
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
-            <Text style={styles.title}>Email</Text>
+            <Text style={styles.title}>{t('email')}</Text>
             <Text style={styles.subtitle}>test@gmail.com</Text>
           </View>
           <IconButton
@@ -60,7 +103,7 @@ const Profile = () => {
 
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
-            <Text style={styles.title}>Mobile Number</Text>
+            <Text style={styles.title}>{t('mobileNumber')}</Text>
             <Text style={styles.subtitle}>7777777</Text>
           </View>
           <IconButton
@@ -77,7 +120,7 @@ const Profile = () => {
 
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
-            <Text style={styles.title}>Address</Text>
+            <Text style={styles.title}>{t('address')}</Text>
             <Text style={styles.subtitle}>test address</Text>
           </View>
           <IconButton
@@ -94,7 +137,7 @@ const Profile = () => {
 
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
-            <Text style={styles.title}>Island/City</Text>
+            <Text style={styles.title}>{t('islandCity')}</Text>
             <Text style={styles.subtitle}>test island/city</Text>
           </View>
           <IconButton
@@ -111,7 +154,7 @@ const Profile = () => {
 
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
-            <Text style={styles.title}>Country</Text>
+            <Text style={styles.title}>{t('country')}</Text>
             <Text style={styles.subtitle}>test country</Text>
           </View>
           <IconButton
@@ -128,7 +171,7 @@ const Profile = () => {
 
         <View style={styles.listTitleWrapper}>
           <View style={styles.userInfoBox}>
-            <Text style={styles.title}>Post Code</Text>
+            <Text style={styles.title}>{t('postCode')}</Text>
             <Text style={styles.subtitle}>test post code</Text>
           </View>
           <IconButton
@@ -149,39 +192,3 @@ const Profile = () => {
 
 export default Profile;
 
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  bannerRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    bottom: 20,
-  },
-  textStyle: {
-    color: 'white',
-    fontSize: 20,
-    fontWeight: '700',
-  },
-  listTitleWrapper: {
-    paddingHorizontal: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  title: {
-    color: 'black',
-    paddingBottom: 5,
-  },
-  subtitle: {
-    color: '#858b94',
-  },
-  divider: {
-    height: 1,
-    backgroundColor: '#ccc',
-    marginVertical: 20,
-  },
-});

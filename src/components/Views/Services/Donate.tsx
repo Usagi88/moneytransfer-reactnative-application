@@ -14,28 +14,89 @@ import SelectDropdown from 'react-native-select-dropdown';
 import BannerAmount from '../../common/BannerAmount';
 import LinearGradient from 'react-native-linear-gradient';
 import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
+import {useTranslation} from 'react-i18next';
 
 const Donate = () => {
   const [amount, onChangeAmount] = useState<any>(null);
-
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
   const packages = ['Esfiya', 'DhivehiMv'];
+
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    firstSentence: {
+      paddingHorizontal: 20,
+      paddingTop: 10,
+      paddingBottom: 14,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    inputText: {
+      fontWeight: '600',
+      fontSize: 16,
+      color: 'black',
+      paddingHorizontal: 20,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    inputWrapper: {
+      paddingHorizontal: 20,
+      paddingTop: 6,
+      paddingBottom: 10,
+    },
+    input: {
+      height: 46,
+      backgroundColor: '#f2f2f2',
+      paddingHorizontal: 10,
+      borderRadius: 10,
+      textAlign: deviceLocale == 'dv' ? 'right' : 'left',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    buttonWrapper: {
+      paddingHorizontal: 20,
+      paddingTop: 10,
+      paddingBottom: 10,
+    },
+    button: {
+      borderRadius: 10,
+      height: 46,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
+    },
+    buttonText: {
+      color: 'white',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    donateLastText: {
+      color: '#747373',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    underline: {
+      width: 100,
+      height: 1,
+      backgroundColor: '#747373',
+      marginTop: 10,
+      marginBottom: 20,
+      marginLeft: deviceLocale == 'dv' ? 'auto' : null,
+    },
+  });
 
   return (
     <>
       <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
-        <Text style={styles.firstSentence}>
-          Select the recipient to donate.
-        </Text>
-        <Text style={styles.inputText}>Select a donee</Text>
+        <Text style={styles.firstSentence}>{t('donateFirstText')}</Text>
+        <Text style={styles.inputText}>{t('selectADonee')}</Text>
         <View style={{paddingHorizontal: 20}}>
           <SelectDropdown
             data={packages}
             onSelect={(selectedItem, index) => {
               //console.log(selectedItem, index);
             }}
-            defaultButtonText={'Select a donee'}
+            defaultButtonText={t('selectADonee')}
             buttonTextAfterSelection={(selectedItem, index) => {
               // text represented after item is selected
               // if data array is an array of objects then return selectedItem.property to render after item is selected
@@ -71,13 +132,13 @@ const Donate = () => {
             }}
           />
         </View>
-        <Text style={styles.inputText}>Amount</Text>
+        <Text style={styles.inputText}>{t('amount')}</Text>
         <View style={styles.inputWrapper}>
           <TextInput
             style={styles.input}
             onChangeText={onChangeAmount}
             value={amount}
-            placeholder="Amount"
+            placeholder={t('amount')}
             keyboardType="numeric"
           />
         </View>
@@ -88,24 +149,13 @@ const Donate = () => {
               end={{x: 1, y: 1}}
               colors={['#3AC170', '#25BFA3']}
               style={styles.button}>
-              <Text style={styles.buttonText}>Send Donation</Text>
+              <Text style={styles.buttonText}>{t('sendDonation')}</Text>
             </LinearGradient>
           </TouchableNativeFeedback>
         </View>
         <View style={{paddingHorizontal: 20, paddingTop: 10}}>
-          <Text style={{color: '#747373'}}>
-            Note: Call 4007004 if you would like to receive donations through
-            FahiPay.
-          </Text>
-          <View
-            style={{
-              width: 100,
-              height: 1,
-              backgroundColor: '#747373',
-              marginTop: 10,
-              marginBottom: 20,
-            }}
-          />
+          <Text style={styles.donateLastText}>{t('donateSecondText')}</Text>
+          <View style={styles.underline} />
         </View>
       </ScrollView>
     </>
@@ -114,46 +164,4 @@ const Donate = () => {
 
 export default Donate;
 
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  firstSentence: {
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 14,
-  },
-  inputText: {
-    fontWeight: '600',
-    fontSize: 16,
-    color: 'black',
-    paddingHorizontal: 20,
-  },
-  inputWrapper: {
-    paddingHorizontal: 20,
-    paddingTop: 6,
-    paddingBottom: 10,
-  },
-  input: {
-    height: 46,
-    backgroundColor: '#f2f2f2',
-    paddingHorizontal: 10,
-    borderRadius: 10,
-  },
-  buttonWrapper: {
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
-  },
-  button: {
-    borderRadius: 10,
-    height: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  buttonText: {
-    color: 'white',
-  },
-});
+

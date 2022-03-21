@@ -175,7 +175,7 @@ const Services = () => {
                 image={require('../../assets/icons/donate.png')}
                 link={'Donate'}
               />
-              <View style={{flex: 1, marginHorizontal: 10, padding: 10}} />
+              <View style={{flex: 1, marginHorizontal: 10,}} />
             </View>
           </ScrollView>
   

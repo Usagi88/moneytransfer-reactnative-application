@@ -14,6 +14,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import DhiraaguWholesale from './DhiraaguWholesale';
 import OoredooWholesale from './OoredooWholesale';
 import NavbarWithBackBtn from '../../../common/NavbarWithBackBtn';
+import {useTranslation} from 'react-i18next';
 
 const FirstRoute = () => {
   return <DhiraaguWholesale />;
@@ -28,6 +29,8 @@ const renderScene = SceneMap({
 });
 
 const Wholesale = ({route}) => {
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
   const {tabId} = route.params;
 
   const layout = useWindowDimensions();
@@ -41,6 +44,82 @@ const Wholesale = ({route}) => {
   useEffect(() => {
     setIndex(tabId);
   }, []);
+
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    tabBar: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      paddingHorizontal: 10,
+      paddingTop: 5,
+      paddingBottom: 10,
+    },
+    tabItemOne: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 100,
+      height: 50,
+      borderRadius: 10,
+      shadowColor: '#000',
+      shadowOffset: {width: 0, height: 3},
+      shadowOpacity: 0.27,
+      shadowRadius: 4.65,
+      elevation: 6,
+      left: 10,
+    },
+    tabItemTwo: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 100,
+      height: 50,
+      borderRadius: 10,
+      shadowColor: '#000',
+      shadowOffset: {width: 0, height: 3},
+      shadowOpacity: 0.27,
+      shadowRadius: 4.65,
+      elevation: 6,
+      right: 10,
+    },
+    tabItemActive: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 100,
+      height: 50,
+      borderRadius: 10,
+      shadowColor: '#000',
+      shadowOffset: {width: 0, height: 3},
+      shadowOpacity: 0.27,
+      shadowRadius: 4.65,
+      elevation: 6,
+      left: 10,
+      zIndex: 2,
+    },
+    tabItemActiveTwo: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 100,
+      height: 50,
+      borderRadius: 10,
+      shadowColor: '#000',
+      shadowOffset: {width: 0, height: 3},
+      shadowOpacity: 0.27,
+      shadowRadius: 4.65,
+      elevation: 6,
+      right: 10,
+      zIndex: 2,
+    },
+    tabTitle: {
+      fontSize: 14,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+  });
 
   const _renderTabBar = () => {
     return (
@@ -58,7 +137,7 @@ const Wholesale = ({route}) => {
                 ...styles.tabTitle,
                 color: index == 0 ? 'white' : 'black',
               }}>
-              Dhiraagu
+              {t('dhiraagu')}
             </Text>
           </LinearGradient>
         </TouchableNativeFeedback>
@@ -75,7 +154,7 @@ const Wholesale = ({route}) => {
                 ...styles.tabTitle,
                 color: index == 1 ? 'white' : 'black',
               }}>
-              Ooredoo
+              {t('ooredoo')}
             </Text>
           </LinearGradient>
         </TouchableNativeFeedback>
@@ -101,78 +180,3 @@ const Wholesale = ({route}) => {
 };
 
 export default Wholesale;
-
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  tabBar: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-    paddingTop: 5,
-    paddingBottom: 10,
-  },
-  tabItemOne: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 100,
-    height: 50,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 3},
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
-    left: 10,
-  },
-  tabItemTwo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 100,
-    height: 50,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 3},
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
-    right: 10,
-  },
-  tabItemActive: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 100,
-    height: 50,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 3},
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
-    left: 10,
-    zIndex: 2,
-  },
-  tabItemActiveTwo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 100,
-    height: 50,
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 3},
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
-    right: 10,
-    zIndex: 2,
-  },
-  tabTitle: {
-    fontSize: 14,
-  },
-});

@@ -14,6 +14,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Invite from './Invite';
 import Referrals from './Referrals';
 import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
+import { useTranslation } from 'react-i18next';
 
 const FirstRoute = () => {
   return <Invite />;
@@ -34,72 +35,10 @@ const InviteFriends = () => {
     {key: 'first', title: 'Dhiraagu'},
     {key: 'second', title: 'Ooredoo'},
   ]);
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
 
-  const _renderTabBar = () => {
-    return (
-      <View style={styles.tabBar}>
-        <TouchableNativeFeedback
-          onPress={() => setIndex(0)}
-          useForeground={true}>
-          <LinearGradient
-            start={{x: 0, y: 1}}
-            end={{x: 1, y: 1}}
-            colors={index == 0 ? ['#3AC170', '#25BFA3'] : ['white', 'white']}
-            style={index == 0 ? styles.tabItemActive : styles.tabItemOne}>
-            <Text
-              style={{
-                ...styles.tabTitle,
-                color: index == 0 ? 'white' : 'black',
-              }}>
-              Invite
-            </Text>
-          </LinearGradient>
-        </TouchableNativeFeedback>
-        <TouchableNativeFeedback
-          onPress={() => setIndex(1)}
-          useForeground={true}>
-          <LinearGradient
-            start={{x: 0, y: 1}}
-            end={{x: 1, y: 1}}
-            colors={index == 1 ? ['#3AC170', '#25BFA3'] : ['white', 'white']}
-            style={index == 1 ? styles.tabItemActiveTwo : styles.tabItemTwo}>
-            <Text
-              style={{
-                ...styles.tabTitle,
-                color: index == 1 ? 'white' : 'black',
-              }}>
-              Referrals
-            </Text>
-          </LinearGradient>
-        </TouchableNativeFeedback>
-      </View>
-    );
-  };
-
-  return (
-    <>
-      <NavbarWithBackBtn />
-      <View style={styles.column}>
-        <View style={styles.imageWrapper}>
-          <Image
-            style={styles.image}
-            source={require('../../../assets/images/inviteFriends.png')}
-          />
-        </View>
-        <TabView
-          navigationState={{index, routes}}
-          renderScene={renderScene}
-          onIndexChange={setIndex}
-          initialLayout={{width: layout.width}}
-          renderTabBar={_renderTabBar}
-        />
-      </View>
-    </>
-  );
-};
-
-export default InviteFriends;
-
+  
 const styles = EStyleSheet.create({
   column: {
     flex: 1,
@@ -176,6 +115,7 @@ const styles = EStyleSheet.create({
   },
   tabTitle: {
     fontSize: 14,
+    fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
   },
 
   imageWrapper: {
@@ -188,3 +128,69 @@ const styles = EStyleSheet.create({
     resizeMode: 'cover',
   },
 });
+
+  const _renderTabBar = () => {
+    return (
+      <View style={styles.tabBar}>
+        <TouchableNativeFeedback
+          onPress={() => setIndex(0)}
+          useForeground={true}>
+          <LinearGradient
+            start={{x: 0, y: 1}}
+            end={{x: 1, y: 1}}
+            colors={index == 0 ? ['#3AC170', '#25BFA3'] : ['white', 'white']}
+            style={index == 0 ? styles.tabItemActive : styles.tabItemOne}>
+            <Text
+              style={{
+                ...styles.tabTitle,
+                color: index == 0 ? 'white' : 'black',
+              }}>
+              {t('invite')}
+            </Text>
+          </LinearGradient>
+        </TouchableNativeFeedback>
+        <TouchableNativeFeedback
+          onPress={() => setIndex(1)}
+          useForeground={true}>
+          <LinearGradient
+            start={{x: 0, y: 1}}
+            end={{x: 1, y: 1}}
+            colors={index == 1 ? ['#3AC170', '#25BFA3'] : ['white', 'white']}
+            style={index == 1 ? styles.tabItemActiveTwo : styles.tabItemTwo}>
+            <Text
+              style={{
+                ...styles.tabTitle,
+                color: index == 1 ? 'white' : 'black',
+              }}>
+              {t('referrals')}
+            </Text>
+          </LinearGradient>
+        </TouchableNativeFeedback>
+      </View>
+    );
+  };
+
+  return (
+    <>
+      <NavbarWithBackBtn />
+      <View style={styles.column}>
+        <View style={styles.imageWrapper}>
+          <Image
+            style={styles.image}
+            source={require('../../../assets/images/inviteFriends.png')}
+          />
+        </View>
+        <TabView
+          navigationState={{index, routes}}
+          renderScene={renderScene}
+          onIndexChange={setIndex}
+          initialLayout={{width: layout.width}}
+          renderTabBar={_renderTabBar}
+        />
+      </View>
+    </>
+  );
+};
+
+export default InviteFriends;
+

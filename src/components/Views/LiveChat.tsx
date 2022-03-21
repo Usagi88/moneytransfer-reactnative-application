@@ -21,24 +21,99 @@ import LinearGradient from 'react-native-linear-gradient';
 import ReceiverChatBubble from '../common/ReceiverChatBubble';
 import SenderChatBubble from '../common/SenderChatBubble';
 import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
+import { useTranslation } from 'react-i18next';
 
 let {width} = Dimensions.get('window');
 
 const LiveChat = () => {
   const [message, onChangeMessage] = useState<any>(null);
   const [livechatMessages, setLivechatMessages] = useState<any>([]);
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
 
   const addMessage = () => {
     onChangeMessage('');
     setLivechatMessages([...livechatMessages, message]);
   };
 
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    box: {
+      width: 40,
+      height: 40,
+      borderRadius: 10,
+      overflow: 'hidden',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  
+    titleWrapper: {
+      width: width,
+      flexDirection: deviceLocale == 'dv' ? 'row-reverse' : 'row',
+      paddingHorizontal: 20,
+      paddingTop: 20,
+      paddingBottom: 10,
+      alignItems: 'center',
+    },
+    title: {
+      fontSize: 20,
+      fontWeight: deviceLocale == 'dv' ? '600' : '700',
+      color: 'black',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null,
+    },
+    divider: {
+      flex: 1,
+      height: 1,
+      backgroundColor: '#ccc',
+      marginLeft: 10,
+      marginRight: 10,
+    },
+    inputWrapper: {
+      paddingTop: 6,
+      paddingBottom: 10,
+      flexDirection: 'row',
+      flex: 1,
+    },
+    input: {
+      height: 46,
+      backgroundColor: '#f2f2f2',
+      paddingHorizontal: 10,
+      borderBottomLeftRadius: 10,
+      borderTopLeftRadius: 10,
+      flex: 1,
+    },
+    button: {
+      borderRadius: 10,
+      right: 10,
+      height: 46,
+      width: 46,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
+      backgroundColor: '#f2f2f2',
+    },
+    livechatBox: {
+      height: '100% - 190',
+    },
+    submitBtn: {
+      width: 46,
+      height: 46,
+      borderRadius: 10,
+      overflow: 'hidden',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  });
+
   return (
     <>
       <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Live Chat</Text>
+          <Text style={styles.title}>{t('liveChat')}</Text>
           <View style={styles.divider} />
           <TouchableNativeFeedback onPress={() => {}} useForeground={true}>
             <LinearGradient
@@ -110,73 +185,4 @@ const LiveChat = () => {
 
 export default LiveChat;
 
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  box: {
-    width: 40,
-    height: 40,
-    borderRadius: 10,
-    overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
 
-  titleWrapper: {
-    width: width,
-    flexDirection: 'row',
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 10,
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: 'black',
-  },
-  divider: {
-    flex: 1,
-    height: 1,
-    backgroundColor: '#ccc',
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  inputWrapper: {
-    paddingTop: 6,
-    paddingBottom: 10,
-    flexDirection: 'row',
-    flex: 1,
-  },
-  input: {
-    height: 46,
-    backgroundColor: '#f2f2f2',
-    paddingHorizontal: 10,
-    borderBottomLeftRadius: 10,
-    borderTopLeftRadius: 10,
-    flex: 1,
-  },
-  button: {
-    borderRadius: 10,
-    right: 10,
-    height: 46,
-    width: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-    backgroundColor: '#f2f2f2',
-  },
-  livechatBox: {
-    height: '100% - 190',
-  },
-  submitBtn: {
-    width: 46,
-    height: 46,
-    borderRadius: 10,
-    overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

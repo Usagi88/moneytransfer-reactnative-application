@@ -15,13 +15,78 @@ import BannerAmount from '../../common/BannerAmount';
 import LinearGradient from 'react-native-linear-gradient';
 import {DataTable} from 'react-native-paper';
 import NavbarWithBackBtn from '../../common/NavbarWithBackBtn';
+import { useTranslation } from 'react-i18next';
 
 const SchedulePayment = () => {
   const [dayOfMonth, onChangeDayOfMonth] = useState<any>(null);
   const [serviceNumber, onChangeServiceNumber] = useState<any>(null);
   const [amount, onChangeAmount] = useState<any>(null);
+  const {t, i18n} = useTranslation();
+  let deviceLocale = i18n.language;
 
   const packages = ['Service 1', 'Service 2', 'Service 3', 'Service 4'];
+
+  const styles = EStyleSheet.create({
+    column: {
+      flex: 1,
+      backgroundColor: 'white',
+    },
+    firstSentence: {
+      paddingHorizontal: 20,
+      paddingTop: 10,
+      paddingBottom: 14,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
+    },
+    inputText: {
+      fontWeight: '600',
+      fontSize: 16,
+      color: 'black',
+      paddingHorizontal: 20,
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
+    },
+    inputWrapper: {
+      paddingHorizontal: 20,
+      paddingTop: 6,
+      paddingBottom: 20,
+    },
+    input: {
+      height: 46,
+      backgroundColor: '#f2f2f2',
+      paddingHorizontal: 10,
+      borderRadius: 10,
+      textAlign: deviceLocale == 'dv' ? 'right' : 'left',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
+    },
+    buttonWrapper: {
+      paddingHorizontal: 20,
+      paddingBottom: 10,
+    },
+    button: {
+      borderRadius: 10,
+      height: 46,
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
+    },
+    buttonText: {
+      color: 'white',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
+    },
+  
+    iconButton: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    dataTableHeader: {
+      fontSize: 14,
+      fontWeight: '600',
+      color: 'black',
+      fontFamily: deviceLocale == 'dv' ? 'Faruma' : null
+    },
+    dataTableCell: {
+      color: 'black',
+    },
+  });
 
   return (
     <>
@@ -29,18 +94,16 @@ const SchedulePayment = () => {
       <ScrollView style={styles.column}>
         <BannerAmount />
         <Text style={styles.firstSentence}>
-          You can easily make an automatic monthly payment with this service.
-          The automatic payment will work only if you have sufficient balance in
-          FahiPay account.
+          {t('scheduledPaymentsViewFirstText')}
         </Text>
-        <Text style={styles.inputText}>Select a service</Text>
+        <Text style={styles.inputText}>{t('selectAService')}</Text>
         <View style={{paddingHorizontal: 20}}>
           <SelectDropdown
             data={packages}
             onSelect={(selectedItem, index) => {
               //console.log(selectedItem, index);
             }}
-            defaultButtonText={'Select a service'}
+            defaultButtonText={t('selectAService')}
             buttonTextAfterSelection={(selectedItem, index) => {
               // text represented after item is selected
               // if data array is an array of objects then return selectedItem.property to render after item is selected
@@ -76,32 +139,32 @@ const SchedulePayment = () => {
             }}
           />
         </View>
-        <Text style={styles.inputText}>Payment day of month</Text>
+        <Text style={styles.inputText}>{t('paymentDayOfMonth')}</Text>
         <View style={styles.inputWrapper}>
           <TextInput
             style={styles.input}
             onChangeText={onChangeDayOfMonth}
             value={dayOfMonth}
-            placeholder="Payment day of month"
+            placeholder={t('paymentDayOfMonth')}
             keyboardType="numeric"
           />
         </View>
-        <Text style={styles.inputText}>Service Number</Text>
+        <Text style={styles.inputText}>{t('serviceNumber')}</Text>
         <View style={styles.inputWrapper}>
           <TextInput
             style={styles.input}
             onChangeText={onChangeServiceNumber}
             value={serviceNumber}
-            placeholder="Service Number"
+            placeholder={t('serviceNumber')}
           />
         </View>
-        <Text style={styles.inputText}>Amount</Text>
+        <Text style={styles.inputText}>{t('amount')}</Text>
         <View style={styles.inputWrapper}>
           <TextInput
             style={styles.input}
             onChangeText={onChangeAmount}
             value={amount}
-            placeholder="Amount"
+            placeholder={t('amount')}
             keyboardType="numeric"
           />
         </View>
@@ -112,7 +175,7 @@ const SchedulePayment = () => {
               end={{x: 1, y: 1}}
               colors={['#3AC170', '#25BFA3']}
               style={styles.button}>
-              <Text style={styles.buttonText}>Schedule Payment</Text>
+              <Text style={styles.buttonText}>{t('schedulePayment')}</Text>
             </LinearGradient>
           </TouchableNativeFeedback>
         </View>
@@ -122,16 +185,16 @@ const SchedulePayment = () => {
               <Text style={styles.dataTableHeader}>#</Text>
             </DataTable.Title>
             <DataTable.Title style={{flex: 3}}>
-              <Text style={styles.dataTableHeader}>Service</Text>
+              <Text style={styles.dataTableHeader}>{t('service')}</Text>
             </DataTable.Title>
             <DataTable.Title style={{flex: 2}}>
-              <Text style={styles.dataTableHeader}>Number</Text>
+              <Text style={styles.dataTableHeader}>{t('number')}</Text>
             </DataTable.Title>
             <DataTable.Title style={{flex: 2}}>
-              <Text style={styles.dataTableHeader}>Amount</Text>
+              <Text style={styles.dataTableHeader}>{t('amount')}</Text>
             </DataTable.Title>
             <DataTable.Title style={{flex: 2}}>
-              <Text style={styles.dataTableHeader}>Day</Text>
+              <Text style={styles.dataTableHeader}>{t('day')}</Text>
             </DataTable.Title>
           </DataTable.Header>
 
@@ -174,59 +237,4 @@ const SchedulePayment = () => {
 
 export default SchedulePayment;
 
-const styles = EStyleSheet.create({
-  column: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  firstSentence: {
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 14,
-  },
-  inputText: {
-    fontWeight: '600',
-    fontSize: 16,
-    color: 'black',
-    paddingHorizontal: 20,
-  },
-  inputWrapper: {
-    paddingHorizontal: 20,
-    paddingTop: 6,
-    paddingBottom: 20,
-  },
-  input: {
-    height: 46,
-    backgroundColor: '#f2f2f2',
-    paddingHorizontal: 10,
-    borderRadius: 10,
-  },
-  buttonWrapper: {
-    paddingHorizontal: 20,
 
-    paddingBottom: 10,
-  },
-  button: {
-    borderRadius: 10,
-    height: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  buttonText: {
-    color: 'white',
-  },
-
-  iconButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dataTableHeader: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: 'black',
-  },
-  dataTableCell: {
-    color: 'black',
-  },
-});

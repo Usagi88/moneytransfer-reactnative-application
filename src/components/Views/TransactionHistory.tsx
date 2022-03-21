@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {ScrollView} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -9,17 +10,19 @@ import NavbarWithBackBtn from '../common/NavbarWithBackBtn';
 import TitleHorizonDivider from '../common/TitleHorizonDivider';
 
 const TransactionHistory = () => {
+  const {t, i18n} = useTranslation();
+  
   return (
     <>
       <NavbarWithBackBtn />
       <ScrollView style={styles.column}>
         <BannerAmount />
-        <TitleHorizonDivider name={'Transaction History'} />
+        <TitleHorizonDivider name={t('transactionHistory')} />
 
         <ScrollView style={styles.listBox} nestedScrollEnabled={true}>
           <FPCard
             backgroundColor={'#E03838'}
-            description={'Refunded Transaction'}
+            description={t('refundedTransaction')}
             date={'19 June 2021 - 17:30'}
             amount={'532.00'}
             currency={'MVR'}
@@ -27,7 +30,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#0CAF39'}
-            description={'Cash Deposit'}
+            description={t('cashDeposit')}
             date={'19 June 2021 - 17:30'}
             amount={'31,912.90'}
             currency={'MVR'}
@@ -35,7 +38,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Service Recharge'}
+            description={t('serviceRecharge')}
             date={'19 June 2021 - 17:30'}
             amount={'120.50'}
             currency={'MVR'}
@@ -43,7 +46,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Dhiraagu Reload'}
+            description={t('dhiraaguReload')}
             date={'19 June 2021 - 17:30'}
             amount={'31,912.50'}
             currency={'MVR'}
@@ -51,7 +54,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Service Recharge'}
+            description={t('serviceRecharge')}
             date={'19 June 2021 - 17:30'}
             amount={'120.50'}
             currency={'MVR'}
@@ -59,7 +62,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Dhiraagu Reload'}
+            description={t('dhiraaguReload')}
             date={'19 June 2021 - 17:30'}
             amount={'31,912.50'}
             currency={'MVR'}
@@ -67,7 +70,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#E03838'}
-            description={'Refunded Transaction'}
+            description={t('refundedTransaction')}
             date={'19 June 2021 - 17:30'}
             amount={'532.00'}
             currency={'MVR'}
@@ -75,7 +78,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#0CAF39'}
-            description={'Cash Deposit'}
+            description={t('cashDeposit')}
             date={'19 June 2021 - 17:30'}
             amount={'31,912.90'}
             currency={'MVR'}
@@ -83,7 +86,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Service Recharge'}
+            description={t('serviceRecharge')}
             date={'19 June 2021 - 17:30'}
             amount={'120.50'}
             currency={'MVR'}
@@ -91,7 +94,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Dhiraagu Reload'}
+            description={t('dhiraaguReload')}
             date={'19 June 2021 - 17:30'}
             amount={'31,912.50'}
             currency={'MVR'}
@@ -99,7 +102,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Service Recharge'}
+            description={t('serviceRecharge')}
             date={'19 June 2021 - 17:30'}
             amount={'120.50'}
             currency={'MVR'}
@@ -107,7 +110,7 @@ const TransactionHistory = () => {
           />
           <FPCard
             backgroundColor={'#FFA26B'}
-            description={'Dhiraagu Reload'}
+            description={t('dhiraaguReload')}
             date={'19 June 2021 - 17:30'}
             amount={'31,912.50'}
             currency={'MVR'}
