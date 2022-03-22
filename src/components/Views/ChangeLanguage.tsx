@@ -132,23 +132,6 @@ const ChangeLanguage = () => {
 
         <View style={styles.languageCardWrapper}>
           <TouchableNativeFeedback
-            onPress={() => changeLanguage('hi')}
-            useForeground={true}>
-            <View style={styles.languageCard}>
-              <View style={{flexDirection: deviceLocale === 'dv' ? 'row-reverse' : 'row', alignItems: 'center'}}>
-                <CountryFlag isoCode="in" size={25} />
-                <Text style={styles.language}>Hindi</Text>
-              </View>
-              <RadioButton
-                value="hi"
-                status={currentLanguage === 'hi' ? 'checked' : 'unchecked'}
-              />
-            </View>
-          </TouchableNativeFeedback>
-        </View>
-
-        <View style={styles.languageCardWrapper}>
-          <TouchableNativeFeedback
             onPress={() => changeLanguage('bn')}
             useForeground={true}>
             <View style={styles.languageCard}>
@@ -159,26 +142,6 @@ const ChangeLanguage = () => {
               <RadioButton
                 value="bn"
                 status={currentLanguage === 'bn' ? 'checked' : 'unchecked'}
-              />
-            </View>
-          </TouchableNativeFeedback>
-        </View>
-
-        <View style={styles.languageCardWrapper}>
-          <TouchableNativeFeedback
-            onPress={() => changeLanguage('ja')}
-            useForeground={true}>
-            <View style={styles.languageCard}>
-              <View style={{flexDirection: deviceLocale === 'dv' ? 'row-reverse' : 'row', alignItems: 'center'}}>
-                <View style={{borderColor: '#ccc', borderWidth: 1}}>
-                  <CountryFlag isoCode="jp" size={25} />
-                </View>
-
-                <Text style={styles.language}>Japanese</Text>
-              </View>
-              <RadioButton
-                value="ja"
-                status={currentLanguage === 'ja' ? 'checked' : 'unchecked'}
               />
             </View>
           </TouchableNativeFeedback>

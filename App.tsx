@@ -29,7 +29,11 @@ EStyleSheet.build({
   // always call EStyleSheet.build() even if you don't use global variables!
   $textColor: '#0275d8',
 });
-//const Drawer = createDrawerNavigator();
+import codePush from 'react-native-code-push';
+
+let codePushOptions = { 
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME, 
+};
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -49,4 +53,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default codePush(codePushOptions)(App);
