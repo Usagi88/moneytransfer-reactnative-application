@@ -11,11 +11,11 @@ const About = () => {
         <View style={styles.imageWrapper}>
           <Image
             style={styles.image}
-            source={require('../../assets/images/fahipay-logo.png')}
+            source={require('../../assets/images/logo-placeholder.png')}
           />
           <View style={styles.divider} />
           <View style={{alignItems: 'center'}}>
-            <Text style={styles.title}>FAHIPAY PVT LTD</Text>
+            <Text style={styles.title}>TEST PVT LTD</Text>
             <Text>App Version 1.0.1</Text>
           </View>
         </View>

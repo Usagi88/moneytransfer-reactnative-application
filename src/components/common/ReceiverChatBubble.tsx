@@ -11,7 +11,7 @@ const ReceiverChatBubble = (props:ReceiverChatBubbleType) => {
   return (
     <View style={styles.receiverBubbleContainer}>
       <Text style={{textAlign: 'left', paddingLeft: 20, top: 5}}>
-        Fahipay helpdesk
+        Helpdesk
       </Text>
       <View style={styles.receiverBubbleWrapper}>
         <LiveChatTriangle

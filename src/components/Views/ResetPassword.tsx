@@ -124,7 +124,7 @@ const ResetPassword = () => {
         <View style={styles.logoWrapper}>
           <Image
             style={styles.logo}
-            source={require('../../assets/images/fahipay-logo.png')}
+            source={require('../../assets/images/logo-placeholder.png')}
           />
         </View>
         <View style={{paddingHorizontal: 20}}>

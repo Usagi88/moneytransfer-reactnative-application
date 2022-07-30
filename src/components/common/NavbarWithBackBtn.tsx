@@ -44,7 +44,7 @@ const NavbarWithBackBtn = () => {
               navigation.navigate('HomeStack');
             }}>
             <Image
-              source={require('../../assets/images/fahipay-logo.png')}
+              source={require('../../assets/images/logo-placeholder.png')}
               style={{width: '100%', height: '100%'}}
             />
           </TouchableNativeFeedback>

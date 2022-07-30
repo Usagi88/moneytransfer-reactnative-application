@@ -25,9 +25,9 @@ import { useTranslation } from 'react-i18next';
 let {width} = Dimensions.get('window');
 
 const images = [
-  require('../../assets/carousel/bannerFour.png'),
-  require('../../assets/carousel/bannerFive.png'),
-  require('../../assets/carousel/bannerSix.png'),
+  require('../../assets/carousel/bannerOne.png'),
+  require('../../assets/carousel/bannerTwo.png'),
+  require('../../assets/carousel/bannerThree.png'),
 ];
 
 const Home = ({navigation}) => {

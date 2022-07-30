@@ -59,15 +59,15 @@ const ContactUs = () => {
         <TitleHorizonDivider name={t('contacts')} />
         <View style={styles.rowWrapper}>
           <FontAwesomeIcon icon={faPhone} size={22} color={'#25BFA3'} />
-          <Text style={styles.title}>4007004</Text>
+          <Text style={styles.title}>3000001</Text>
         </View>
         <View style={styles.rowWrapper}>
           <FontAwesomeIcon icon={faEnvelope} size={22} color={'#25BFA3'} />
-          <Text style={styles.title}>info@fahipay.mv</Text>
+          <Text style={styles.title}>info@test.mv</Text>
         </View>
         <View style={styles.rowWrapper}>
           <FontAwesomeIcon icon={faGlobe} size={22} color={'#25BFA3'} />
-          <Text style={styles.title}>www.fahipay.mv</Text>
+          <Text style={styles.title}>www.test.mv</Text>
         </View>
         <TitleHorizonDivider name={t('socialMediaHandles')} />
         <View style={styles.boxWrapper}>
