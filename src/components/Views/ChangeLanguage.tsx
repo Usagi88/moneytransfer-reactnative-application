@@ -133,13 +133,13 @@ const ChangeLanguage = () => {
             onPress={() => changeLanguage('ja')}
             useForeground={true}>
             <View style={styles.languageCard}>
-              <View style={{flexDirection: deviceLocale === 'ja' ? 'row-reverse' : 'row', alignItems: 'center'}}>
+              <View style={{flexDirection: deviceLocale === 'dv' ? 'row-reverse' : 'row', alignItems: 'center'}}>
                 <CountryFlag isoCode="jp" size={25} />
                 <Text style={styles.language}>Japan</Text>
               </View>
               <RadioButton
-                value="en"
-                status={currentLanguage === 'jp' ? 'checked' : 'unchecked'}
+                value="ja"
+                status={currentLanguage === 'ja' ? 'checked' : 'unchecked'}
               />
             </View>
           </TouchableNativeFeedback>
